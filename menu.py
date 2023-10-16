@@ -2,7 +2,7 @@ from vagas import vagas
 from kulcs import kulcs
 from asas import asas
 
-def fomenu():
+def fomenu(egeszseg, nev, energia, lebukas, penz):
     print(f'Játékos neve: {nev} ')
     print()
     print(f'Egészségi szinted: {egeszseg}')
@@ -12,6 +12,6 @@ def fomenu():
 
 def mellekmenu():
     print(f'Eszköztárad: ')
-    print(f'Szökésedhez ({}) szükséges eszközök: ')
-    print(f'Kivégézesig fentmaradó idő: {} nap')
+    # print(f'Szökésedhez ({}) szükséges eszközök: ')
+    # print(f'Kivégézesig fentmaradó idő: {} nap')
     print('')

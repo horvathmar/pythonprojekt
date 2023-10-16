@@ -1,8 +1,10 @@
 from vagas import vago
 from kulcs import kulcsketto
 from asas import aso
+from menu import fomenu
 
 def main() -> str:
+    fomenu(egeszseg, nev, energia, lebukas, penz)
     egeszseg = 0
     energia = 0
     penz = 0
