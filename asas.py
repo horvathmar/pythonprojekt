@@ -1,3 +1,2 @@
-from main import nev
-def aso():
+def aso(nev):
     print(f'Az ásós szökési módot  választottad {nev}-nek')

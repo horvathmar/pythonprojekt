@@ -1,6 +1,6 @@
-from vagas import vagas
-from kulcs import kulcs
-from asas import asas
+from vagas import vago
+from kulcs import kulcsketto
+from asas import aso
 
 def main() -> str:
     egeszseg = 0
@@ -17,9 +17,9 @@ def main() -> str:
     print('\t 3 - Szerezni egy ásót és kiásni magát')
     valasz = int(input('A szökési mód kiválasztása: '))
     if valasz == 1:
-        kulcs()
+        kulcsketto(nev)
     elif valasz == 2:
-        vagas()
+        vago(nev)
     elif valasz == 3:
-        asas()
+        aso(nev)
 main()
