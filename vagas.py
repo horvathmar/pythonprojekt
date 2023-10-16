@@ -1,0 +1,2 @@
+def vagas():
+    pass
