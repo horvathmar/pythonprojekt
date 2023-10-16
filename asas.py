@@ -1,2 +1,2 @@
 def asas():
-    pass
+    print('Az ásós szökési módot  választottad {nev}-nek')

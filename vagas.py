@@ -1,2 +1,2 @@
 def vagas():
-    pass
+    print('A vágásos szökési módot  választottad {nev}-nek')

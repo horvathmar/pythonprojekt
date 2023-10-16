@@ -1,2 +1,2 @@
 def kulcs():
-    pass
+    print('A kulcsos szökési módot  választottad {nev}-nek')
