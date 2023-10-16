@@ -12,6 +12,7 @@ def main():
     print('\t 2 - Szerezni egy vágóeszközt és kivágni a kerítést')
     print('\t 3 - Szerezni egy ásót és kiásni magát')
     valasz = input('A szökési mód kiválasztása: ')
+    print('abuggéa')
     if valasz == 1:
         kulcs()
     elif valasz == 2:
