@@ -21,7 +21,7 @@ def main() -> str:
     if valasz == 1:
         kulcsketto(nev)
     elif valasz == 2:
-        vago(nev)
+        vago(nev, egeszseg, energia, lebukas, penz)
     elif valasz == 3:
         aso(nev)
 main()

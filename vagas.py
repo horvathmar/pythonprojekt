@@ -10,18 +10,18 @@ def vago(nev, egeszseg, energia, lebukas, penz):
             megbeszeles = int(input('Válaszd ki, hogy hol kérje meg a tesvérét, 1-est ha telefonon és 2-est, ha levélben.'))
             if megbeszeles == 1:
                 print('Reménykedniük kell, hogy ne hallgassák le a telefont.')
-                print(f'A {valasztott_ember} megpróbálja becsempészni {nev}-nek a csípőfogót.')
+                print(f'A  megpróbálja becsempészni {nev}-nek a csípőfogót.')
             elif megbeszeles == 2:
                 print('Ez egy biztonságosabb mód, de lassabban ér oda az üzenet.')
-                print(f'A {valasztott_ember} megpróbálja becsempészni {nev}-nek a csípőfogót.')
+                print(f'A  megpróbálja becsempészni {nev}-nek a csípőfogót.')
         elif valasztott_ember == 2:
             print(f'{nev}-nek reménykednie kell, hogy a barátja, akiben ő bízik nem adja fel a rendőröknek.') 
             print(f'Szerencéje van, mivel a barátja nem adja fel, és benne van hogy segít {nev}-nek.')
             megbeszeles2 = int(input('Válaszd ki, hogy hol kérje meg a tesvérét, 1-est ha telefonon és 2-est, ha levélben.'))
             if megbeszeles2 == 1:
                 print('Reménykedniük kell, hogy ne hallgassák le a telefont.')
-                print(f'A {valasztott_ember} megpróbálja becsempészni {nev}-nek a csípőfogót.')
-                print(f'{valasztott_ember} sikeresen becsempészte a börtön területére a csípőfogót, és most átadta {nev}-nek.')
+                print(f'A  megpróbálja becsempészni {nev}-nek a csípőfogót.')
+                print(f' sikeresen becsempészte a börtön területére a csípőfogót, és most átadta {nev}-nek.')
                 print(f'AMikor azonban {nev} megpróbálja bevinni a cellájába egy motozáshoz ér.')
                 dobas_vagy_maradas = int(input('Ugyan elrejtette a gatájában, de ha megtatálja a fegyőr azonnal vége a tervének! Mit tegyen? Írjon be 1-est ha menjen vissza, és dobja el, és 2-est ha higgadttan reménykedik, hogy nem találjál meg. '))
                 if dobas_vagy_maradas == 1:
