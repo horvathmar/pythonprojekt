@@ -19,9 +19,12 @@ def kulcsketto(nev):
             print('\t 3 - Elmondod az igazat')
             valaszharom = int(input('A választásod: '))
             if valaszharom == 1:
-                print('Nagyon átlátszó, az őrök gyanút fognak, de elengednek, ezt most megúsztad')
+                print('Nagyon átlátszó, az őrök gyanút fognak, de elengednek, ezt most megúszta')
             elif valaszharom ==2:
-                print('ifz')            
+                print('Megérhető, nem fognak gyanút, ezt most megúszta')            
+            elif valaszharom == 3:
+                print('Rossz válassz, büntetésből többet kell dolgoznia minden nap')
+                print('Nem tudták meg az eredeti célod, de legközelebb jobban vigyázz')
     elif valaszelso ==2:
         print('Keményen végig dolgoztad a napot')
         print('Másnap...')
