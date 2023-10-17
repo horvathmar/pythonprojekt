@@ -4,14 +4,14 @@ from asas import aso
 from menu import fomenu
 
 def main() -> str:
-    fomenu(egeszseg, nev, energia, lebukas, penz)
+    # fomenu(egeszseg, nev, energia, lebukas, penz)
     egeszseg = 0
     energia = 0
     penz = 0
     lebukas = 0
-    print('Üdvözöllek a játékban! Folyamatos választási lehetőségek, és adott esetben kihívások is lesznek a játék során. A játékban láthatjuk a szökevényünk egészségi szintjét, a pénzt, kivégzésig fennmaradó idő, lebukási esély százalékban és az Energia szintünket is láthatjuk. Sok esetben a játékosnak kell megadnia a kért információkat.')
+    print('Üdvözöllek a játékban! Folyamatos választási lehetőségek, és adott esetben kihívások is lesznek a játék során. A játékban láthatjuk a szökevényünk egészségi szintjét, a pénzt, kivégzésig fennmaradó időt, lebukási esélyt százalékban és az Energia szintünket is láthatjuk. Sok esetben a játékosnak kell megadnia a kért információkat.')
     nev = input('Adja meg a szökevény nevét: ')
-    print(f'Cél: {nev}-et kiszöktetni a börtönből')
+    print(f'Cél: {nev}-t kiszöktetni a börtönből')
     print(f'Jelenleg {nev} egy börtöncellában fekszik az ágyán és azon gondolkozik, hogy hogyan tudna kiszabadúlni a börtönből')
     print('Három ötlete van: ')
     print('\t 1 - Csinálni álkulcsokat és kinyitni az ajtókat')

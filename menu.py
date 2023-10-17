@@ -1,6 +1,6 @@
-from vagas import vagas
-from kulcs import kulcs
-from asas import asas
+from vagas import vago
+from kulcs import kulcsketto
+from asas import aso
 
 def fomenu(egeszseg, nev, energia, lebukas, penz):
     print(f'Játékos neve: {nev} ')
