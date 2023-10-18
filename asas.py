@@ -1,4 +1,4 @@
-def aso(nev, egeszseg, energia, lebukas, penz):
+def aso(nev):
     print(f'A kiásást választottad szökési módul {nev}-nek')
     print(f'Az első lépés ahhoz, hogy kiásd magad az, hogy {nev} megszerezzem egy ásót és egy posztert, amivel kiáshatja magát, majd minden nap végén eltakarhatja a haladását a poszterrel')
     valasz_egy = int(input('3 Lehetőséged van: 1 - Lopás a raktárból, 2 - Kézi ásó Készítése, 3 - Egy külsős ember lefizetése'))
