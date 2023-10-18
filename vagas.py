@@ -32,6 +32,19 @@ def vago(nev, egeszseg, energia, lebukas, penz):
                     print('Odaért a motozáshoz, és az őr gyanut fogott a viselkedéséből és...')
                     print(f'{nev}-nek szerencséje volt mivel nem találták meg nála a csípőfogt a motozás során. Bevitte a cellájába, és ott elrejtette.')
                     lebukas += 10
+                    print(f'Most ki kellene választania {nev}-nek, hogy mikor szeretne kiszabadulni')
+                    idopont = int(input('Írjon be 1-est ha, akkor amikor éppen nézik a rabok a TV-t és hangoskodnak, így senki sem fog rá figyelni és 2-est, ha egy este amikor már mindenki alszik. '))
+                    if idopont == 1:
+                        print('Így nehezen veszik észre, és nyugodtan tudja vágni a kerítést, mivel senki sem fogja hallani.')
+                        print(f'{nev}-nek kell szereznie egy embert, aki majd a kijutása aután elviszi autóval.')
+                        ki_jon_ertem = int(input('Döntse el, hogy ki jöjjön a szökevényért. Írjon be 1-est, ha testvére, és 2-est, ha a barátmője. '))
+                        if ki_jon_ertem == 1:
+                            print('Jól döntöttél, mivel ő már becsempészett egy csípőfogót, biztosan eljön érte!')
+                        elif ki_jon_ertem == 2:
+                            print('Vigyázz! Ne bízz teljesen a barátnődben, nehogy eláruljon.')
+                    elif idopont == 2:
+                        print('így csndesebben kell majd vágnia, de könnyebben szökik majd meg.')
+
 
             elif megbeszeles2 == 2:
                 print('Ez egy biztonságosabb mód, de lassabban ér oda az üzenet.')
