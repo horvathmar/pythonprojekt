@@ -53,6 +53,31 @@ def kulcsketto(nev):
                     eselyharom = randint(e,f)
                     if eselyharom == e:
                         print('Sikerül elkészítenie a kulcsot')
+                        valasztiz = int(input('Szeretne még ma elindulni és kiszabadúlni a börtönből?, ha igen(1), ha nem(2): '))
+                        if valasztiz == 1:
+                            i = 1
+                            j = 2
+                            eselyot = randint(i,j)
+                            if eselyot == i:
+                                print('Túl mohó volt, elkapták')
+                                print('VÉGE!')
+                                # lebukas += 100
+                            elif eselyot == j:
+                                print('Sikerül kiszabadúlnia, gratulálunk, kivitte a játék')
+                                print('NYERT!')
+                                print(f'A győztes játékos: {nev}')
+                        elif valasztiz == 2:
+                            k = 1
+                            l = 2
+                            eselyot = randint(k, l)
+                            if eselyot == k:
+                                print('Észreveszik és elkapták')
+                                print('VÉGE!')
+                                # lebukas += 100
+                            elif eselyot == l:
+                                print('Sikerül kiszabadúlnia, gratulálunk, kivitte a játék')
+                                print('NYERT!')
+                                print(f'A győztes játékos: {nev}')
                     elif eselyharom == f:
                         print('Eltörte a kulcsot, ráadásúl élszre is veszik')
                         print('VÉGE!')
@@ -111,6 +136,87 @@ def kulcsketto(nev):
                     esely = randint(a,b)
                     if esely == a:
                         print('Nyert')
+                        valasznyolc= int(input('Szeretnél másnap elindúlni kulcsot készíteni?, ha igen(1), ha nem(2)'))
+                if valasznyolc == 1:
+                    print('Másnap...')
+                    print('Észrevétlenül elszökik')
+                    print(f'A műhelyben {nev} a gép elött áll és készíti a kulcsot, de vigyáznia kell, nehogy eltörjön, vagy elrontsa a kulcsot')
+                    e = 5
+                    f = 6
+                    eselyharom = randint(e,f)
+                    if eselyharom == e:
+                        print('Sikerül elkészítenie a kulcsot')
+                        valasztiz = int(input('Szeretne még ma elindulni és kiszabadúlni a börtönből?, ha igen(1), ha nem(2): '))
+                        if valasztiz == 1:
+                            i = 1
+                            j = 2
+                            eselyot = randint(i,j)
+                            if eselyot == i:
+                                print('Túl mohó volt, elkapták')
+                                print('VÉGE!')
+                                # lebukas += 100
+                            elif eselyot == j:
+                                print('Sikerül kiszabadúlnia, gratulálunk, kivitte a játék')
+                                print('NYERT!')
+                                print(f'A győztes játékos: {nev}')
+                        elif valasztiz == 2:
+                            k = 1
+                            l = 2
+                            eselyot = randint(k, l)
+                            if eselyot == k:
+                                print('Észreveszik és elkapták')
+                                print('VÉGE!')
+                                # lebukas += 100
+                            elif eselyot == l:
+                                print('Sikerül kiszabadúlnia, gratulálunk, kivitte a játék')
+                                print('NYERT!')
+                                print(f'A győztes játékos: {nev}')
+                    elif eselyharom == f:
+                        print('Eltörte a kulcsot, ráadásúl élszre is veszik')
+                        print('VÉGE!')
+                        # lebukas += 100
+                elif valasznyolc == 2:
+                    print(f'A következő napon {nev} végig dolgozott.')
+                    print('Elhatározza, hogy másnap elindul és megpróbálja elkészíteni a kulcsot')
+                    print('Másnap...')
+                    print('Észrevétlenül elszökik')
+                    print(f'A műhelyben {nev} a gép elött áll és készíti a kulcsot, de vigyáznia kell, nehogy eltörjön, vagy elrontsa a kulcsot')
+                    g = 5
+                    h = 6
+                    eselynegy = randint(g,h)
+                    if eselynegy == g:
+                        print('Sikerül elkészítenie a kulcsot')
+                        valaszkilenc = int(input('Szeretne még ma elindulni és kiszabadúlni a börtönből?, ha igen(1), ha nem(2): '))
+                        if valaszkilenc == 1:
+                            i = 1
+                            j = 2
+                            eselyot = randint(i,j)
+                            if eselyot == i:
+                                print('Túl mohó volt, elkapták')
+                                print('VÉGE!')
+                                # lebukas += 100
+                            elif eselyot == j:
+                                print('Sikerül kiszabadúlnia, gratulálunk, kivitte a játék')
+                                print('NYERT!')
+                                print(f'A győztes játékos: {nev}')
+                        elif valaszkilenc == 2:
+                            k = 1
+                            l = 2
+                            eselyot = randint(k, l)
+                            if eselyot == k:
+                                print('Észreveszik és elkapták')
+                                print('VÉGE!')
+                                # lebukas += 100
+                            elif eselyot == l:
+                                print('Sikerül kiszabadúlnia, gratulálunk, kivitte a játék')
+                                print('NYERT!')
+                                print(f'A győztes játékos: {nev}')
+                    elif eselynegy == h:
+                        print('Eltörte a kulcsot, ráadásúl élszre is veszik')
+                        print('VÉGE!')
+
+
+                        
                     elif esely == b:
                         print('Éppen el tud futni, de szét verték a búráját')
                         print('Nincs bökő')
