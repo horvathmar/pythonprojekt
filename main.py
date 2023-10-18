@@ -19,7 +19,7 @@ def main() -> str:
     print('\t 3 - Szerezni egy ásót és kiásni magát')
     valasz = int(input('A szökési mód kiválasztása: '))
     if valasz == 1:
-        kulcsketto(nev)
+        kulcsketto(nev, egeszseg, energia, lebukas, penz)
     elif valasz == 2:
         vago(nev, egeszseg, energia, lebukas, penz)
     elif valasz == 3:

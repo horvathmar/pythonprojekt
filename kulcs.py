@@ -1,5 +1,5 @@
 from random import randint
-def kulcsketto(nev):
+def kulcsketto(nev, egeszseg, energia, lebukas, penz):
     print(f'A kulcsos szökési módot választottad {nev}-nek')
     print(f'{nev}-nek szüksége lesz kettő kulcsra, és az ahhoz szükséges anyagokra')
     print('')
