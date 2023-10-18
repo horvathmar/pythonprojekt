@@ -44,6 +44,12 @@ def vago(nev, egeszseg, energia, lebukas, penz):
                             print('Vigyázz! Ne bízz teljesen a barátnődben, nehogy eláruljon.')
                     elif idopont == 2:
                         print('így csndesebben kell majd vágnia, de könnyebben szökik majd meg.')
+                        print(f'{nev}-nek kell szereznie egy embert, aki majd a kijutása aután elviszi autóval.')
+                        ki_jon_ertem2 = int(input('Döntse el, hogy ki jöjjön a szökevényért. Írjon be 1-est, ha testvére, és 2-est, ha a barátmője. '))
+                        if ki_jon_ertem2 == 1:
+                            print('Jól döntöttél, mivel ő már becsempészett egy csípőfogót, biztosan eljön érte!')
+                        elif ki_jon_ertem2 == 2:
+                            print('Vigyázz! Ne bízz teljesen a barátnődben, nehogy eláruljon.')
 
 
             elif megbeszeles2 == 2:
