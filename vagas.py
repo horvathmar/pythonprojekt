@@ -40,17 +40,76 @@ def vago(nev, egeszseg, energia, lebukas, penz):
                         ki_jon_ertem = int(input('Döntse el, hogy ki jöjjön a szökevényért. Írjon be 1-est, ha testvére, és 2-est, ha a barátmője. '))
                         if ki_jon_ertem == 1:
                             print('Jól döntöttél, mivel ő már becsempészett egy csípőfogót, biztosan eljön érte!')
+                            mit_tegyek4 = int(input('1 - kúszva menjek el a keríésig, és 2 - futva, mert úgy gyorsabb'))
+                            if mit_tegyek4 == 1:
+                                print(f'Jól döntöttél, sikeresen eljutott {nev} a kapuig.')
+                                print('Nyugodtan vághatja a kaput, mivel nem hallják a többi rab miatt.')
+                                print(f'Két kerítés van, közöttük a földön szögesdrót. Mit tegyen {nev}?')
+                                dontes = int(input('1-est ha vágja el, 2-est ha menjen át rajta.'))
+                                if dontes == 1:
+                                    print('Át tudta vági, és már csak egy kapu választja el a szabadságtól!')
+                                elif dontes == 2:
+                                    print('Sajnos beleakadt a szögesdrótba, és mikoözben próbált kijutni, észrevették, és elkapták.')
+                                    print('VÉGE')
+                                    lebukas += 100
+                                print(f'Sajnos nem volt szerencséd, és az őr észrevette {nev}-et! Riadót fújt és {nev}-et elkapták.')
+                                print('VÉGE!')
+                                lebukas += 100
                         elif ki_jon_ertem == 2:
                             print('Vigyázz! Ne bízz teljesen a barátnődben, nehogy eláruljon.')
+                            mit_tegyek3 = int(input('1 - kúszva menjek el a keríésig, és 2 - futva, mert úgy gyorsabb'))
+                            if mit_tegyek3 == 1:
+                                print(f'Jól döntöttél, sikeresen eljutott {nev} a kapuig.')
+                                print('Nyugodtan vághatja a kaput, mivel nem hallják a többi rab miatt.')
+                                print(f'Két kerítés van, közöttük a földön szögesdrót. Mit tegyen {nev}?')
+                                dontes = int(input('1-est ha vágja el, 2-est ha menjen át rajta.'))
+                                if dontes == 1:
+                                    print('Át tudta vági, és már csak egy kapu választja el a szabadságtól!')
+                                elif dontes == 2:
+                                    print('Sajnos beleakadt a szögesdrótba, és mikoözben próbált kijutni, észrevették, és elkapták.')
+                                    print('VÉGE')
+                                    lebukas += 100
                     elif idopont == 2:
                         print('így csndesebben kell majd vágnia, de könnyebben szökik majd meg.')
                         print(f'{nev}-nek kell szereznie egy embert, aki majd a kijutása aután elviszi autóval.')
                         ki_jon_ertem2 = int(input('Döntse el, hogy ki jöjjön a szökevényért. Írjon be 1-est, ha testvére, és 2-est, ha a barátmője. '))
                         if ki_jon_ertem2 == 1:
                             print('Jól döntöttél, mivel ő már becsempészett egy csípőfogót, biztosan eljön érte!')
+                            print('Egyik este nekilendült, és kijutott az udvarra, de észrevette az őrtornyot.')
+                            mit_tegyek = int(input('1 - kúszva menjek el a keríésig, és 2 - futva, mert úgy gyorsabb'))
+                            if mit_tegyek == 1:
+                                print(f'Jól döntöttél, sikeresen eljutott {nev} a kapuig.')
+                                print('Nyugodtan vághatja a kaput, mivel nem hallják a többi rab miatt.')
+                                print(f'Két kerítés van, közöttük a földön szögesdrót. Mit tegyen {nev}?')
+                                dontes = int(input('1-est ha vágja el, 2-est ha menjen át rajta.'))
+                                if dontes == 1:
+                                    print('Át tudta vági, és már csak egy kapu választja el a szabadságtól!')
+                                elif dontes == 2:
+                                    print('Sajnos beleakadt a szögesdrótba, és mikoözben próbált kijutni, észrevették, és elkapták.')
+                                    print('VÉGE')
+                                    lebukas += 100
+                            elif mit_tegyek == 2:
+                                print(f'Sajnos nem volt szerencséd, és az őr észrevette {nev}-et! Riadót fújt és {nev}-et elkapták.')
+                                print('VÉGE!')
+                                lebukas += 100                             
                         elif ki_jon_ertem2 == 2:
                             print('Vigyázz! Ne bízz teljesen a barátnődben, nehogy eláruljon.')
-
+                            mit_tegyek2 = int(input('1 - kúszva menjek el a keríésig, és 2 - futva, mert úgy gyorsabb'))
+                            if mit_tegyek2 == 1:
+                                print(f'Jól döntöttél, sikeresen eljutott {nev} a kapuig.')
+                                print('Nyugodtan vághatja a kaput, mivel nem hallják a többi rab miatt.')
+                                print(f'Két kerítés van, közöttük a földön szögesdrót. Mit tegyen {nev}?')
+                                dontes = int(input('1-est ha vágja el, 2-est ha menjen át rajta.'))
+                                if dontes == 1:
+                                    print('Át tudta vági, és már csak egy kapu választja el a szabadságtól!')
+                                elif dontes == 2:
+                                    print('Sajnos beleakadt a szögesdrótba, és mikoözben próbált kijutni, észrevették, és elkapták.')
+                                    print('VÉGE')
+                                    lebukas += 100
+                            elif mit_tegyek2 == 2:
+                                print(f'Sajnos nem volt szerencséd, és az őr észrevette {nev}-et! Riadót fújt és {nev}-et elkapták.')
+                                print('VÉGE!') 
+                                lebukas += 100  
 
             elif megbeszeles2 == 2:
                 print('Ez egy biztonságosabb mód, de lassabban ér oda az üzenet.')
