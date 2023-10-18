@@ -48,6 +48,10 @@ def vago(nev, egeszseg, energia, lebukas, penz):
                                 dontes = int(input('1-est ha vágja el, 2-est ha menjen át rajta.'))
                                 if dontes == 1:
                                     print('Át tudta vági, és már csak egy kapu választja el a szabadságtól!')
+                                    print(f'AZ utolsó kerítésen is átvágta {nev}')
+                                    print(f'Miután átment a kerítésen vágott lyukon, elkezdett futni a szabadsága felé {nev}')
+                                    print('Senki sem tudta megállítani, és élete végéig szabad maradt!')
+                                    print(f'Sikeresen kijutattad {nev}-et a börtönből. GRATULÁLUNK!')
                                 elif dontes == 2:
                                     print('Sajnos beleakadt a szögesdrótba, és mikoözben próbált kijutni, észrevették, és elkapták.')
                                     print('VÉGE')
@@ -65,6 +69,10 @@ def vago(nev, egeszseg, energia, lebukas, penz):
                                 dontes = int(input('1-est ha vágja el, 2-est ha menjen át rajta.'))
                                 if dontes == 1:
                                     print('Át tudta vági, és már csak egy kapu választja el a szabadságtól!')
+                                    print(f'AZ utolsó kerítésen is átvágta {nev}')
+                                    print(f'Miután átment a kerítésen vágott lyukon, elkezdett futni a szabadsága felé {nev}')
+                                    print('Senki sem tudta megállítani, és élete végéig szabad maradt!')
+                                    print(f'Sikeresen kijutattad {nev}-et a börtönből. GRATULÁLUNK!')
                                 elif dontes == 2:
                                     print('Sajnos beleakadt a szögesdrótba, és mikoözben próbált kijutni, észrevették, és elkapták.')
                                     print('VÉGE')
@@ -84,6 +92,10 @@ def vago(nev, egeszseg, energia, lebukas, penz):
                                 dontes = int(input('1-est ha vágja el, 2-est ha menjen át rajta.'))
                                 if dontes == 1:
                                     print('Át tudta vági, és már csak egy kapu választja el a szabadságtól!')
+                                    print(f'AZ utolsó kerítésen is átvágta {nev}')
+                                    print(f'Miután átment a kerítésen vágott lyukon, elkezdett futni a szabadsága felé {nev}')
+                                    print('Senki sem tudta megállítani, és élete végéig szabad maradt!')
+                                    print(f'Sikeresen kijutattad {nev}-et a börtönből. GRATULÁLUNK!')
                                 elif dontes == 2:
                                     print('Sajnos beleakadt a szögesdrótba, és mikoözben próbált kijutni, észrevették, és elkapták.')
                                     print('VÉGE')
@@ -102,6 +114,10 @@ def vago(nev, egeszseg, energia, lebukas, penz):
                                 dontes = int(input('1-est ha vágja el, 2-est ha menjen át rajta.'))
                                 if dontes == 1:
                                     print('Át tudta vági, és már csak egy kapu választja el a szabadságtól!')
+                                    print(f'AZ utolsó kerítésen is átvágta {nev}')
+                                    print(f'Miután átment a kerítésen vágott lyukon, elkezdett futni a szabadsága felé {nev}')
+                                    print('Senki sem tudta megállítani, és élete végéig szabad maradt!')
+                                    print(f'Sikeresen kijutattad {nev}-et a börtönből. GRATULÁLUNK!')
                                 elif dontes == 2:
                                     print('Sajnos beleakadt a szögesdrótba, és mikoözben próbált kijutni, észrevették, és elkapták.')
                                     print('VÉGE')
