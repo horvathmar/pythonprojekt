@@ -23,5 +23,5 @@ def main() -> str:
     elif valasz == 2:
         vago(nev, egeszseg, energia, lebukas, penz)
     elif valasz == 3:
-        aso(nev)
+        aso(nev, egeszseg, energia, lebukas, penz)
 main()
