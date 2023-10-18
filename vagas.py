@@ -119,13 +119,13 @@ def vago(nev, egeszseg, energia, lebukas, penz):
                                     print('Senki sem tudta megállítani, és élete végéig szabad maradt!')
                                     print(f'Sikeresen kijutattad {nev}-et a börtönből. GRATULÁLUNK!')
                                 elif dontes == 2:
-                                    print('Sajnos beleakadt a szögesdrótba, és mikoözben próbált kijutni, észrevették, és elkapták.')
+                                    print('Sajnos beleakadt a szögesdrótba, és miközben próbált kijutni, észrevették, és elkapták.')
                                     print('VÉGE')
                                     lebukas += 100
                             elif mit_tegyek2 == 2:
                                 print(f'Sajnos nem volt szerencséd, és az őr észrevette {nev}-et! Riadót fújt és {nev}-et elkapták.')
                                 print('VÉGE!') 
-                                lebukas += 100  
+                                lebukas += 100
 
             elif megbeszeles2 == 2:
                 print('Ez egy biztonságosabb mód, de lassabban ér oda az üzenet.')
