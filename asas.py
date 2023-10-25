@@ -1,4 +1,5 @@
 from random import randint
+from safe_input import beker
 
 def aso(nev, egeszseg, energia, lebukas, penz):
     print(f'A kiásást választottad szökési módul {nev}-nek')
@@ -10,10 +11,10 @@ def aso(nev, egeszseg, energia, lebukas, penz):
     while True:
         if valasztott1 == 1:
             print('A raktárból fogja lopni a dolgokat, jó választás, ámde nagy kockázattal jár majd.')
-            terv = int(input('Válaszd ki, hogy mikor próbáljon bejutni oda, 1 - Nappal, 2 - Éjjel: '))
+            terv = beker('Válaszd ki, hogy mikor próbáljon bejutni oda, 1 - Nappal, 2 - Éjjel: ')
             if terv == 2:
                 print('Az ajtóknál őrök vannak készenlétben, visszafordulsz')
-                orok = int(input('1 - igen, 2 - nem:'))
+                orok = beker('1 - igen, 2 - nem:')
                 if orok == 2:
                     print('Elkaptak, vesztettél')
                     exit (0)
@@ -21,7 +22,7 @@ def aso(nev, egeszseg, energia, lebukas, penz):
                     print('Visszafordultál')
             if terv == 1:
                 print('Egy rab szembejött veled, és megkérdezte hogy tervezel e kiszökni valamikor, elmondod neki az igazsgot?')
-                szembe = int(input('1 - igen, 2 - nem: '))           
+                szembe = beker('1 - igen, 2 - nem: ')
                 if szembe == 2:
                     print('Elsétáltál mellette, és bementél, megvan a zsákmány ')
                     print('Ezzel könnyedén kiástad magad pár nap alatt, szép munka')
@@ -33,14 +34,17 @@ def aso(nev, egeszseg, energia, lebukas, penz):
                         exit (0)
                     else:
                         print('Felajánlotta neked segítségét, így gyorsabban tudsz majd végezni, hogy válaszolsz')
-                        help = int(input('1 - elfogadod, 2 - nem fogadod el'))
+                        help = beker('1 - elfogadod, 2 - nem fogadod el')
                         if help == 1:
                             print('Az úr segítségének köszönhetően hamarabb, illetve mindketten kijutottatok')
+                            exit (0)
                         else:
                             print('Hirtelen mérges lett válaszodat hallván, és az éj leple alatt ripityára töri az ásót. Újrakezdheted az egész operációt - 1, vagy öngyilkos lehetsz')
-                            melyik = int(input('Válassz: '))
+                            melyik = beker('Válassz: ')  
                             if melyik == 1:
                                 return kukac
                             else: 
                                 print('Öngyilkos lettél, vége a játéknak')
                                 exit (0)
+                    if random1 == 2:
+                        print('Elmondtad az úrnak ')
