@@ -30,7 +30,7 @@ def aso(nev, egeszseg, energia, lebukas, penz):
                 else:
                     random1 = randint(1,2)
                     if random1 == 1:
-                        ('Beköpött téged, vesztettél')  
+                        print('Beköpött téged, vesztettél')  
                         exit (0)
                     else:
                         print('Felajánlotta neked segítségét, így gyorsabban tudsz majd végezni, hogy válaszolsz')
@@ -39,12 +39,10 @@ def aso(nev, egeszseg, energia, lebukas, penz):
                             print('Az úr segítségének köszönhetően hamarabb, illetve mindketten kijutottatok')
                             exit (0)
                         else:
-                            print('Hirtelen mérges lett válaszodat hallván, és az éj leple alatt ripityára töri az ásót. Újrakezdheted az egész operációt - 1, vagy öngyilkos lehetsz')
+                            print('Hirtelen mérges lett válaszodat hallván, és az éj leple alatt ripityára töri az ásót. Újrakezdheted az egész operációt - 1, vagy öngyilkos lehetsz - 2')
                             melyik = beker('Válassz: ')  
                             if melyik == 1:
-                                return kukac
+                              ads  
                             else: 
                                 print('Öngyilkos lettél, vége a játéknak')
                                 exit (0)
-                    if random1 == 2:
-                        print('Elmondtad az úrnak ')
