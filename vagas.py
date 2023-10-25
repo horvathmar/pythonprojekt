@@ -139,11 +139,13 @@ def vago(nev, egeszseg, energia, lebukas, penz):
         print('Így sokkal kisebb a lebukási esély, de pénzt kell szereznie az elitéltnek!')
         penzkeresetimod = int(input('Hogyan szerezzen az elitélt pénzt? Írjon be 1-est ha menjen el dolgozni a börtönben, és 2-est, ha kezdjen el árulni valamit, amit más behozott neki. '))
         if penzkeresetimod == 1:
-            print('Ez egy biztonságos, de lasabb módja a pénzkeresésnek.')
+            print('Ez egy biztonságos, de lassabb módja a pénzkeresésnek.')
             print(f'{nev} összegyűjtötte a szügséges pénzmennyiséget')
             penz += 200
-            print(f'Most meg kell vennie {nev}-nek a csípőfogót, ami pont euro.')
+            print(f'Most meg kell vennie {nev}-nek a csípőfogót, ami pont 200 euro.')
+            penz -= 200
         elif penzkeresetimod == 2:
             print(f'{nev} hamar eladja nem használt dolgait, így meg tudja venni a vágóeszközt-')
             penz += 200
-            print(f'Most meg kell vennie {nev}-nek a csípőfogót, ami pont euro.')
+            print(f'Most meg kell vennie {nev}-nek a csípőfogót, ami pont 200 euro.')
+            penz -= 200
