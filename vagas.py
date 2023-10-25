@@ -138,3 +138,7 @@ def vago(nev, egeszseg, energia, lebukas, penz):
     elif elso == 2:
         print('Így sokkal kisebb a lebukási esély, de pénzt kell szereznie az elitéltnek!')
         penzkeresetimod = int(input('Hogyan szerezzen az elitélt pénzt? Írjon be 1-est ha menjen el dolgozni a börtönben, és 2-est, ha kezdjen el árulni valamit, amit más behozott neki. '))
+        if penzkeresetimod == 1:
+            print('')
+        elif penzkeresetimod == 2:
+            print('')
