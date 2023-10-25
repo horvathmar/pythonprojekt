@@ -236,9 +236,130 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                 if eselyketto == c:
                     print('Észrevétlenül el tud szökni a tömegből')
                     print('Azzal tölti a maradék időt, hogy alaposabban körűlnézzen')
+                    print('Másnap...')
+                    print(f'Egy ismeretlen ember meglátogatja {nev}-t és üzletet kínál')
+                    print('\t 1 - Elkezd üzletelni')
+                    print('\t 2 - Nem kezd el üzletelni')
+                    valasztizenegy = int(input('Válasz: '))
+                    if valasztizenegy == 1:
+                        print('Három ajánlatot kínál fel: ')
+                        print(f'\t Segít {nev}-nek kiszabadulni, és ha sikerül, akkor fizetnie kell neki 1000 Eurót.')
+                        print('\t Segít kiszökni, de utána le kell dolgoznia 100 órát az éttermében')
+                        print('\t Ad neki egy eszközt, de nem segít a szökésben')
+                        valasztizenketto = int(input('Választás: '))
+                        if valasztizenketto == 1:
+                            print('A következő egy hétben minden nap a szökés tervén dolgoznak...')
+                            print('Elkészült a terv')
+                            ab = 1
+                            ac = 2
+                            eselyhat = randint(ab, ac)
+                            if eselyhat == ab:
+                                print('Sikerül eljutnia a kapuig')
+                                print('A kapunál az üzlettársa várja egy kocsival, sikerül megszöknie')
+                                if penz >= 1000:
+                                    print('NYERT!')
+                                    print(f'A győztes játékos: {nev}')
+                                elif penz < 1000:
+                                    print('Nincs elég pénze, megverik')
+                                    print('VÉGE!')
+                                    lebukas += 100
+                            elif eselyhat == ac:
+                                print('Nem jut el a kapuig, elkapják')
+                                print('VÉGE!')
+                                lebukas += 100
+                        elif valasztizenketto == 2:
+                            print('A következő egy hétben minden nap a szökés tervén dolgoznak...')
+                            print('Elkészült a terv')
+                            ab = 1
+                            ac = 2
+                            eselyhat = randint(ab, ac)
+                            if eselyhat == ab:
+                                print('Sikerül eljutnia a kapuig')
+                                print('A kapunál az üzlettársa várja egy kocsival, sikerül megszöknie, ledolgozza még a 100 órát')
+                                print('NYERT!')
+                                print(f'A győztes játékos: {nev}')
+                            elif eselyhat == ac:
+                                print('Nem jut el a kapuig, elkapják')
+                                print('VÉGE!')
+                                lebukas += 100
+                        elif valasztizenketto == 3:
+                            print('Kapott egy kulcsot')
+                            print('Másnap elhatározza, hogy aznap kiszökik')
+                            m = 1
+                            n = 2
+                            eselyot = randint(m, n)
+                            if eselyot == m:
+                                print('Észreveszik és elkapták')
+                                print('VÉGE!')
+                                lebukas += 100
+                            elif eselyot == n:
+                                print('Sikerül kiszabadúlnia, gratulálunk, kivitte a játékot')
+                                print('NYERT!')
+                                print(f'A győztes játékos: {nev}')
+                    elif valasztizenegy == 2:
+                        print(f'{nev} nem kezd bele az üzletelésbe')
                 elif eselyketto == d:
                     print('Elkapják, mostmár tényleg nem tudja kimagyarázni')
                     print('VÉGE!')
                     lebukas += 100
         elif valasznegy == 3:
             print('Kemény munkával telt a mai nap')
+            print('Másnap...')
+            print(f'Egy ismeretlen ember meglátogatja {nev}-t és üzletet kínál')
+            print('\t 1 - Elkezd üzletelni')
+            print('\t 2 - Nem kezd el üzletelni')
+            valasztizenegy = int(input('Válasz: '))
+            if valasztizenegy == 1:
+                print('Három ajánlatot kínál fel: ')
+                print(f'\t Segít {nev}-nek kiszabadulni, és ha sikerül, akkor fizetnie kell neki 1000 Eurót.')
+                print('\t Segít kiszökni, de utána le kell dolgoznia 100 órát az éttermében')
+                print('\t Ad neki egy eszközt, de nem segít a szökésben')
+                valasztizenketto = int(input('Választás: '))
+                if valasztizenketto == 1:
+                    print('A következő egy hétben minden nap a szökés tervén dolgoznak...')
+                    print('Elkészült a terv')
+                    ab = 1
+                    ac = 2
+                    eselyhat = randint(ab, ac)
+                    if eselyhat == ab:
+                        print('Sikerül eljutnia a kapuig')
+                        print('A kapunál az üzlettársa várja egy kocsival, sikerül megszöknie')
+                        if penz >= 1000:
+                            print('NYERT!')
+                            print(f'A győztes játékos: {nev}')
+                        elif penz < 1000:
+                            print('Nincs elég pénze, megverik')
+                            print('VÉGE!')
+                            lebukas += 100
+                    elif eselyhat == ac:
+                        print('Nem jut el a kapuig, elkapják')
+                        print('VÉGE!')
+                        lebukas += 100
+                elif valasztizenketto == 2:
+                    print('A következő egy hétben minden nap a szökés tervén dolgoznak...')
+                    print('Elkészült a terv')
+                    ab = 1
+                    ac = 2
+                    eselyhat = randint(ab, ac)
+                    if eselyhat == ab:
+                        print('Sikerül eljutnia a kapuig')
+                        print('A kapunál az üzlettársa várja egy kocsival, sikerül megszöknie, ledolgozza még a 100 órát')
+                        print('NYERT!')
+                        print(f'A győztes játékos: {nev}')
+                    elif eselyhat == ac:
+                        print('Nem jut el a kapuig, elkapják')
+                        print('VÉGE!')
+                        lebukas += 100
+                elif valasztizenketto == 3:
+                    print('Kapott egy kulcsot')
+                    print('Másnap elhatározza, hogy aznap kiszökik')
+                    m = 1
+                    n = 2
+                    eselyot = randint(m, n)
+                    if eselyot == m:
+                        print('Észreveszik és elkapták')
+                        print('VÉGE!')
+                        lebukas += 100
+                    elif eselyot == n:
+                        print('Sikerül kiszabadúlnia, gratulálunk, kivitte a játék')
+                        print('NYERT!')
