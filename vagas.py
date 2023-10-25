@@ -52,14 +52,35 @@ def vago(nev, egeszseg, energia, lebukas, penz):
         if penzkeresetimod == 1:
             print('Ez egy biztonságos, de lassabb módja a pénzkeresésnek.')
             print(f'{nev} összegyűjtötte a szügséges pénzmennyiséget')
-            penz += 200
-            print(f'Most meg kell vennie {nev}-nek a csípőfogót, ami pont 200 euro.')
-            penz -= 200
         elif penzkeresetimod == 2:
             print(f'{nev} hamar eladja nem használt dolgait, így meg tudja venni a vágóeszközt-')
-            penz += 200
-            print(f'Most meg kell vennie {nev}-nek a csípőfogót, ami pont 200 euro.')
-            penz -= 200
+        penz += 25
+        print('')
+        print(f'Most meg kell vennie {nev}-nek a csípőfogót, ami 175 euro.')
+
+def szokes(nev, penz, lebukas):
+    print('Miután megvette a csípőfogót még aznap este megpróbál megszökni.')
+    print(f'Sikeresen kilopózott az udvarra, de most el kell jutni a kerítésig,  úgy, hogy az őr nem veszi észre.')
+    fut_vagy_kuszas = int(input('Mit tegyen? 1 - Fut 2 - kúszik'))
+    if fut_vagy_kuszas == 1:
+        print('Sajnos az őr észrevette, és riadót fújt!')
+        print('VÉGE!')
+    elif fut_vagy_kuszas == 2:
+        print('Jól döntöttél, mivel eljutott a kapuig, és így más csak el kell vágni a kerítést.')
+
+def kapu_atvagasa(nev, penz, lebukas):
+    print('ELkezdte vágni a kerítést és hamar vágott magának egy lyukat, amin már átfér.')
+    print('Azonban a két kerítés között szögesdrót van.')
+    ugras_maszas = int(input('Mit tegyen? 1 - ugorja át, 2 - másszon át rajta'))
+    if ugras_maszas == 1:
+        print('Sikeresen átjutott a szögesdróton!')
+        print('Átvágta az utolsó kerítést, és élete végéig szabad emberként élt!')
+        print('Gratulálunk, sikeresen kivitted a játékot!')
+    elif ugras_maszas == 2:
+        print(f'Sajnos {nev} beleakadt a szögesdrótban, és miközben próbál kiszabadulni, meghalotta az őr, és elkapta.')
+        print(f'Sajnos {nev}-et elkapták, így számodra a játéknak VÉGE!')
+
+
 
 
 def csempesz(lebukas, nev):
