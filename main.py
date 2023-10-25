@@ -15,20 +15,15 @@ def main() -> str:
     print(f'Cél: {nev}-t kiszöktetni a börtönből')
     print('\n')
     print(f'Jelenleg "{nev}" egy börtöncellában fekszik az ágyán és azon gondolkozik, hogy hogyan tudna kiszabadúlni a börtönből')
-    
-    visszaugras = aso(visszaugras)
-    print(visszaugras)
-    while visszaugras != 0:
-        visszaugras = 0
-        print('Három ötlete van: ')
-        print('\t 1 - Csinálni álkulcsokat és kinyitni az ajtókat')
-        print('\t 2 - Szerezni egy vágóeszközt és kivágni a kerítést')
-        print('\t 3 - Szerezni egy ásót és kiásni magát')
-        valasz = int(input('Melyik szökési módot választod: '))
-        if valasz == 1:
-            kulcsketto(nev, egeszseg, energia, lebukas, penz)
-        elif valasz == 2:
-            vago(nev, egeszseg, energia, lebukas, penz)
-        elif valasz == 3:
-            aso(nev, egeszseg, energia, lebukas, penz,)
+    print('Három ötlete van: ')
+    print('\t 1 - Csinálni álkulcsokat és kinyitni az ajtókat')
+    print('\t 2 - Szerezni egy vágóeszközt és kivágni a kerítést')
+    print('\t 3 - Szerezni egy ásót és kiásni magát')
+    valasz = int(input('Melyik szökési módot választod: '))
+    if valasz == 1:
+        kulcsketto(nev, egeszseg, energia, lebukas, penz)
+    elif valasz == 2:
+        vago(nev, egeszseg, energia, lebukas, penz)
+    elif valasz == 3:
+        aso(nev, egeszseg, energia, lebukas, penz,)
 main()
