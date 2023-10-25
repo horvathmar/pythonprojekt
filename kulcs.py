@@ -27,6 +27,7 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                 print('Rossz válasz')
                 print('VÉGE!')
                 lebukas += 100
+                exit()
             
     if valaszelso == 2 or valaszketto == 1 or valaszketto ==2:
         print('Keményen végig dolgoztad a napot.')
@@ -62,10 +63,12 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                                 print('Túl mohó volt, elkapták')
                                 print('VÉGE!')
                                 lebukas += 100
+                                exit()
                             elif eselyot == j:
                                 print('Sikerül kiszabadúlnia, gratulálunk, kivitte a játék')
                                 print('NYERT!')
                                 print(f'A győztes játékos: {nev}')
+                                exit()
                         elif valasztiz == 2:
                             k = 1
                             l = 2
@@ -74,14 +77,17 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                                 print('Észreveszik és elkapták')
                                 print('VÉGE!')
                                 lebukas += 100
+                                exit()
                             elif eselyot == l:
                                 print('Sikerül kiszabadúlnia, gratulálunk, kivitte a játék')
                                 print('NYERT!')
                                 print(f'A győztes játékos: {nev}')
+                                exit()
                     elif eselyharom == f:
                         print('Eltörte a kulcsot, ráadásúl élszre is veszik')
                         print('VÉGE!')
                         lebukas += 100
+                        exit()
                 elif valasznyolc == 2:
                     print(f'A következő napon {nev} végig dolgozott.')
                     print('Elhatározza, hogy másnap elindul és megpróbálja elkészíteni a kulcsot')
@@ -102,10 +108,12 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                                 print('Túl mohó volt, elkapták')
                                 print('VÉGE!')
                                 lebukas += 100
+                                exit()
                             elif eselyot == j:
                                 print('Sikerül kiszabadúlnia, gratulálunk, kivitte a játék')
                                 print('NYERT!')
                                 print(f'A győztes játékos: {nev}')
+                                exit()
                         elif valaszkilenc == 2:
                             k = 1
                             l = 2
@@ -114,14 +122,17 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                                 print('Észreveszik és elkapták')
                                 print('VÉGE!')
                                 lebukas += 100
+                                exit()
                             elif eselyot == l:
                                 print('Sikerül kiszabadúlnia, gratulálunk, kivitte a játék')
                                 print('NYERT!')
                                 print(f'A győztes játékos: {nev}')
+                                exit()
                     elif eselynegy == h:
                         print('Eltörte a kulcsot, ráadásúl élszre is veszik')
                         print('VÉGE!')
                         lebukas += 100
+                        exit()
             elif valaszot == 2:
                 print('Neki is van ágya, miért kéne neki?')
                 print('Nem szerezte meg')
@@ -155,10 +166,12 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                                 print('Túl mohó volt, elkapták')
                                 print('VÉGE!')
                                 lebukas += 100
+                                exit()
                             elif eselyot == j:
                                 print('Sikerül kiszabadúlnia, gratulálunk, kivitte a játék')
                                 print('NYERT!')
                                 print(f'A győztes játékos: {nev}')
+                                exit()
                         elif valasztiz == 2:
                             k = 1
                             l = 2
@@ -167,14 +180,17 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                                 print('Észreveszik és elkapták')
                                 print('VÉGE!')
                                 lebukas += 100
+                                exit()
                             elif eselyot == l:
                                 print('Sikerül kiszabadúlnia, gratulálunk, kivitte a játék')
                                 print('NYERT!')
                                 print(f'A győztes játékos: {nev}')
+                                exit()
                     elif eselyharom == f:
                         print('Eltörte a kulcsot, ráadásúl élszre is veszik')
                         print('VÉGE!')
                         lebukas += 100
+                        exit()
                 elif valasznyolc == 2:
                     print(f'A következő napon {nev} végig dolgozott.')
                     print('Elhatározza, hogy másnap elindul és megpróbálja elkészíteni a kulcsot')
@@ -195,10 +211,12 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                                 print('Túl mohó volt, elkapták')
                                 print('VÉGE!')
                                 lebukas += 100
+                                exit()
                             elif eselyot == j:
                                 print('Sikerül kiszabadúlnia, gratulálunk, kivitte a játék')
                                 print('NYERT!')
                                 print(f'A győztes játékos: {nev}')
+                                exit()
                         elif valaszkilenc == 2:
                             k = 1
                             l = 2
@@ -207,16 +225,16 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                                 print('Észreveszik és elkapták')
                                 print('VÉGE!')
                                 lebukas += 100
+                                exit()
                             elif eselyot == l:
                                 print('Sikerül kiszabadúlnia, gratulálunk, kivitte a játék')
                                 print('NYERT!')
                                 print(f'A győztes játékos: {nev}')
+                                exit()
                     elif eselynegy == h:
                         print('Eltörte a kulcsot, ráadásúl élszre is veszik')
                         print('VÉGE!')
-
-
-                        
+                        exit()
                     elif esely == b:
                         print('Éppen el tud futni, de szét verték a búráját')
                         print('Nincs bökő')
@@ -259,14 +277,17 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                                 if penz >= 1000:
                                     print('NYERT!')
                                     print(f'A győztes játékos: {nev}')
+                                    exit()
                                 elif penz < 1000:
                                     print('Nincs elég pénze, megverik')
                                     print('VÉGE!')
                                     lebukas += 100
+                                    exit()
                             elif eselyhat == ac:
                                 print('Nem jut el a kapuig, elkapják')
                                 print('VÉGE!')
                                 lebukas += 100
+                                exit()
                         elif valasztizenketto == 2:
                             print('A következő egy hétben minden nap a szökés tervén dolgoznak...')
                             print('Elkészült a terv')
@@ -278,10 +299,12 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                                 print('A kapunál az üzlettársa várja egy kocsival, sikerül megszöknie, ledolgozza még a 100 órát')
                                 print('NYERT!')
                                 print(f'A győztes játékos: {nev}')
+                                exit()
                             elif eselyhat == ac:
                                 print('Nem jut el a kapuig, elkapják')
                                 print('VÉGE!')
                                 lebukas += 100
+                                exit()
                         elif valasztizenketto == 3:
                             print('Kapott egy kulcsot')
                             print('Másnap elhatározza, hogy aznap kiszökik')
@@ -292,16 +315,19 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                                 print('Észreveszik és elkapták')
                                 print('VÉGE!')
                                 lebukas += 100
+                                exit()
                             elif eselyot == n:
                                 print('Sikerül kiszabadúlnia, gratulálunk, kivitte a játékot')
                                 print('NYERT!')
                                 print(f'A győztes játékos: {nev}')
+                                exit()
                     elif valasztizenegy == 2:
                         print(f'{nev} nem kezd bele az üzletelésbe')
                 elif eselyketto == d:
                     print('Elkapják, mostmár tényleg nem tudja kimagyarázni')
                     print('VÉGE!')
                     lebukas += 100
+                    exit()
         elif valasznegy == 3:
             print('Kemény munkával telt a mai nap')
             print('Másnap...')
@@ -327,14 +353,17 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                         if penz >= 1000:
                             print('NYERT!')
                             print(f'A győztes játékos: {nev}')
+                            exit()
                         elif penz < 1000:
                             print('Nincs elég pénze, megverik')
                             print('VÉGE!')
                             lebukas += 100
+                            exit()
                     elif eselyhat == ac:
                         print('Nem jut el a kapuig, elkapják')
                         print('VÉGE!')
                         lebukas += 100
+                        exit()
                 elif valasztizenketto == 2:
                     print('A következő egy hétben minden nap a szökés tervén dolgoznak...')
                     print('Elkészült a terv')
@@ -346,10 +375,12 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                         print('A kapunál az üzlettársa várja egy kocsival, sikerül megszöknie, ledolgozza még a 100 órát')
                         print('NYERT!')
                         print(f'A győztes játékos: {nev}')
+                        exit()
                     elif eselyhat == ac:
                         print('Nem jut el a kapuig, elkapják')
                         print('VÉGE!')
                         lebukas += 100
+                        exit()
                 elif valasztizenketto == 3:
                     print('Kapott egy kulcsot')
                     print('Másnap elhatározza, hogy aznap kiszökik')
@@ -360,6 +391,8 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                         print('Észreveszik és elkapták')
                         print('VÉGE!')
                         lebukas += 100
+                        exit()
                     elif eselyot == n:
                         print('Sikerül kiszabadúlnia, gratulálunk, kivitte a játék')
                         print('NYERT!')
+                        exit()
