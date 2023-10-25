@@ -1,4 +1,6 @@
 from random import randint
+from safe_input import beker
+
 def kulcsketto(nev, egeszseg, energia, lebukas, penz):
     print(f'A kulcsos szökési módot választottad {nev}-nek')
     print(f'{nev}-nek szüksége lesz kettő kulcsra, és az ahhoz szükséges anyagokra')
@@ -6,10 +8,10 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
     print(f'A raboknak minden nap 16:00-18:00-ig kell dolgozniuk a műhelyben, ilyenkor {nev}-nek lehetősége lehet arra, hogy bejusson a kovácsműhelybe, de vigyázz nehogy észre vegyék!')
     print('1 óra múlva...')
     print('A rabok elindulnak dolgozni')
-    valaszelso = int(input(f'Szeretne {nev} elszökni a többiek közűl, és elmenni a kovácsműhelybe?, ha igen (1), ha nem (2): '))
+    valaszelso = beker(f'Szeretne {nev} elszökni a többiek közűl, és elmenni a kovácsműhelybe?, ha igen (1), ha nem (2): ')
     if valaszelso == 1:
         print(f'{nev} észrevétlenül kilép a tömegből, és elindul a műhely felé. A következő fél órát azzal tölti, hogy információkat szerezzen a műhelyről, de vigyáznod kell, nehogy feltűnjön valakinek, hogy nem vagy ott.')
-        valaszketto = int(input(f'{nev} szeretne visszaindúlni?, ha igen (1), ha nem (2): '))
+        valaszketto = beker(f'{nev} szeretne visszaindúlni?, ha igen (1), ha nem (2): ')
         if valaszketto == 1:
             print(f'Jól döntöttél, {nev} elindul vissza és sikeresen beleolvad a tömegbe')
         elif valaszketto == 2:
@@ -18,7 +20,7 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
             print('\t 1 - Eltévedett és nem talált vissza')
             print('\t 2 - El kellett mennie WC-re')
             print('\t 3 - Elmondod az igazat')
-            valaszharom = int(input('A választásod: '))
+            valaszharom = beker('A választásod: ', 3)
             if valaszharom == 1:
                 print('Nagyon átlátszó, az őrök gyanút fognak, de elengednek, ezt most megúszta')
             elif valaszharom ==2:
@@ -32,7 +34,7 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
     if valaszelso == 2 or valaszketto == 1 or valaszketto ==2:
         print('Keményen végig dolgoztad a napot.')
         print('Másnap...')
-        valasznegy = int(input(f'Szeretne {nev} észrevétlenül anyagokat gyűjteni, vagy még jobban körűlnézni?, ha anyagokat akar gyűjteni(1), körűlnézni(2), maradni és dolgozni(3): '))
+        valasznegy = beker(f'Szeretne {nev} észrevétlenül anyagokat gyűjteni, vagy még jobban körűlnézni?, ha anyagokat akar gyűjteni(1), körűlnézni(2), maradni és dolgozni(3): ', 3)
         if valasznegy == 1:
             print(f'A mai nap során {nev} anyagokat próbál gyűjteni')
             print('A cellatársánál van egy bökő, ami alkalmas lehet ahhoz, hogy kulcsokat készítsen belőle, de kell egy fair trade ehhez. ')
@@ -40,11 +42,11 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
             print('\t 1 - A mai és a holnapi ebédet')
             print('\t 2 - Aludhat az ágyadon egy hétig')
             print('\t 3 - Nem ad neki semmit')
-            valaszot = int(input('A választás: '))
+            valaszot = beker('A választás: ', 3)
             if valaszot == 1:
                 print('Egy jó ajánlat volt')
                 print('Megszerezted a bökőt')
-                valasznyolc= int(input('Szeretnél másnap elindúlni kulcsot készíteni?, ha igen(1), ha nem(2)'))
+                valasznyolc= beker('Szeretnél másnap elindúlni kulcsot készíteni?, ha igen(1), ha nem(2)')
                 if valasznyolc == 1:
                     print('Másnap...')
                     print('Észrevétlenül elszökik')
@@ -54,7 +56,7 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                     eselyharom = randint(e,f)
                     if eselyharom == e:
                         print('Sikerül elkészítenie a kulcsot')
-                        valasztiz = int(input('Szeretne még ma elindulni és kiszabadúlni a börtönből?, ha igen(1), ha nem(2): '))
+                        valasztiz = beker('Szeretne még ma elindulni és kiszabadúlni a börtönből?, ha igen(1), ha nem(2): ')
                         if valasztiz == 1:
                             i = 1
                             j = 2
@@ -99,7 +101,7 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                     eselynegy = randint(g,h)
                     if eselynegy == g:
                         print('Sikerül elkészítenie a kulcsot')
-                        valaszkilenc = int(input('Szeretne még ma elindulni és kiszabadúlni a börtönből?, ha igen(1), ha nem(2): '))
+                        valaszkilenc = beker('Szeretne még ma elindulni és kiszabadúlni a börtönből?, ha igen(1), ha nem(2): ')
                         if valaszkilenc == 1:
                             i = 1
                             j = 2
@@ -140,13 +142,13 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                 print(f'Egy ismeretlen ember meglátogatja {nev}-t és üzletet kínál')
                 print('\t 1 - Elkezd üzletelni')
                 print('\t 2 - Nem kezd el üzletelni')
-                valasztizenegy = int(input('Válasz: '))
+                valasztizenegy = beker('Válasz: ')
                 if valasztizenegy == 1:
                     print('Három ajánlatot kínál fel: ')
                     print(f'\t 1 - Segít {nev}-nek kiszabadulni, és ha sikerül, akkor fizetnie kell neki 1000 Eurót.')
                     print('\t 2 - Segít kiszökni, de utána le kell dolgoznia 100 órát az éttermében')
                     print('\t 3 - Ad neki egy eszközt, de nem segít a szökésben')
-                    valasztizenketto = int(input('Választás: '))
+                    valasztizenketto = beker('Választás: ', 3) 
                     if valasztizenketto == 1:
                         print('A következő egy hétben minden nap a szökés tervén dolgoznak...')
                         print('Elkészült a terv')
@@ -211,7 +213,7 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
             elif valaszot == 3:
                 print('1 - Harc')
                 print('2 - Nincs harc')
-                valaszhat = int(input('Válasz: '))
+                valaszhat = beker('Válasz: ')
                 if valaszhat == 1:
                     print('Ma délbe harc')
                     a = 0
@@ -219,7 +221,7 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                     esely = randint(a,b)
                     if esely == a:
                         print('Nyert')
-                        valasznyolc= int(input('Szeretnél másnap elindúlni kulcsot készíteni?, ha igen(1), ha nem(2)'))
+                        valasznyolc= beker('Szeretnél másnap elindúlni kulcsot készíteni?, ha igen(1), ha nem(2)')
                 if valasznyolc == 1:
                     print('Másnap...')
                     print('Észrevétlenül elszökik')
@@ -229,7 +231,7 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                     eselyharom = randint(e,f)
                     if eselyharom == e:
                         print('Sikerül elkészítenie a kulcsot')
-                        valasztiz = int(input('Szeretne még ma elindulni és kiszabadúlni a börtönből?, ha igen(1), ha nem(2): '))
+                        valasztiz = beker('Szeretne még ma elindulni és kiszabadúlni a börtönből?, ha igen(1), ha nem(2): ')
                         if valasztiz == 1:
                             i = 1
                             j = 2
@@ -274,7 +276,7 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                     eselynegy = randint(g,h)
                     if eselynegy == g:
                         print('Sikerül elkészítenie a kulcsot')
-                        valaszkilenc = int(input('Szeretne még ma elindulni és kiszabadúlni a börtönből?, ha igen(1), ha nem(2): '))
+                        valaszkilenc = beker('Szeretne még ma elindulni és kiszabadúlni a börtönből?, ha igen(1), ha nem(2): ')
                         if valaszkilenc == 1:
                             i = 1
                             j = 2
@@ -316,20 +318,20 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
             print(f'{nev} alaposabban körbe akar nézni ma.')
             print('Négy óra múlva...')
             print(f'A rabok elindulnak dolgozni és {nev} elhatározza, hogy megszökik a tömegből')
-            valaszhet = int(input('De még meggondolhatja magát, ha igen(1), ha nem(2): '))
+            valaszhet = beker('De még meggondolhatja magát, ha igen(1), ha nem(2): ')
             if valaszhet == 1:
                 print('Kemény munkával telt a nap, de nem haladt a munkával')
                 print('Másnap...')
             print(f'Egy ismeretlen ember meglátogatja {nev}-t és üzletet kínál')
             print('\t 1 - Elkezd üzletelni')
             print('\t 2 - Nem kezd el üzletelni')
-            valasztizenegy = int(input('Válasz: '))
+            valasztizenegy = beker('Válasz: ')
             if valasztizenegy == 1:
                 print('Három ajánlatot kínál fel: ')
                 print(f'\t 1 - Segít {nev}-nek kiszabadulni, és ha sikerül, akkor fizetnie kell neki 1000 Eurót.')
                 print('\t 2 - Segít kiszökni, de utána le kell dolgoznia 100 órát az éttermében')
                 print('\t 3 - Ad neki egy eszközt, de nem segít a szökésben')
-                valasztizenketto = int(input('Választás: '))
+                valasztizenketto = beker('Választás: ', 3)
                 if valasztizenketto == 1:
                     print('A következő egy hétben minden nap a szökés tervén dolgoznak...')
                     print('Elkészült a terv')
@@ -391,11 +393,11 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
             print('\t 1 - A mai és a holnapi ebédet')
             print('\t 2 - Aludhat az ágyadon egy hétig')
             print('\t 3 - Nem ad neki semmit')
-            valaszot = int(input('A választás: '))
+            valaszot = beker('A választás: ',3)
             if valaszot == 1:
                 print('Egy jó ajánlat volt')
                 print('Megszerezted a bökőt')
-                valasznyolc= int(input('Szeretnél másnap elindúlni kulcsot készíteni?, ha igen(1), ha nem(2)'))
+                valasznyolc= beker('Szeretnél másnap elindúlni kulcsot készíteni?, ha igen(1), ha nem(2)')
                 if valasznyolc == 1:
                     print('Másnap...')
                     print('Észrevétlenül elszökik')
@@ -405,7 +407,7 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                     eselyharom = randint(e,f)
                     if eselyharom == e:
                         print('Sikerül elkészítenie a kulcsot')
-                        valasztiz = int(input('Szeretne még ma elindulni és kiszabadúlni a börtönből?, ha igen(1), ha nem(2): '))
+                        valasztiz = beker('Szeretne még ma elindulni és kiszabadúlni a börtönből?, ha igen(1), ha nem(2): ')
                         if valasztiz == 1:
                             i = 1
                             j = 2
@@ -450,7 +452,7 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                     eselynegy = randint(g,h)
                     if eselynegy == g:
                         print('Sikerül elkészítenie a kulcsot')
-                        valaszkilenc = int(input('Szeretne még ma elindulni és kiszabadúlni a börtönből?, ha igen(1), ha nem(2): '))
+                        valaszkilenc = beker('Szeretne még ma elindulni és kiszabadúlni a börtönből?, ha igen(1), ha nem(2): ')
                         if valaszkilenc == 1:
                             i = 1
                             j = 2
@@ -464,7 +466,7 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                                 print('Sikerül kiszabadúlnia, gratulálunk, kivitte a játék')
                                 print('NYERT!')
                                 print(f'A győztes játékos: {nev}')
-                                exit()
+                                exit()                          
                         elif valaszkilenc == 2:
                             k = 1
                             l = 2
@@ -495,7 +497,7 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                 esely = randint(a,b)
                 if esely == a:
                     print('Nyert')
-                    valasznyolc= int(input('Szeretnél másnap elindúlni kulcsot készíteni?, ha igen(1), ha nem(2)'))
+                    valasznyolc= beker('Szeretnél másnap elindúlni kulcsot készíteni?, ha igen(1), ha nem(2)')
                     if valasznyolc == 1:
                         print('Másnap...')
                         print('Észrevétlenül elszökik')
@@ -505,7 +507,7 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                         eselyharom = randint(e,f)
                         if eselyharom == e:
                             print('Sikerül elkészítenie a kulcsot')
-                            valasztiz = int(input('Szeretne még ma elindulni és kiszabadúlni a börtönből?, ha igen(1), ha nem(2): '))
+                            valasztiz = beker('Szeretne még ma elindulni és kiszabadúlni a börtönből?, ha igen(1), ha nem(2): ')
                             if valasztiz == 1:
                                 i = 1
                                 j = 2
@@ -550,7 +552,7 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                         eselynegy = randint(g,h)
                         if eselynegy == g:
                             print('Sikerül elkészítenie a kulcsot')
-                            valaszkilenc = int(input('Szeretne még ma elindulni és kiszabadúlni a börtönből?, ha igen(1), ha nem(2): '))
+                            valaszkilenc = beker('Szeretne még ma elindulni és kiszabadúlni a börtönből?, ha igen(1), ha nem(2): ')
                             if valaszkilenc == 1:
                                 i = 1
                                 j = 2
@@ -599,13 +601,13 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                     print(f'Egy ismeretlen ember meglátogatja {nev}-t és üzletet kínál')
                     print('\t 1 - Elkezd üzletelni')
                     print('\t 2 - Nem kezd el üzletelni')
-                    valasztizenegy = int(input('Válasz: '))
+                    valasztizenegy = beker('Válasz: ')
                     if valasztizenegy == 1:
                         print('Három ajánlatot kínál fel: ')
                         print(f'\t 1 - Segít {nev}-nek kiszabadulni, és ha sikerül, akkor fizetnie kell neki 1000 Eurót.')
                         print('\t 2 - Segít kiszökni, de utána le kell dolgoznia 100 órát az éttermében')
                         print('\t 3 - Ad neki egy eszközt, de nem segít a szökésben')
-                        valasztizenketto = int(input('Választás: '))
+                        valasztizenketto = beker('Választás: ', 3)
                         if valasztizenketto == 1:
                             print('A következő egy hétben minden nap a szökés tervén dolgoznak...')
                             print('Elkészült a terv')
@@ -675,13 +677,13 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
             print(f'Egy ismeretlen ember meglátogatja {nev}-t és üzletet kínál')
             print('\t 1 - Elkezd üzletelni')
             print('\t 2 - Nem kezd el üzletelni')
-            valasztizenegy = int(input('Válasz: '))
+            valasztizenegy = beker('Válasz: ')
             if valasztizenegy == 1:
                 print('Három ajánlatot kínál fel: ')
                 print(f'\t Segít {nev}-nek kiszabadulni, és ha sikerül, akkor fizetnie kell neki 1000 Eurót.')
                 print('\t Segít kiszökni, de utána le kell dolgoznia 100 órát az éttermében')
                 print('\t Ad neki egy eszközt, de nem segít a szökésben')
-                valasztizenketto = int(input('Választás: '))
+                valasztizenketto = beker('Választás: ')
                 if valasztizenketto == 1:
                     print('A következő egy hétben minden nap a szökés tervén dolgoznak...')
                     print('Elkészült a terv')
