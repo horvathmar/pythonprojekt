@@ -55,25 +55,28 @@ def vago(nev, egeszseg, energia, lebukas, penz):
             print('Ez egy biztonságos, de lassabb módja a pénzkeresésnek.')
             print(f'{nev} összegyűjtötte a szügséges pénzmennyiséget')
         elif penzkeresetimod == 2:
-            print(f'{nev} hamar eladja nem használt dolgait, így meg tudja venni a vágóeszközt-')
+            print(f'{nev} hamar eladja nem használt dolgait, így meg tudja venni a vágóeszközt')
         penz += 25
-        print('')
         print(f'Most meg kell vennie {nev}-nek a csípőfogót, ami 175 euro.')
+
+    szokes(nev, penz, lebukas)
 
 def szokes(nev, penz, lebukas):
     print('Miután megvette a csípőfogót még aznap este megpróbál megszökni.')
     print(f'Sikeresen kilopózott az udvarra, de most el kell jutni a kerítésig,  úgy, hogy az őr nem veszi észre.')
-    fut_vagy_kuszas = beker('Mit tegyen? 1 - Fut 2 - kúszik')
+    fut_vagy_kuszas = beker('Mit tegyen? 1 - Fut 2 - kúszik ')
     if fut_vagy_kuszas == 1:
         print('Sajnos az őr észrevette, és riadót fújt!')
         print('VÉGE!')
+        exit()
     elif fut_vagy_kuszas == 2:
         print('Jól döntöttél, mivel eljutott a kapuig, és így más csak el kell vágni a kerítést.')
+    kapu_atvagasa(nev, penz, lebukas)
 
 def kapu_atvagasa(nev, penz, lebukas):
     print('ELkezdte vágni a kerítést és hamar vágott magának egy lyukat, amin már átfér.')
     print('Azonban a két kerítés között szögesdrót van.')
-    ugras_maszas = beker('Mit tegyen? 1 - ugorja át, 2 - másszon át rajta')
+    ugras_maszas = beker('Mit tegyen? 1 - ugorja át, 2 - másszon át rajta ')
     if ugras_maszas == 1:
         print('Sikeresen átjutott a szögesdróton!')
         print('Átvágta az utolsó kerítést, és élete végéig szabad emberként élt!')
@@ -81,6 +84,7 @@ def kapu_atvagasa(nev, penz, lebukas):
     elif ugras_maszas == 2:
         print(f'Sajnos {nev} beleakadt a szögesdrótban, és miközben próbál kiszabadulni, meghalotta az őr, és elkapta.')
         print(f'Sajnos {nev}-et elkapták, így számodra a játéknak VÉGE!')
+        exit()
 
 
 
