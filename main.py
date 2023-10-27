@@ -10,6 +10,7 @@ def main() -> str:
     energia = 0
     penz = 0
     lebukas = 0
+    print('\n')
     print('Üdvözöllek a játékban! Folyamatos választási lehetőségek, és adott esetben kihívások is lesznek a játék során. A játékban láthatjuk a szökevényünk egészségi szintjét, a pénzt, kivégzésig fennmaradó időt, lebukási esélyt százalékban és az Energia szintünket is láthatjuk. Sok esetben a játékosnak kell megadnia a kért információkat.')
     nev = input('Adja meg a szökevény nevét: ')
     print(f'Cél: {nev}-t kiszöktetni a börtönből')
@@ -26,4 +27,5 @@ def main() -> str:
         vago(nev, egeszseg, energia, lebukas, penz)
     elif valasz == 3:
         aso(nev, egeszseg, energia, lebukas, penz,)
+        
 main()

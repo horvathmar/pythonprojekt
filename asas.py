@@ -1,6 +1,7 @@
 from random import randint
 from safe_input import beker
 
+
 def aso(nev, egeszseg, energia, lebukas, penz,):
     print('\n')
     print('--------------------------------------------------------------------------------------------------------------------------------')
@@ -72,9 +73,10 @@ def aso(nev, egeszseg, energia, lebukas, penz,):
                                 exit (0)
                                 break
         if valasztott1 == 2:
+    
             print('--------------------------------------------------------------------------------------------------------------------------------')
             print(f'"{nev}" úgy döntött, hogy maga fog el készíteni egy ásót, amivel majd utána kiáshatja magát' )
-            print('Ehhez két dologra van szüksége: vödör, szögek, nyél')
+            print('Ehhez két dologra van szüksége: vödör + szögek, nyél')
             print('\t 1 - Nappal')
             print('\t 2 - Éjjel')
             terv2 = beker('Válassz, szerinted mikor kezdje meg a küldetést: ')
