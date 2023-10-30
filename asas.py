@@ -1,6 +1,8 @@
 from random import randint
 from safe_input import beker
 
+nyel = 0
+vodszog = 0
 
 def aso(nev, egeszseg, energia, lebukas, penz,):
     print('\n')
@@ -89,6 +91,7 @@ def aso(nev, egeszseg, energia, lebukas, penz,):
                     print('Elmész a nyél után is kutatni, vagy inkább mára abbahagyod a császkálást?')
                     print('\t 1 - Folytatom')
                     print('\t 2 - Visszatérek a cellába')
+                    vodszog += 1
                     nyel = beker('Mit választasz következő lépésnek: ')
                     if nyel == 1: 
                         print('--------------------------------------------------------------------------------------------------------------------------------')
@@ -116,6 +119,11 @@ def aso(nev, egeszseg, energia, lebukas, penz,):
                             else:
                                 print('--------------------------------------------------------------------------------------------------------------------------------')
                                 print('Inkább visszafordulsz, még átgondolod ezt')
+                                print('--------------------------------------------------------------------------------------------------------------------------------')
+                            print('Másnap ismét meglátod a rácsok közt bevilágító napfényt, és kikelsz az ágyból')
+                            print('\t 1 - Elmész a nyél után keresni')
+                            print('\t Rákérdezel a cellatársadra, hátha tud valami módot')
+                            #megcsinálni a válzotokaat, ha vödör megvan + ha nyel megvan stb.
                 if random2 == 2 or terv2 == 2:
                     #Éjjel nem megy tovább
                     print('--------------------------------------------------------------------------------------------------------------------------------')
@@ -126,6 +134,7 @@ def aso(nev, egeszseg, energia, lebukas, penz,):
                     if orocske == 1:
                         print('--------------------------------------------------------------------------------------------------------------------------------')
                         print('Ez bevállt, elhitte neked, megszerezted a nyelet')
+                        nyel += 1
                     else:
                         print('--------------------------------------------------------------------------------------------------------------------------------')
                         print('Gondolkodsz azon, hogyha csak egy picivel is óvtosabb lettél volna, el tudtad volna csempészni mellette')
@@ -142,6 +151,7 @@ def aso(nev, egeszseg, energia, lebukas, penz,):
                             else:
                                 print('--------------------------------------------------------------------------------------------------------------------------------')
                                 print('Gratula, megszerezted a nyelet')
+                        if nyel == 1:
                             print('--------------------------------------------------------------------------------------------------------------------------------')
                             print('Már csak egy vödröt és szögeket kell szereznek, de honnan is kéne szerezni olyat?')
                             print('\t Átkutatod, mi van körülötted')
@@ -156,3 +166,4 @@ def aso(nev, egeszseg, energia, lebukas, penz,):
                                 else:
                                     print('Nagyon sajnálom barátom, de ezt beszoptad, a cellatársad beköpött téged, vesztettél')
                                     exit(0)
+            if terv2 == 2:
