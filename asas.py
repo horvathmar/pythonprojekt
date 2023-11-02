@@ -4,7 +4,6 @@ from safe_input import beker
 nyel = 0
 nyel2 = 0
 vodszog = 0
-wh1 = 0
 
 def aso(nev, egeszseg, energia, lebukas, penz,):
     print('\n')
@@ -129,49 +128,54 @@ def aso(nev, egeszseg, energia, lebukas, penz,):
                             print('Másnap ismét meglátod a rácsok közt bevilágító napfényt, és kikelsz az ágyból')
                             print('\t 1 - Elmész a nyél után keresni')
                             print('\t 2 - Rákérdezel a cellatársadra, hátha tud valami módot')
-                            tarsas = beker('Hogyan cselekszel: ')
-                            while wh1 == 1:
-                                if tarsas == 1:
-                                    print('Bizonytalanul továbbmész, de meglátsz egy őrt, és megtorpansz')
-                                    print('\t 1 - Tovább menni, el az őr mellett úgy kinézve mintha tudnád merre mész')
-                                    print('\t 2 - Visszafordulni, és inkább a cellatársadnál rákérdezni, majd követni utasításait')
-                                    visszafele = beker('Válassz: ')
-                                    if visszafele == 1:
-                                        random3 = randint(1,2)
-                                        if random3 == 1: 
-                                                print('Egy 3 ajtós épületrészlegnél találod magadat, viszont melyik lehet a raktár ajtaja')
-                                                print('\t1 - Első ajtó, kint egy kalapács logója látható az ajtón')
-                                                print('\t2 - Második ajtó, rajta egy fegyver jel áll')
-                                                print('\t3 - Harmadik ajtó, külsején egy rendőr jelzéssel')
-                                                ajtok = beker('Melyik ajtót választod: ')
-                                                if ajtok == 1:
-                                                    print('Ez itt a raktár része, itt ráleltél a nyélre, ámde visszafele egy őr megkérdezi hová tartasz vele')
-                                                    print('\t 1 - Egy társamnak viszem, eltört a felmosó nyele')
-                                                    print('\t 2 - Leütöd vele, és menekülsz')
-                                                    orok1es2 = beker('Mit teszel: ')
-                                                    if orok1es2 == 1:
-                                                        print('Megszerezted a nyelet is')
+                            tarsas1 = beker('Hogyan cselekszel: ')
+                            if tarsas1 == 1:
+                                print('--------------------------------------------------------------------------------------------------------------------------------')
+                                print('Bizonytalanul továbbmész, de meglátsz egy őrt, és megtorpansz')
+                                print('\t 1 - Tovább menni, el az őr mellett úgy kinézve mintha tudnád merre mész')
+                                print('\t 2 - Visszafordulni, és inkább a cellatársadnál rákérdezni, majd követni utasításait')
+                                visszafele = beker('Válassz: ')
+                                if visszafele == 1:
+                                    random3 = randint(1,2)
+                                    if random3 == 1: 
+                                            print('Egy 3 ajtós épületrészlegnél találod magadat, viszont melyik lehet a raktár ajtaja')
+                                            print('\t1 - Első ajtó, kint egy kalapács logója látható az ajtón')
+                                            print('\t2 - Második ajtó, rajta egy fegyver jel áll')
+                                            print('\t3 - Harmadik ajtó, külsején egy rendőr jelzéssel')
+                                            ajtok = beker('Melyik ajtót választod: ')
+                                            if ajtok == 1:
+                                                print('--------------------------------------------------------------------------------------------------------------------------------')
+                                                print('Ez itt a raktár része, itt ráleltél a nyélre, ámde visszafele egy őr megkérdezi hová tartasz vele')
+                                                print('\t 1 - Egy társamnak viszem, eltört a felmosó nyele')
+                                                print('\t 2 - Leütöd vele, és menekülsz')
+                                                orok1es2 = beker('Mit teszel: ')
+                                                if orok1es2 == 1:
+                                                    print('Megszerezted a nyelet is')
+                                                    nyel2 += 1
+                                                else:
+                                                    utes = randint(1,2)
+                                                    if utes == 1:
+                                                        print('Voltak még ott többen is, lefogtak és meglőttek, VESZTETTÉL') 
+                                                        exit(0) 
                                                     else:
-                                                        utes = randint(1,2)
-                                                        if utes == 1:
-                                                            print('Voltak még ott többek is, lefogtak és meglőttek, VESZTETTÉL') 
-                                                            exit(0) 
-                                                        else:
-                                                            print('Megszerezted a nyelet is')
-                                                if ajtok == 2:
-                                                    print('Egy kis záras babrálás után beléptél, és mindenféle fegyverrel találtad magad szembe')
-                                                    print('Mélyen elgondolkozol, hogy vajon mit kéne tenned')
-                                                if ajtok == 3:
-                                                    print('Most tényleg, mit vártál')
-                                                    print('Benyitottál és egy rakás rendőrtiszttel találtad szembe magad, letartóztattak, VESZTETTÉL')
-                                                    exit(0)
-                                        if random3 == 2:
-                                            print('Az úr megállított téged, és visszaküldött a cellába')
-                                    if visszafele == 2:
-                                            print('Visszatérsz a társadhoz, hogy meglásd, ő mit mondd')
-                                if tarsas == 2:
-                                    print('Azt mondja, hogy van a folyosó végén 3 ajtó, és semmilyen körülmények között ne menj be a másodikba')
-                                    wh1 += 1
+                                                        print('Megszerezted a nyelet is')
+                                                        nyel2 += 1
+                                            if ajtok == 2:
+                                                print('Egy kis záras babrálás után beléptél, és mindenféle fegyverrel találtad magad szembe')
+                                                print('Mélyen elgondolkozol, hogy vajon mit kéne tenned')
+                                            if ajtok == 3:
+                                                print('Most tényleg, mit vártál')
+                                                print('Benyitottál és egy rakás rendőrtiszttel találtad szembe magad, letartóztattak, VESZTETTÉL')
+                                                exit(0)
+                                    if random3 == 2:
+                                        print('Az úr megállított téged, és visszaküldött a cellába')
+                                if visszafele == 2:
+                                        print('Visszatérsz a társadhoz, hogy meglásd, ő mit mondd')
+                                        print('Azt mondja, hogy van a folyosó végén 3 ajtó, és semmilyen körülmények között ne menj be a másodikba')
+                                        return ajtok == 1
+                            else:
+                                print('Azt mondja, hogy van a folyosó végén 3 ajtó, és semmilyen körülmények között ne menj be a másodikba')
+                                return ajtok == 1
                 else:
                     print('--------------------------------------------------------------------------------------------------------------------------------')
                     print('Az egyik sarokban találsz egy nyelet, és elindulsz visszafelé, amilyen halkan csak tudsz')
@@ -233,8 +237,8 @@ def aso(nev, egeszseg, energia, lebukas, penz,):
                                 print('Másnap ismét meglátod a rácsok közt bevilágító napfényt, és kikelsz az ágyból')
                                 print('\t 1 - Elmész a nyél után keresni')
                                 print('\t 2 - Rákérdezel a cellatársadra, hátha tud valami módot')
-                                tarsas = beker('Hogyan cselekszel: ')
-                                if tarsas == 1:
+                                tarsas1 = beker('Hogyan cselekszel: ')
+                                if tarsas1 == 1:
                                     print('Bizonytalanul továbbmész, de meglátsz egy őrt, és megtorpansz')
                                     print('\t 1 - Tovább menni, el az őr mellett úgy kinézve mintha tudnád merre mész')
                                     print('\t 2 - Visszafordulni, és inkább a cellatársadnál rákérdezni, majd követni utasításait')
@@ -272,7 +276,7 @@ def aso(nev, egeszseg, energia, lebukas, penz,):
                                             print('Az úr megállított téged, és visszaküldött a cellába')
                                     if visszafele == 2:
                                             print('Visszatérsz a társadhoz, hogy meglásd, ő mit mondd')
-                                if tarsas == 2:
+                                else:
                                     print('Azt mondja, hogy van a folyosó végén 3 ajtó, és semmilyen körülmények között ne menj be a másodikba')
                                     print('Elindulsz a folyosón...')
                                     print('Egy 3 ajtós épületrészlegnél találod magadat, viszont melyik lehet a raktár ajtaja')
@@ -304,8 +308,7 @@ def aso(nev, egeszseg, energia, lebukas, penz,):
                             if random3 == 2:
                                 print('Az úr megállított téged, és visszaküldött a cellába')
                         if visszafele == 2:
-                                print('Visszatérsz a társadhoz, hogy meglásd, ő mit mondd')
-                            
+                                print('Visszatérsz a társadhoz, hogy meglásd, ő mit mondd')        
                     if random2 == 2: 
                     
                         print('--------------------------------------------------------------------------------------------------------------------------------')
@@ -348,8 +351,7 @@ def aso(nev, egeszseg, energia, lebukas, penz,):
                                 else:
                                     print('--------------------------------------------------------------------------------------------------------------------------------')
                                     print('Gratula, megszerezted a nyelet')
-                                    nyel2 += 1
-                            
+                                    nyel2 += 1  
                     else:
                         print('--------------------------------------------------------------------------------------------------------------------------------')
                         print('Egy őr észrevesz, és megkérdőjelezi, hogy mit csinálsz itt, egy random fa nyéllel a kezedben')
