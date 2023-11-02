@@ -91,7 +91,6 @@ def aso(nev, egeszseg, energia, lebukas, penz,):
                     print('Elmész a nyél után is kutatni, vagy inkább mára abbahagyod a császkálást?')
                     print('\t 1 - Folytatom')
                     print('\t 2 - Visszatérek a cellába')
-                    vodszog += 1
                     nyel = beker('Mit választasz következő lépésnek: ')
                     if nyel == 1: 
                         print('--------------------------------------------------------------------------------------------------------------------------------')
@@ -107,6 +106,7 @@ def aso(nev, egeszseg, energia, lebukas, penz,):
                         if tores == 1:
                             print('--------------------------------------------------------------------------------------------------------------------------------')
                             print('Te hülye, ezt még a süket is meghallja, elkapnak és visznek is az elektromos székbe, VESZTETTÉL')
+                            exit(0)
                         else:
                             print('--------------------------------------------------------------------------------------------------------------------------------')
                             print('Mostanára legalábbis békénhagytad, de beugrott, hogy mintha a raktárban tartanának néhány pót rudat, azt fel tudnád használni nyélként')
@@ -122,9 +122,33 @@ def aso(nev, egeszseg, energia, lebukas, penz,):
                                 print('--------------------------------------------------------------------------------------------------------------------------------')
                             print('Másnap ismét meglátod a rácsok közt bevilágító napfényt, és kikelsz az ágyból')
                             print('\t 1 - Elmész a nyél után keresni')
-                            print('\t Rákérdezel a cellatársadra, hátha tud valami módot')
-                            #megcsinálni a válzotokaat, ha vödör megvan + ha nyel megvan stb.
-                if random2 == 2 or terv2 == 2:
+                            print('\t 2 - Rákérdezel a cellatársadra, hátha tud valami módot')
+                            tarsas = beker('Hogyan cselekszel: ')
+                            if tarsas == 1:
+                                print('Bizonytalanul továbbmész, de meglátsz egy őrt, és megtorpansz')
+                                print('\t 1 - Tovább menni, el az őr mellett úgy kinézve mintha tudnád merre mész')
+                                print('\t 2 - Visszafordulni, és inkább a cellatársadnál rákérdeznim, majd követni utasításait')
+                                visszafele = beker('Válassz: ')
+                                if visszafele == 1:
+                                    random3 = randint(1,3)
+                                    if random3 == 1: 
+                                        print('Egy 3 ajtós épületrészlegnél találod magadat, viszont melyik lehet a raktár ajtaja')
+                                        print('\t1 - Első ajtó, kint egy kalapács logója látható az ajtón')
+                                        print('\t2 - Második ajtó, rajta egy fegyver jel áll')
+                                        print('\t3 - Harmadik ajtó, külsején egy rendőr jelzéssel')
+                                        ajtok = beker('Melyik ajtót választod: ')
+                                        if ajtok == 1:
+                                            print('Ez itt a raktár része, itt ráleltél a nyélre, ámde visszafele egy őr megkérdezi hová tartasz vele')
+                                            print('\t 1 - Egy társamnak viszem, eltört a felmosó nyele')
+                                            print('\t 2 - Leütöd vele, és menekülsz')
+                                            orok1es2 = beker('')  
+                                        if ajtok == 2:
+
+                                        if ajtok == 3:
+                                            print('Most tényleg, mit vártál')
+                                            print('Benyitottál és egy rakás rendőrtisztel találtad szembe magad, letartóztattak, VESZTETTÉL')
+                                            exit(0)
+                if random2 == 2: 
                     #Éjjel nem megy tovább
                     print('--------------------------------------------------------------------------------------------------------------------------------')
                     print('Egy őr észrevesz, és megkérdőjelezi, hogy mit csinálsz itt, egy random fa nyéllel a kezedben')
@@ -134,7 +158,20 @@ def aso(nev, egeszseg, energia, lebukas, penz,):
                     if orocske == 1:
                         print('--------------------------------------------------------------------------------------------------------------------------------')
                         print('Ez bevállt, elhitte neked, megszerezted a nyelet')
-                        nyel += 1
+                        print('--------------------------------------------------------------------------------------------------------------------------------')
+                        print('Már csak egy vödröt és szögeket kell szereznek, de honnan is kéne szerezni olyat?')
+                        print('\t 1 -Átkutatod, mi van körülötted')
+                        print('\t 2 -Elkéred egy társadtól, mert vannak az ágya alatt ilyenek(for some reason)')
+                        kellkeves = beker('Mi lenne a TE választásod')
+                        if kellkeves == 1:
+                            print('Találtál amit kell, gratulálok, összeraktad és kijutottál')
+                        else:
+                            picirandom = randint(1,2)
+                            if picirandom == 1:
+                                print('Látta egyik társad hogy miben settenkedsz, de együttérzett veled és nem árult be, NYERTÉL')
+                            else:
+                                print('Nagyon sajnálom barátom, de ezt beszoptad, a cellatársad beköpött téged, vesztettél')
+                                exit(0)
                     else:
                         print('--------------------------------------------------------------------------------------------------------------------------------')
                         print('Gondolkodsz azon, hogyha csak egy picivel is óvtosabb lettél volna, el tudtad volna csempészni mellette')
@@ -151,19 +188,46 @@ def aso(nev, egeszseg, energia, lebukas, penz,):
                             else:
                                 print('--------------------------------------------------------------------------------------------------------------------------------')
                                 print('Gratula, megszerezted a nyelet')
-                        if nyel == 1:
+                                nyel += 1
+                        
+            else:
+                print('--------------------------------------------------------------------------------------------------------------------------------')
+                print('Egy őr észrevesz, és megkérdőjelezi, hogy mit csinálsz itt, egy random fa nyéllel a kezedben')
+                print('\t 1 - Letagadod(egy cellatársnak viszed, eltört a felmosó nyele)')
+                print('\t 2 - Elnézést kér mielőtt agyonverne, és szépen visszahelyezed ahonnan hoztad')
+                orocske = beker('Te hogyan cselekednél: ')
+                if orocske == 1:
+                    print('--------------------------------------------------------------------------------------------------------------------------------')
+                    print('Ez bevállt, elhitte neked, megszerezted a nyelet')
+                    nyel += 1
+                else:
+                    print('--------------------------------------------------------------------------------------------------------------------------------')
+                    print('Gondolkodsz azon, hogyha csak egy picivel is óvtosabb lettél volna, el tudtad volna csempészni mellette')
+                    print('\t 1 - Áhh, majd máskor visszatérek erre')
+                    print('\t 2 - Hajrá, megbízok az ösztöneimben, menni fog ez mint az 1x1')
+                    ujra = beker('Mi a következő lépésed az alábbiak közül')
+                    if ujra == 1:
+                        print('Visszakullogsz szemlesújtva a celládba')
+                    else:
+                        hiszipiszi = randint(1,2)
+                        if hiszipiszi == 1:
                             print('--------------------------------------------------------------------------------------------------------------------------------')
-                            print('Már csak egy vödröt és szögeket kell szereznek, de honnan is kéne szerezni olyat?')
-                            print('\t Átkutatod, mi van körülötted')
-                            print('\t Elkéred egy társadtól, mert vannak az ágya alatt ilyenek(for some reason)')
-                            kellkeves = beker('Mi lenne a TE választásod')
-                            if kellkeves == 1:
-                                print('Találtál amit kell, gratulálok, összeraktad és kijutottál')
+                            print('Sajnálom tesókám, másodszorra már nem hitt a faszságodnak, VESZTETTÉL')
+                        else:
+                            print('--------------------------------------------------------------------------------------------------------------------------------')
+                            print('Gratula, megszerezted a nyelet')
+                    if nyel == 1:
+                        print('--------------------------------------------------------------------------------------------------------------------------------')
+                        print('Már csak egy vödröt és szögeket kell szereznek, de honnan is kéne szerezni olyat?')
+                        print('\t Átkutatod, mi van körülötted')
+                        print('\t Elkéred egy társadtól, mert vannak az ágya alatt ilyenek(for some reason)')
+                        kellkeves = beker('Mi lenne a TE választásod')
+                        if kellkeves == 1:
+                            print('Találtál amit kell, gratulálok, összeraktad és kijutottál')
+                        else:
+                            picirandom = randint(1,2)
+                            if picirandom == 1:
+                                print('Látta egyik társad hogy miben settenkedsz, de együttérzett veled és nem árult be, NYERTÉL')
                             else:
-                                picirandom = randint(1,2)
-                                if picirandom == 1:
-                                    print('Látta egyik társad hogy miben settenkedsz, de együttérzett veled és nem árult be, NYERTÉL')
-                                else:
-                                    print('Nagyon sajnálom barátom, de ezt beszoptad, a cellatársad beköpött téged, vesztettél')
-                                    exit(0)
-            if terv2 == 2:
+                                print('Nagyon sajnálom barátom, de ezt beszoptad, a cellatársad beköpött téged, vesztettél')
+                                exit(0)
