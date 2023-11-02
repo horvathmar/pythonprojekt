@@ -162,7 +162,8 @@ def aso(nev, egeszseg, energia, lebukas, penz,):
                                                         nyel2 += 1
                                             if ajtok == 2:
                                                 print('Egy kis záras babrálás után beléptél, és mindenféle fegyverrel találtad magad szembe')
-                                                print('Mélyen elgondolkozol, hogy vajon mit kéne tenned')
+                                                print('Mélyen elgondolkozol, hogy vajon mit kéne tenned, ámde amikor megfordulsz')
+                                                print('Ez egy csapda volt, VESZTETTÉL')
                                             if ajtok == 3:
                                                 print('Most tényleg, mit vártál')
                                                 print('Benyitottál és egy rakás rendőrtiszttel találtad szembe magad, letartóztattak, VESZTETTÉL')
@@ -176,6 +177,23 @@ def aso(nev, egeszseg, energia, lebukas, penz,):
                             else:
                                 print('Azt mondja, hogy van a folyosó végén 3 ajtó, és semmilyen körülmények között ne menj be a másodikba')
                                 return ajtok == 1
+                            if nyel2 == 1:
+                                print('--------------------------------------------------------------------------------------------------------------------------------')
+                                print('Már csak egy vödröt és szögeket kell szereznek, de honnan is kéne szerezni olyat?')
+                                print('\t Átkutatod, mi van körülötted')
+                                print('\t Elkéred egy társadtól, mert vannak az ágya alatt ilyenek(for some reason)')
+                                kellkeves = beker('Mi lenne a TE választásod')
+                                if kellkeves == 1:
+                                    print('Találtál amit kell, gratulálok, összeraktad és kijutottál')
+                                    exit(0)
+                                else:
+                                    picirandom = randint(1,2)
+                                    if picirandom == 1:
+                                        print('Látta egyik társad hogy miben settenkedsz, de együttérzett veled és nem árult be, NYERTÉL')
+                                        exit(0)
+                                    else:
+                                        print('Nagyon sajnálom barátom, de ezt beszoptad, a cellatársad beköpött téged, vesztettél')
+                                        exit(0)
                 else:
                     print('--------------------------------------------------------------------------------------------------------------------------------')
                     print('Az egyik sarokban találsz egy nyelet, és elindulsz visszafelé, amilyen halkan csak tudsz')
@@ -267,7 +285,8 @@ def aso(nev, egeszseg, energia, lebukas, penz,):
                                                             print('Megszerezted a nyelet is')
                                                 if ajtok == 2:
                                                     print('Egy kis záras babrálás után beléptél, és mindenféle fegyverrel találtad magad szembe')
-                                                    print('Mélyen elgondolkozol, hogy vajon mit kéne tenned')
+                                                    print('Mélyen elgondolkozol, hogy vajon mit kéne tenned, ámde amikor megfordulsz')
+                                                    print('Ez egy csapda volt, VESZTETTÉL')
                                                 if ajtok == 3:
                                                     print('Most tényleg, mit vártál')
                                                     print('Benyitottál és egy rakás rendőrtiszttel találtad szembe magad, letartóztattak, VESZTETTÉL')
@@ -294,7 +313,7 @@ def aso(nev, egeszseg, energia, lebukas, penz,):
                                         else:
                                             utes = randint(1,2)
                                             if utes == 1:
-                                                print('Voltak még ott többek is, lefogtak és meglőttek, VESZTETTÉL') 
+                                                print('Voltak még ott többen is, lefogtak és meglőttek, VESZTETTÉL') 
                                                 exit(0) 
                                             else:
                                                 print('Megszerezted a nyelet is')
