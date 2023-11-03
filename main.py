@@ -15,7 +15,7 @@ def main() -> str:
     nev = input('Adja meg a szökevény nevét: ')
     print(f'Cél: {nev}-t kiszöktetni a börtönből')
     print('\n')
-    print(f'Jelenleg "{nev}" egy börtöncellában fekszik az ágyán és azon gondolkozik, hogy hogyan tudna kiszabadúlni a börtönből')
+    print(f'Jelenleg "{nev}" egy börtöncellában fekszik az ágyán és azon gondolkozik, hogy hogyan tudna kiszabadulni a börtönből')
     print('Három ötlete van: ')
     print('\t 1 - Csinálni álkulcsot és kinyitni az ajtókat')
     print('\t 2 - Szerezni egy vágóeszközt és kivágni a kerítést')
