@@ -4,9 +4,11 @@ from safe_input import beker
 nyel = 0
 nyel2 = 0
 vodszog = 0
+
 egeszseg = 10
 energia = 10
 lebukas = 1
+penz = 100
 
 def aso(nev, egeszseg, energia, lebukas, penz,):
     print('\n')
