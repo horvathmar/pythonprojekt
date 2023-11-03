@@ -10,3 +10,13 @@ body{
 .link{
     color: white;
 }
+.betumeret{
+    font-size: 25px;
+    font-style: italic;
+}
+#cim{
+    font-size: 40px;
+}
+.card{
+    background-color: lightgrey;
+}

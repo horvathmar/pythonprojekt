@@ -3,7 +3,7 @@ from safe_input import beker
 
 def kulcsketto(nev, egeszseg, energia, lebukas, penz):
     print(f'A kulcsos szökési módot választottad {nev}-nek')
-    print(f'{nev}-nek szüksége lesz kettő kulcsra, és az ahhoz szükséges anyagokra')
+    print(f'{nev}-nek szüksége lesz egy kulcsra, és az ahhoz szükséges anyagokra')
     print('')
     print(f'A raboknak minden nap 16:00-18:00-ig kell dolgozniuk a műhelyben, ilyenkor {nev}-nek lehetősége lehet arra, hogy bejusson a kovácsműhelybe, de vigyázz nehogy észre vegyék!')
     print('1 óra múlva...')
@@ -37,7 +37,7 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
         valasznegy = beker(f'Szeretne {nev} észrevétlenül anyagokat gyűjteni, vagy még jobban körűlnézni?, ha anyagokat akar gyűjteni(1), körűlnézni(2), maradni és dolgozni(3): ', 3)
         if valasznegy == 1:
             print(f'A mai nap során {nev} anyagokat próbál gyűjteni')
-            print('A cellatársánál van egy bökő, ami alkalmas lehet ahhoz, hogy kulcsokat készítsen belőle, de kell egy fair trade ehhez. ')
+            print('A cellatársánál van egy bökő, ami alkalmas lehet ahhoz, hogy kulcsot készítsen belőle, de kell egy fair trade ehhez. ')
             print('Mit ajánlasz neki érte?')
             print('\t 1 - A mai és a holnapi ebédet')
             print('\t 2 - Aludhat az ágyadon egy hétig')
