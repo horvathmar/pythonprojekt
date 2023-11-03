@@ -4,15 +4,23 @@ from safe_input import beker
 nyel = 0
 nyel2 = 0
 vodszog = 0
+egeszseg = 10
+energia = 10
+lebukas = 1
 
 def aso(nev, egeszseg, energia, lebukas, penz,):
     print('\n')
     print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
+    print(f'HP: {egeszseg}/10')
+    print(f'Energia: {energia}/10')
+    print(f'Lebukás esélye: {lebukas}/10')
+    print(f'Pénzed: {penz} Ft')
     print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
     print(f'"{nev}" elhatározta, hogy ki fog ásni a börtönből, aminek végrehajtásához egy ásót kell megszereznie.')
     print('A játék során te fogod irányítani minden választását, sok sikert!')
     print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
-    kukac = print('Egy ásó megszerzésére 2 lehetősége van: ')
+    print('Egy ásó megszerzésére 2 lehetősége van: ')
+    ide = 1
     print('\t 1 - Lopás a raktárból')
     print('\t 2 - Kézi ásó készítése')
     valasztott1 = int(input('Válaszd ki az egyik lehetőséget: '))
@@ -34,15 +42,17 @@ def aso(nev, egeszseg, energia, lebukas, penz,):
                     exit (0)
                 else:
                     print('Visszament a cellájába, így maradt még ideje átgondolni a következő lépést')
-                    return True
+                    return valasztott1 == 1
             if terv == 1:
                 print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
+                print('Szeretnéd elmondani bárkinek is terveidet?')
                 print('\t 1 - Igen')
                 print('\t 2 - Nem')
                 szembe = beker('Mi a választásod: ')
                 if szembe == 2:
                     print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
-                    print('Ezzel könnyedén kiásta magát pár nap alatt, NYERTÉL')
+                    print('Elsettenkedett az őrök mellett, és megszerezte az ásóját')
+                    print('Egyedül is könnyedén kiásta magát pár nap alatt, NYERTÉL')
                     exit (0)
                 else:
                     random1 = randint(1,2)
@@ -69,6 +79,7 @@ def aso(nev, egeszseg, energia, lebukas, penz,):
                             if melyik == 1:  
                             #VIssza kellene menni az első három választási lehetőséghez.
                                 print('Elhatározta hogy újrakezdi az operációt')
+                                return ide
                             else: 
                                 print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                                 print('Öngyilkos lettél, vége a játéknak')
@@ -189,6 +200,23 @@ def aso(nev, egeszseg, energia, lebukas, penz,):
                                         print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                                         print('Megszerezted a nyelet is')
                                         nyel2 += 1
+                                        if nyel2 == 1:
+                                            print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
+                                            print('Már csak egy vödröt és szögeket kell szereznek, de honnan is kéne szerezni olyat?')
+                                            print('\t Átkutatod, mi van körülötted')
+                                            print('\t Elkéred egy társadtól, mert vannak az ágya alatt ilyenek(for some reason)')
+                                            kellkeves = beker('Mi lenne a TE választásod')
+                                            if kellkeves == 1:
+                                                print('Találtál amit kell, gratulálok, összeraktad és kijutottál')
+                                                exit(0)
+                                            else:
+                                                picirandom = randint(1,2)
+                                                if picirandom == 1:
+                                                    print('Látta egyik társad hogy miben settenkedsz, de együttérzett veled és nem árult be, NYERTÉL')
+                                                    exit(0)
+                                                else:
+                                                    print('Nagyon sajnálom barátom, de ezt beszoptad, a cellatársad beköpött téged, vesztettél')
+                                                    exit(0)
                                     else:
                                         utes = randint(1,2)
                                         if utes == 1:
@@ -285,14 +313,17 @@ def aso(nev, egeszseg, energia, lebukas, penz,):
                         print('\t 2 -Elkéred egy társadtól, mert vannak az ágya alatt ilyenek(for some reason)')
                         kellkeves = beker('Mi lenne a TE választásod')
                         if kellkeves == 1:
+                            print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                             print('Találtál amit kell, gratulálok, összeraktad és kijutottál')
                             exit(0)
                         else:
                             picirandom = randint(1,2)
                             if picirandom == 1:
+                                print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                                 print('Látta egyik társad hogy miben settenkedsz, de együttérzett veled és nem árult be, NYERTÉL')
                                 exit(0)
                             else:
+                                print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                                 print('Nagyon sajnálom barátom, de ezt beszoptad, a cellatársad beköpött téged, vesztettél')
                                 exit(0)
                     else:

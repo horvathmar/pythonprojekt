@@ -27,5 +27,4 @@ def main() -> str:
         vago(nev, egeszseg, energia, lebukas, penz)
     elif valasz == 3:
         aso(nev, egeszseg, energia, lebukas, penz,)
-        
 main()
