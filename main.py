@@ -6,9 +6,9 @@ from menu import fomenu
 def main() -> str:
     
     # fomenu(egeszseg, nev, energia, lebukas, penz)
-    egeszseg = 0
-    energia = 0
-    penz = 0
+    egeszseg = 10
+    energia = 10
+    penz = 100
     lebukas = 0
     print('\n')
     print('Üdvözöllek a játékban! Folyamatos választási lehetőségek, és adott esetben kihívások is lesznek a játék során. A játékban láthatjuk a szökevényünk egészségi szintjét, a pénzt, kivégzésig fennmaradó időt, lebukási esélyt százalékban és az Energia szintünket is láthatjuk. Sok esetben a játékosnak kell megadnia a kért információkat.')
