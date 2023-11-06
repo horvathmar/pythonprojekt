@@ -11,11 +11,7 @@ def aso(nev, egeszseg, energia, lebukas, penz):
     global vodszog
     global nyel2
     print('\n')
-    print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
-    print(f'HP: {egeszseg}/10')
-    print(f'Energia: {energia}/10')
-    print(f'Lebukás esélye: {lebukas}/10')
-    print(f'Pénzed: {penz} Ft')
+    print_stats(egeszseg, energia, lebukas, penz)
     print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
     print(f'"{nev}" elhatározta, hogy ki fog ásni a börtönből, aminek végrehajtásához egy ásót kell megszereznie.')
     print('A játék során te fogod irányítani minden választását, sok sikert!')
@@ -32,65 +28,12 @@ def aso(nev, egeszseg, energia, lebukas, penz):
             print('\t 1 - Nappal')
             print('\t 2 - Éjjel')
             terv = beker('Válassz, szerinted melyik lenne a jobb választás: ')
-            if terv == 2:
-                print_stats(egeszseg, energia, lebukas, penz)
-                energia -= 2
-                print(f'Az ajtók mellett két őr áll, viszont "{nev}" távolról észreveszi őket, és gondolkozni kezd')
-                print('\t 1 - Visszafordul')
-                print('\t 2 - Tovább megy')
-                orok = beker('Az ő helyében te hogy cselekednél?')
-                if orok == 2:
-                    print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
-                    print('Minél közelebb ért, egyre gyanúsabbnak tűnt, és elkapták. VESZTETTÉL')
-                    exit(0)
-                else:
-                    print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
-                    print('Visszament a cellájába, így maradt még ideje átgondolni a következő lépést')
-                    return valasztott1 == 1
             if terv == 1:
-                print_stats(egeszseg, energia, lebukas, penz)
-                print('Szeretnéd elmondani bárkinek is terveidet?')
-                print('\t 1 - Igen')
-                print('\t 2 - Nem')
-                szembe = beker('Mi a választásod: ')
-                if szembe == 2:
-                    print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
-                    print('Elsettenkedett az őrök mellett, és megszerezte az ásóját')
-                    print('Egyedül is könnyedén kiásta magát pár nap alatt, NYERTÉL')
-                    exit(0)
-                else:
-                    random1 = randint(1, 2)
-                    if random1 == 1:
-                        print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
-                        print('A személy csúnyán beköpöte, VESZTETTÉL')
-                        exit(0)
-                    else:
-                        print_stats(egeszseg, energia, lebukas, penz)
-                        print('Felajánlotta segítségét, így gyorsabban tud majd végezni, hogy válaszol')
-                        print('\t 1 - Elfogadod ')
-                        print('\t 2 - Nem fogadod el')
-                        help = beker(f'Mit tennél "{nev}" helyében?')
-                        if help == 1:
-                            print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
-                            print('Az úr segítségének köszönhetően hamarabb, illetve mindketten kijutottatok, NYERTÉL')
-                            exit(0)
-                        else:
-                            print_stats(egeszseg, energia, lebukas, penz)
-                            energia -= 2
-                            print('Hirtelen mérges lett választ hallván, és az éj leple alatt ripityára töri az ásót. Csalódóttan figyeli, de cselekednie kell, mit tesz?')
-                            print('\t 1 - Újrakezdi az egész operációt')
-                            print('\t 2 - Öngyilkos lesz')
-                            melyik = beker('Válassz helyette: ')
-                            energia -= 2
-                            if melyik == 1:
-                                # VIssza kellene menni az első három választási lehetőséghez.
-                                print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
-                                print('Elhatározta hogy újrakezdi az operációt')
-                                return ide
-                            else:
-                                print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
-                                print('Öngyilkos lettél, vége a játéknak')
-                                exit(0)
+                terv1_kezel(egeszseg, energia, lebukas, nev, penz)
+                return ide
+            if terv == 2:
+                terv2_kezel(egeszseg, energia, lebukas, nev, penz)
+                return valasztott1 == 1
         if valasztott1 == 2:
             print_stats(egeszseg, energia, lebukas, penz)
             print(f'"{nev}" úgy döntött, hogy maga fog el készíteni egy ásót, amivel majd utána kiáshatja magát')
@@ -142,14 +85,8 @@ def aso(nev, egeszseg, energia, lebukas, penz):
                             else:
                                 print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                                 print('Inkább visszafordulsz, még átgondolod ezt')
-                                print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
-                                print('-----------------------')
                                 energia -= 2
-                            print(f'HP: {egeszseg}/10')
-                            print(f'Energia: {energia}/10')
-                            print(f'Lebukás esélye: {lebukas}/10')
-                            print(f'Pénzed: {penz} Ft')
-                            print('-----------------------')
+                            print_stats(egeszseg, energia, lebukas, penz)
                             print('Másnap ismét meglátod a rácsok közt bevilágító napfényt, és kikelsz az ágyból')
                             print('\t 1 - Elmész a nyél után keresni')
                             print('\t 2 - Rákérdezel a cellatársadra, hátha tud valami módot')
@@ -167,103 +104,22 @@ def aso(nev, egeszseg, energia, lebukas, penz):
                                     if random3 == 1:
                                         print_stats(egeszseg, energia, lebukas, penz)
                                         energia -= 2
-                                        print('Egy 3 ajtós épületrészlegnél találod magadat, viszont melyik lehet a raktár ajtaja')
-                                        print('\t1 - Első ajtó, kint egy kalapács logója látható az ajtón')
-                                        print('\t2 - Második ajtó, rajta egy fegyver jel áll')
-                                        print('\t3 - Harmadik ajtó, külsején egy rendőr jelzéssel')
-                                        ajtok = beker('Melyik ajtót választod: ')
-                                        if ajtok == 1:
-                                            print_stats(egeszseg, energia, lebukas, penz)
-                                            energia -= 2
-                                            print('Ez itt a raktár része, itt ráleltél a nyélre, ámde visszafele egy őr megkérdezi hová tartasz vele')
-                                            print('\t 1 - Egy társamnak viszem, eltört a felmosó nyele')
-                                            print('\t 2 - Leütöd vele, és menekülsz')
-                                            orok1es2 = beker('Mit teszel: ')
-                                            if orok1es2 == 1:
-                                                print('Megszerezted a nyelet is')
-                                                nyel2 += 1
-                                                energia -= 2
-                                            else:
-                                                utes = randint(1, 2)
-                                                if utes == 1:
-                                                    print('Voltak még ott többen is, lefogtak és meglőttek, VESZTETTÉL')
-                                                    exit(0)
-                                                else:
-                                                    print('Megszerezted a nyelet is')
-                                                    nyel2 += 1
-                                                    energia -= 2
-                                        if ajtok == 2:
-                                            print('Egy kis záras babrálás után beléptél, és mindenféle fegyverrel találtad magad szembe')
-                                            print('Mélyen elgondolkozol, hogy vajon mit kéne tenned, ámde amikor megfordulsz')
-                                            print('Ez egy csapda volt, VESZTETTÉL')
-                                        if ajtok == 3:
-                                            print('Most tényleg, mit vártál')
-                                            print('Benyitottál és egy rakás rendőrtiszttel találtad szembe magad, letartóztattak, VESZTETTÉL')
-                                            exit(0)
+                                        ajtok = ajtok_beker(False)
+                                        energia = ajtok_kezel(ajtok, egeszseg, energia, lebukas, penz)
                                     if random3 == 2:
                                         print('Az úr megállított téged, és visszaküldött a cellába')
                                         energia -= 2
                                 if visszafele == 2:
                                     print('Visszatérsz a társadhoz, hogy meglásd, ő mit mondd')
-                                    print('Azt mondja, hogy van a folyosó végén 3 ajtó, és semmilyen körülmények között ne menj be a másodikba')
                                     print_stats(egeszseg, energia, lebukas, penz)
                                     energia -= 2
                                     ajtok = ajtok_beker()
-                                if ajtok == 1:
-                                    print_stats(egeszseg, energia, lebukas, penz)
-                                    energia -= 2
-                                    print('Ez itt a raktár része, itt ráleltél a nyélre, ámde visszafele egy őr megkérdezi hová tartasz vele')
-                                    print('\t 1 - Egy társamnak viszem, eltört a felmosó nyele')
-                                    print('\t 2 - Leütöd vele, és menekülsz')
-                                    orok1es2 = beker('Mit teszel: ')
-                                    if orok1es2 == 1:
-                                        print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
-                                        print('Megszerezted a nyelet is')
-                                        nyel2 += 1
-                                        energia -= 2
-                                        if nyel2 == 1:
-                                            vodor(egeszseg, energia, lebukas, penz)
-                                    else:
-                                        utes = randint(1, 2)
-                                        if utes == 1:
-                                            print('─────────────F─────────────────────────────────────────────────────────────────────────────────────────────────────────────────')
-                                            print('Voltak még ott többen is, lefogtak és meglőttek, VESZTETTÉL')
-                                            exit(0)
-                                        else:
-                                            print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
-                                            print('Megszerezted a nyelet is')
-                                            nyel2 += 1
-                                            energia -= 2
-                                energia = ajtok_2_3(ajtok, energia)
+                                    energia = ajtok_kezel(ajtok, egeszseg, energia, lebukas, penz)
                             else:
                                 print_stats(egeszseg, energia, lebukas, penz)
                                 energia -= 2
                                 ajtok = ajtok_beker()
-                                if ajtok == 1:
-                                    print_stats(egeszseg, energia, lebukas, penz)
-                                    energia -= 2
-                                    print('Ez itt a raktár része, itt ráleltél a nyélre, ámde visszafele egy őr megkérdezi hová tartasz vele')
-                                    print('\t 1 - Egy társamnak viszem, eltört a felmosó nyele')
-                                    print('\t 2 - Leütöd vele, és menekülsz')
-                                    orok1es2 = beker('Mit teszel: ')
-                                    if orok1es2 == 1:
-                                        print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
-                                        print('Megszerezted a nyelet is')
-                                        nyel2 += 1
-                                        energia -= 2
-                                    else:
-                                        utes = randint(1, 2)
-                                        if utes == 1:
-                                            print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
-                                            print('Voltak még ott többen is, lefogtak és meglőttek, VESZTETTÉL')
-                                            exit(0)
-                                        else:
-                                            print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
-                                            print('Megszerezted a nyelet is')
-                                            nyel += 1
-                                            vodszog += 1
-                                            energia -= 2
-                                energia = ajtok_2_3(ajtok, energia)
+                                energia = ajtok_kezel(ajtok, egeszseg, energia, lebukas, penz)
                         if random3 == 2:
                             print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                             print('Az úr megállított téged, és visszaküldött a cellába')
@@ -296,14 +152,8 @@ def aso(nev, egeszseg, energia, lebukas, penz):
                         ujra = beker('Mi a következő lépésed az alábbiak közül')
                         if ujra == 1:
                             print('Visszakullogsz szemlesújtva a celládba')
-                            print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
-                            print('-----------------------')
                             energia -= 2
-                            print(f'HP: {egeszseg}/10')
-                            print(f'Energia: {energia}/10')
-                            print(f'Lebukás esélye: {lebukas}/10')
-                            print(f'Pénzed: {penz} Ft')
-                            print('-----------------------')
+                            print_stats(egeszseg, energia, lebukas, penz)
                             print('Másnap reggel csodás napra ébredsz, és azt véled feldefedezni hogy a cellatársad éppen a padlót mossa fel')
                             print('Eszedbe jut a gondolat, miszerint ha letöröd a végét a felmósonak, lesz egy nyeled')
                             print('\t 1 - Letöröd')
@@ -348,39 +198,7 @@ def aso(nev, egeszseg, energia, lebukas, penz):
                                             print('\t2 - Második ajtó, rajta egy fegyver jel áll')
                                             print('\t3 - Harmadik ajtó, külsején egy rendőr jelzéssel')
                                             ajtok = beker('Melyik ajtót választod: ')
-                                            if ajtok == 1:
-                                                print_stats(egeszseg, energia, lebukas, penz)
-                                                energia -= 2
-                                                print('Ez itt a raktár része, itt ráleltél a nyélre, ámde visszafele egy őr megkérdezi hová tartasz vele')
-                                                print('\t 1 - Egy társamnak viszem, eltört a felmosó nyele')
-                                                print('\t 2 - Leütöd vele, és menekülsz')
-                                                orok1es2 = beker('Mit teszel: ')
-                                                if orok1es2 == 1:
-                                                    print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
-                                                    print('Megszerezted a nyelet is')
-                                                    nyel2 += 1
-                                                    energia -= 2
-                                                else:
-                                                    utes = randint(1, 2)
-                                                    if utes == 1:
-                                                        print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
-                                                        print('Voltak még ott többek is, lefogtak és meglőttek, VESZTETTÉL')
-                                                        exit(0)
-                                                    else:
-                                                        print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
-                                                        print('Megszerezted a nyelet is')
-                                                        nyel2 += 1
-                                                        energia -= 2
-                                            if ajtok == 2:
-                                                print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
-                                                print('Egy kis záras babrálás után beléptél, és mindenféle fegyverrel találtad magad szembe')
-                                                print('Mélyen elgondolkozol, hogy vajon mit kéne tenned, ámde amikor megfordulsz, rendőrtisztek állnak veled szembe, fegyverüket rád szegezve')
-                                                print('Ez egy csapda volt, VESZTETTÉL')
-                                            if ajtok == 3:
-                                                print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
-                                                print('Most tényleg, mit vártál')
-                                                print('Benyitottál és egy rakás rendőrtiszttel találtad szembe magad, letartóztattak, VESZTETTÉL')
-                                                exit(0)
+                                            energia = ajtok_kezel(ajtok, egeszseg, energia, lebukas, penz)
                                         if random3 == 2:
                                             print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                                             print('Az úr megállított téged, és visszaküldött a cellába')
@@ -393,30 +211,7 @@ def aso(nev, egeszseg, energia, lebukas, penz):
                                     print_stats(egeszseg, energia, lebukas, penz)
                                     energia -= 2
                                     ajtok = ajtok_beker()
-                                    if ajtok == 1:
-                                        print_stats(egeszseg, energia, lebukas, penz)
-                                        energia -= 2
-                                        print('Ez itt a raktár része, itt ráleltél a nyélre, ámde visszafele egy őr megkérdezi hová tartasz vele')
-                                        print('\t 1 - Egy társamnak viszem, eltört a felmosó nyele')
-                                        print('\t 2 - Leütöd vele, és menekülsz')
-                                        orok1es2 = beker('Mit teszel: ')
-                                        if orok1es2 == 1:
-                                            print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
-                                            print('Megszerezted a nyelet is')
-                                            nyel2 += 1
-                                            energia -= 2
-                                        else:
-                                            utes = randint(1, 2)
-                                            if utes == 1:
-                                                print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
-                                                print('Voltak még ott többen is, lefogtak és meglőttek, VESZTETTÉL')
-                                                exit(0)
-                                            else:
-                                                print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
-                                                print('Megszerezted a nyelet is')
-                                                nyel2 += 1
-                                                energia -= 2
-                                    energia = ajtok_2_3(ajtok, energia)
+                                    energia = ajtok_kezel(ajtok, egeszseg, energia, lebukas, penz)
                             if random3 == 2:
                                 print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                                 print('Az úr megállított téged, és visszaküldött a cellába')
@@ -437,16 +232,9 @@ def aso(nev, egeszseg, energia, lebukas, penz):
                                 print('Visszatérsz a társadhoz, hogy meglásd, ő mit mondd')
                                 energia -= 2
                     if random2 == 2:
-
-                        print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
-                        print('-----------------------')
                         lebukas += 4
-                        print(f'HP: {egeszseg}/10')
-                        print(f'Energia: {energia}/10')
-                        print(f'Lebukás esélye: {lebukas}/10')
-                        print(f'Pénzed: {penz} Ft')
-                        print('-----------------------')
                         energia -= 2
+                        print_stats(egeszseg, energia, lebukas, penz)
                         print('Egy őr észrevesz, és megkérdőjelezi, hogy mit csinálsz itt, egy random fa nyéllel a kezedben')
                         print('\t 1 - Letagadod(egy cellatársnak viszed, eltört a felmosó nyele)')
                         print('\t 2 - Elnézést kér mielőtt agyonverne, és szépen visszahelyezed ahonnan hoztad')
@@ -524,7 +312,91 @@ def aso(nev, egeszseg, energia, lebukas, penz):
             print('Teljesen kifáradtál mindebbe, összeestél és többé nem keltél fel, meghaltál, VESZTETTÉL')
 
 
-def ajtok_2_3(ajtok, energia):
+def terv1_kezel(egeszseg, energia, lebukas, nev, penz):
+    print_stats(egeszseg, energia, lebukas, penz)
+    print('Szeretnéd elmondani bárkinek is terveidet?')
+    print('\t 1 - Igen')
+    print('\t 2 - Nem')
+    szembe = beker('Mi a választásod: ')
+    if szembe == 2:
+        print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
+        print('Elsettenkedett az őrök mellett, és megszerezte az ásóját')
+        print('Egyedül is könnyedén kiásta magát pár nap alatt, NYERTÉL')
+        exit(0)
+    random1 = randint(1, 2)
+    if random1 == 1:
+        print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
+        print('A személy csúnyán beköpöte, VESZTETTÉL')
+        exit(0)
+    print_stats(egeszseg, energia, lebukas, penz)
+    print('Felajánlotta segítségét, így gyorsabban tud majd végezni, hogy válaszol')
+    print('\t 1 - Elfogadod ')
+    print('\t 2 - Nem fogadod el')
+    help = beker(f'Mit tennél "{nev}" helyében?')
+    if help == 1:
+        print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
+        print('Az úr segítségének köszönhetően hamarabb, illetve mindketten kijutottatok, NYERTÉL')
+        exit(0)
+    print_stats(egeszseg, energia, lebukas, penz)
+    energia -= 2
+    print('Hirtelen mérges lett választ hallván, és az éj leple alatt ripityára töri az ásót. Csalódóttan figyeli, de cselekednie kell, mit tesz?')
+    print('\t 1 - Újrakezdi az egész operációt')
+    print('\t 2 - Öngyilkos lesz')
+    melyik = beker('Válassz helyette: ')
+    energia -= 2
+    if melyik == 1:
+        # VIssza kellene menni az első három választási lehetőséghez.
+        print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
+        print('Elhatározta hogy újrakezdi az operációt')
+    else:
+        print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
+        print('Öngyilkos lettél, vége a játéknak')
+        exit(0)
+
+
+def terv2_kezel(egeszseg, energia, lebukas, nev, penz):
+    print_stats(egeszseg, energia, lebukas, penz)
+    energia -= 2
+    print(f'Az ajtók mellett két őr áll, viszont "{nev}" távolról észreveszi őket, és gondolkozni kezd')
+    print('\t 1 - Visszafordul')
+    print('\t 2 - Tovább megy')
+    orok = beker('Az ő helyében te hogy cselekednél?')
+    if orok == 2:
+        print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
+        print('Minél közelebb ért, egyre gyanúsabbnak tűnt, és elkapták. VESZTETTÉL')
+        exit(0)
+    else:
+        print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
+        print('Visszament a cellájába, így maradt még ideje átgondolni a következő lépést')
+
+
+def ajtok_kezel(ajtok, egeszseg, energia, lebukas, penz):
+    global nyel2
+    if ajtok == 1:
+        print_stats(egeszseg, energia, lebukas, penz)
+        energia -= 2
+        print('Ez itt a raktár része, itt ráleltél a nyélre, ámde visszafele egy őr megkérdezi hová tartasz vele')
+        print('\t 1 - Egy társamnak viszem, eltört a felmosó nyele')
+        print('\t 2 - Leütöd vele, és menekülsz')
+        orok1es2 = beker('Mit teszel: ')
+        if orok1es2 == 1:
+            print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
+            print('Megszerezted a nyelet is')
+            nyel2 += 1
+            energia -= 2
+            if nyel2 == 1:
+                vodor(egeszseg, energia, lebukas, penz)
+        else:
+            utes = randint(1, 2)
+            if utes == 1:
+                print('─────────────F─────────────────────────────────────────────────────────────────────────────────────────────────────────────────')
+                print('Voltak még ott többen is, lefogtak és meglőttek, VESZTETTÉL')
+                exit(0)
+            else:
+                print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
+                print('Megszerezted a nyelet is')
+                nyel2 += 1
+                energia -= 2
     if ajtok == 2:
         print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
         print('Egy kis záras babrálás után beléptél, és mindenféle fegyverrel találtad magad szembe')
@@ -538,9 +410,10 @@ def ajtok_2_3(ajtok, energia):
     return energia
 
 
-def ajtok_beker():
-    print('Azt mondja, hogy van a folyosó végén 3 ajtó, és semmilyen körülmények között ne menj be a másodikba')
-    print('Elindulsz a folyosón...')
+def ajtok_beker(told=True):
+    if told:
+        print('Azt mondja, hogy van a folyosó végén 3 ajtó, és semmilyen körülmények között ne menj be a másodikba')
+        print('Elindulsz a folyosón...')
     print('Egy 3 ajtós épületrészlegnél találod magadat, viszont melyik lehet a raktár ajtaja')
     print('\t1 - Első ajtó, kint egy kalapács logója látható az ajtón')
     print('\t2 - Második ajtó, rajta egy fegyver jel áll')
@@ -560,14 +433,8 @@ def print_stats(egeszseg, energia, lebukas, penz):
 
 
 def vodor(egeszseg, energia, lebukas, penz):
-    print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
-    print('-----------------------')
-    print(f'HP: {egeszseg}/10')
-    print(f'Energia: {energia}/10')
-    print(f'Lebukás esélye: {lebukas}/10')
-    print(f'Pénzed: {penz} Ft')
-    print('-----------------------')
     energia -= 2
+    print_stats(egeszseg, energia, lebukas, penz)
     print('Már csak egy vödröt és szögeket kell szereznek, de honnan is kéne szerezni olyat?')
     print('\t Átkutatod, mi van körülötted')
     print('\t Elkéred egy társadtól, mert vannak az ágya alatt ilyenek(for some reason)')
