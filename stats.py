@@ -2,6 +2,7 @@ egeszseg = 10
 energia = 10
 lebukas = 0 
 penz = 100
+nev = ""
 
 def stat(egeszseg,energia,lebukas,penz):
     print(f'HP: {egeszseg}/10')

@@ -1,5 +1,6 @@
 from random import randint
 from safe_input import beker
+from stats import *
 
 nyel = 0
 
@@ -7,11 +8,11 @@ nyel2 = 0
 vodszog = 0
 
 
-def aso(nev, egeszseg, energia, lebukas, penz):
+def aso():
     global vodszog
     global nyel2
     print('\n')
-    print_stats(egeszseg, energia, lebukas, penz)
+    print_stats()
     print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
     print(f'"{nev}" elhatározta, hogy ki fog ásni a börtönből, aminek végrehajtásához egy ásót kell megszereznie.')
     print('A játék során te fogod irányítani minden választását, sok sikert!')
@@ -23,19 +24,19 @@ def aso(nev, egeszseg, energia, lebukas, penz):
     valasztott1 = int(input('Válaszd ki az egyik lehetőséget: '))
     while True:
         if valasztott1 == 1:
-            print_stats(egeszseg, energia, lebukas, penz)
+            print_stats()
             print(f'"{nev}" úgy dönt, hogy be fog szökni a börtön raktárába, ahonnan remélhetőleg ki tud majd hozni egy ásót, viszont döntenie kell, mikor próbálkozik ezzel')
             print('\t 1 - Nappal')
             print('\t 2 - Éjjel')
             terv = beker('Válassz, szerinted melyik lenne a jobb választás: ')
             if terv == 1:
-                terv1_kezel(egeszseg, energia, lebukas, nev, penz)
+                terv1_kezel()
                 return ide
             if terv == 2:
-                terv2_kezel(egeszseg, energia, lebukas, nev, penz)
-                return valasztott1 == 1
+                terv2_kezel()
+                return ide
         if valasztott1 == 2:
-            print_stats(egeszseg, energia, lebukas, penz)
+            print_stats()
             print(f'"{nev}" úgy döntött, hogy maga fog el készíteni egy ásót, amivel majd utána kiáshatja magát')
             print('Ehhez két dologra van szüksége: vödör + szögek, nyél')
             print('\t 1 - Folytatás')
@@ -44,7 +45,7 @@ def aso(nev, egeszseg, energia, lebukas, penz):
             if terv2 == 1:
                 random2 = randint(1, 2)
                 if random2 == 1:
-                    print_stats(egeszseg, energia, lebukas, penz)
+                    print_stats()
                     energia -= 2
                     print('Miközben a folyosókon kuszól, szembetalálkozol egy felmosóvödörrel, és amikor belenézel, néhány szöget vélsz felfedezni')
                     print('\n')
@@ -60,7 +61,7 @@ def aso(nev, egeszseg, energia, lebukas, penz):
                         exit(0)
 
                     else:
-                        print_stats(egeszseg, energia, lebukas, penz)
+                        print_stats()
                         energia -= 2
                         print('Másnap reggel csodás napra ébredsz, és azt véled feldefedezni hogy a cellatársad éppen a padlót mossa fel')
                         print('Eszedbe jut a gondolat, miszerint ha letöröd a végét a felmósonak, lesz egy nyeled')
@@ -72,7 +73,7 @@ def aso(nev, egeszseg, energia, lebukas, penz):
                             print('Te hülye, ezt még a süket is meghallja, elkapnak és visznek is az elektromos székbe, VESZTETTÉL')
                             exit(0)
                         else:
-                            print_stats(egeszseg, energia, lebukas, penz)
+                            print_stats()
                             energia -= 2
                             print('Mostanára legalábbis békénhagytad, de beugrott, hogy mintha a raktárban tartanának néhány pót rudat, azt fel tudnád használni nyélként')
                             print('\t 1 - Még átgondolni')
@@ -86,14 +87,15 @@ def aso(nev, egeszseg, energia, lebukas, penz):
                                 print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                                 print('Inkább visszafordulsz, még átgondolod ezt')
                                 energia -= 2
-                            print_stats(egeszseg, energia, lebukas, penz)
+                                return ide 
+                            print_stats()
                             print('Másnap ismét meglátod a rácsok közt bevilágító napfényt, és kikelsz az ágyból')
                             print('\t 1 - Elmész a nyél után keresni')
                             print('\t 2 - Rákérdezel a cellatársadra, hátha tud valami módot')
                             tarsas1 = beker('Hogyan cselekszel: ')
                             energia += 2
                             if tarsas1 == 1:
-                                print_stats(egeszseg, energia, lebukas, penz)
+                                print_stats()
                                 energia -= 2
                                 print('Bizonytalanul továbbmész, de meglátsz egy őrt, és megtorpansz')
                                 print('\t 1 - Tovább menni, el az őr mellett úgy kinézve mintha tudnád merre mész')
@@ -102,24 +104,24 @@ def aso(nev, egeszseg, energia, lebukas, penz):
                                 if visszafele == 1:
                                     random3 = randint(1, 2)
                                     if random3 == 1:
-                                        print_stats(egeszseg, energia, lebukas, penz)
+                                        print_stats()
                                         energia -= 2
                                         ajtok = ajtok_beker(False)
-                                        energia = ajtok_kezel(ajtok, egeszseg, energia, lebukas, penz)
+                                        ajtok_kezel(ajtok, )
                                     if random3 == 2:
                                         print('Az úr megállított téged, és visszaküldött a cellába')
                                         energia -= 2
                                 if visszafele == 2:
                                     print('Visszatérsz a társadhoz, hogy meglásd, ő mit mondd')
-                                    print_stats(egeszseg, energia, lebukas, penz)
+                                    print_stats()
                                     energia -= 2
                                     ajtok = ajtok_beker()
-                                    energia = ajtok_kezel(ajtok, egeszseg, energia, lebukas, penz)
+                                    ajtok_kezel(ajtok, )
                             else:
-                                print_stats(egeszseg, energia, lebukas, penz)
+                                print_stats()
                                 energia -= 2
                                 ajtok = ajtok_beker()
-                                energia = ajtok_kezel(ajtok, egeszseg, energia, lebukas, penz)
+                                ajtok_kezel(ajtok, )
                         if random3 == 2:
                             print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                             print('Az úr megállított téged, és visszaküldött a cellába')
@@ -129,11 +131,11 @@ def aso(nev, egeszseg, energia, lebukas, penz):
                             energia -= 2
                             return ajtok == 1
                         if nyel2 == 1:
-                            vodor(egeszseg, energia, lebukas, penz)
+                            vodor()
                 else:
                     lebukas += 4
                     energia -= 2
-                    print_stats(egeszseg, energia, lebukas, penz)
+                    print_stats()
                     print('Az egyik sarokban találsz egy nyelet, és elindulsz visszafelé, amilyen halkan csak tudsz')
                     print('Egy őr észrevesz, és megkérdőjelezi, hogy mit csinálsz itt, egy random fa nyéllel a kezedben')
                     print('\t 1 - Letagadod(egy cellatársnak viszed, eltört a felmosó nyele)')
@@ -142,9 +144,9 @@ def aso(nev, egeszseg, energia, lebukas, penz):
                     if orocske == 1:
                         print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                         print('Ez bevállt, elhitte neked, megszerezted a nyelet')
-                        vodor(egeszseg, energia, lebukas, penz)
+                        vodor()
                     else:
-                        print_stats(egeszseg, energia, lebukas, penz)
+                        print_stats()
                         energia -= 2
                         print('Gondolkodsz azon, hogyha csak egy picivel is óvtosabb lettél volna, el tudtad volna csempészni mellette')
                         print('\t 1 - Áhh, majd máskor visszatérek erre')
@@ -153,7 +155,7 @@ def aso(nev, egeszseg, energia, lebukas, penz):
                         if ujra == 1:
                             print('Visszakullogsz szemlesújtva a celládba')
                             energia -= 2
-                            print_stats(egeszseg, energia, lebukas, penz)
+                            print_stats()
                             print('Másnap reggel csodás napra ébredsz, és azt véled feldefedezni hogy a cellatársad éppen a padlót mossa fel')
                             print('Eszedbe jut a gondolat, miszerint ha letöröd a végét a felmósonak, lesz egy nyeled')
                             print('\t 1 - Letöröd')
@@ -164,7 +166,7 @@ def aso(nev, egeszseg, energia, lebukas, penz):
                                 print('Te hülye, ezt még a süket is meghallja, elkapnak és visznek is az elektromos székbe, VESZTETTÉL')
                                 exit(0)
                             else:
-                                print_stats(egeszseg, energia, lebukas, penz)
+                                print_stats()
                                 energia -= 2
                                 print('Mostanára legalábbis békénhagytad, de beugrott, hogy mintha a raktárban tartanának néhány pót rudat, azt fel tudnád használni nyélként')
                                 print('\t 1 - Még átgondolni')
@@ -175,14 +177,14 @@ def aso(nev, egeszseg, energia, lebukas, penz):
                                     print('ÉS tényleg jól emlékeztél, megszerezted, összeszerelted és kijutottál, NYERTÉL')
                                     exit(0)
                                 else:
-                                    print_stats(egeszseg, energia, lebukas, penz)
+                                    print_stats()
                                     energia -= 2
                                 print('Másnap ismét meglátod a rácsok közt bevilágító napfényt, és kikelsz az ágyból')
                                 print('\t 1 - Elmész a nyél után keresni')
                                 print('\t 2 - Rákérdezel a cellatársadra, hátha tud valami módot')
                                 tarsas1 = beker('Hogyan cselekszel: ')
                                 if tarsas1 == 1:
-                                    print_stats(egeszseg, energia, lebukas, penz)
+                                    print_stats()
                                     energia -= 2
                                     print('Bizonytalanul továbbmész, de meglátsz egy őrt, és megtorpansz')
                                     print('\t 1 - Tovább menni, el az őr mellett úgy kinézve mintha tudnád merre mész')
@@ -191,14 +193,14 @@ def aso(nev, egeszseg, energia, lebukas, penz):
                                     if visszafele == 1:
                                         random3 = randint(1, 2)
                                         if random3 == 1:
-                                            print_stats(egeszseg, energia, lebukas, penz)
+                                            print_stats()
                                             energia -= 2
                                             print('Egy 3 ajtós épületrészlegnél találod magadat, viszont melyik lehet a raktár ajtaja')
                                             print('\t1 - Első ajtó, kint egy kalapács logója látható az ajtón')
                                             print('\t2 - Második ajtó, rajta egy fegyver jel áll')
                                             print('\t3 - Harmadik ajtó, külsején egy rendőr jelzéssel')
                                             ajtok = beker('Melyik ajtót választod: ')
-                                            energia = ajtok_kezel(ajtok, egeszseg, energia, lebukas, penz)
+                                            ajtok_kezel(ajtok, )
                                         if random3 == 2:
                                             print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                                             print('Az úr megállított téged, és visszaküldött a cellába')
@@ -208,10 +210,10 @@ def aso(nev, egeszseg, energia, lebukas, penz):
                                         print('Visszatérsz a társadhoz, hogy meglásd, ő mit mondd')
                                         energia -= 2
                                 else:
-                                    print_stats(egeszseg, energia, lebukas, penz)
+                                    print_stats()
                                     energia -= 2
                                     ajtok = ajtok_beker()
-                                    energia = ajtok_kezel(ajtok, egeszseg, energia, lebukas, penz)
+                                    ajtok_kezel(ajtok, )
                             if random3 == 2:
                                 print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                                 print('Az úr megállított téged, és visszaküldött a cellába')
@@ -234,7 +236,7 @@ def aso(nev, egeszseg, energia, lebukas, penz):
                     if random2 == 2:
                         lebukas += 4
                         energia -= 2
-                        print_stats(egeszseg, energia, lebukas, penz)
+                        print_stats()
                         print('Egy őr észrevesz, és megkérdőjelezi, hogy mit csinálsz itt, egy random fa nyéllel a kezedben')
                         print('\t 1 - Letagadod(egy cellatársnak viszed, eltört a felmosó nyele)')
                         print('\t 2 - Elnézést kér mielőtt agyonverne, és szépen visszahelyezed ahonnan hoztad')
@@ -243,9 +245,9 @@ def aso(nev, egeszseg, energia, lebukas, penz):
                         if orocske == 1:
                             print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                             print('Ez bevállt, elhitte neked, megszerezted a nyelet')
-                            vodor(egeszseg, energia, lebukas, penz)
+                            vodor()
                         else:
-                            print_stats(egeszseg, energia, lebukas, penz)
+                            print_stats()
                             energia -= 2
                             print('Gondolkodsz azon, hogyha csak egy picivel is óvatosabb lettél volna, el tudtad volna csempészni mellette')
                             print('\t 1 - Áhh, majd máskor visszatérek erre')
@@ -270,9 +272,9 @@ def aso(nev, egeszseg, energia, lebukas, penz):
                                         print('Ezt a kettőt összeeszkabáltad, gratulálok, NYERTÉL')
                                         exit(0)
                         if nyel == 1:
-                            vodor(egeszseg, energia, lebukas, penz)
+                            vodor()
                     else:
-                        print_stats(egeszseg, energia, lebukas, penz)
+                        print_stats()
                         energia -= 2
                         print('\t 1 - Letagadod(egy cellatársnak viszed, eltört a felmosó nyele)')
                         print('\t 2 - Elnézést kér mielőtt agyonverne, és szépen visszahelyezed ahonnan hoztad')
@@ -283,7 +285,7 @@ def aso(nev, egeszseg, energia, lebukas, penz):
                             nyel2 += 1
                             energia -= 2
                         else:
-                            print_stats(egeszseg, energia, lebukas, penz)
+                            print_stats()
                             energia -= 2
                             print('\t 1 - Áhh, majd máskor visszatérek erre')
                             print('\t 2 - Hajrá, megbízok az ösztöneimben, menni fog ez mint az 1x1')
@@ -303,17 +305,17 @@ def aso(nev, egeszseg, energia, lebukas, penz):
                                     energia -= 2
                                     nyel2 += 1
                             if nyel2 == 1:
-                                vodor(egeszseg, energia, lebukas, penz)
+                                vodor()
             else:
                 exit(0)
             if nyel2 == 1:
-                vodor(egeszseg, energia, lebukas, penz)
+                vodor()
         if energia == 0:
             print('Teljesen kifáradtál mindebbe, összeestél és többé nem keltél fel, meghaltál, VESZTETTÉL')
 
 
-def terv1_kezel(egeszseg, energia, lebukas, nev, penz):
-    print_stats(egeszseg, energia, lebukas, penz)
+def terv1_kezel():
+    print_stats()
     print('Szeretnéd elmondani bárkinek is terveidet?')
     print('\t 1 - Igen')
     print('\t 2 - Nem')
@@ -328,7 +330,7 @@ def terv1_kezel(egeszseg, energia, lebukas, nev, penz):
         print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
         print('A személy csúnyán beköpöte, VESZTETTÉL')
         exit(0)
-    print_stats(egeszseg, energia, lebukas, penz)
+    print_stats()
     print('Felajánlotta segítségét, így gyorsabban tud majd végezni, hogy válaszol')
     print('\t 1 - Elfogadod ')
     print('\t 2 - Nem fogadod el')
@@ -337,7 +339,7 @@ def terv1_kezel(egeszseg, energia, lebukas, nev, penz):
         print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
         print('Az úr segítségének köszönhetően hamarabb, illetve mindketten kijutottatok, NYERTÉL')
         exit(0)
-    print_stats(egeszseg, energia, lebukas, penz)
+    print_stats()
     energia -= 2
     print('Hirtelen mérges lett választ hallván, és az éj leple alatt ripityára töri az ásót. Csalódóttan figyeli, de cselekednie kell, mit tesz?')
     print('\t 1 - Újrakezdi az egész operációt')
@@ -354,8 +356,8 @@ def terv1_kezel(egeszseg, energia, lebukas, nev, penz):
         exit(0)
 
 
-def terv2_kezel(egeszseg, energia, lebukas, nev, penz):
-    print_stats(egeszseg, energia, lebukas, penz)
+def terv2_kezel():
+    print_stats()
     energia -= 2
     print(f'Az ajtók mellett két őr áll, viszont "{nev}" távolról észreveszi őket, és gondolkozni kezd')
     print('\t 1 - Visszafordul')
@@ -370,10 +372,10 @@ def terv2_kezel(egeszseg, energia, lebukas, nev, penz):
         print('Visszament a cellájába, így maradt még ideje átgondolni a következő lépést')
 
 
-def ajtok_kezel(ajtok, egeszseg, energia, lebukas, penz):
+def ajtok_kezel(ajtok, ):
     global nyel2
     if ajtok == 1:
-        print_stats(egeszseg, energia, lebukas, penz)
+        print_stats()
         energia -= 2
         print('Ez itt a raktár része, itt ráleltél a nyélre, ámde visszafele egy őr megkérdezi hová tartasz vele')
         print('\t 1 - Egy társamnak viszem, eltört a felmosó nyele')
@@ -385,7 +387,7 @@ def ajtok_kezel(ajtok, egeszseg, energia, lebukas, penz):
             nyel2 += 1
             energia -= 2
             if nyel2 == 1:
-                vodor(egeszseg, energia, lebukas, penz)
+                vodor()
         else:
             utes = randint(1, 2)
             if utes == 1:
@@ -407,7 +409,6 @@ def ajtok_kezel(ajtok, egeszseg, energia, lebukas, penz):
         print('Most tényleg, mit vártál')
         print('Benyitottál és egy rakás rendőrtiszttel találtad szembe magad, letartóztattak, VESZTETTÉL')
         exit(0)
-    return energia
 
 
 def ajtok_beker(told=True):
@@ -422,7 +423,7 @@ def ajtok_beker(told=True):
     return ajtok
 
 
-def print_stats(egeszseg, energia, lebukas, penz):
+def print_stats():
     print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
     print('-----------------------')
     print(f'HP: {egeszseg}/10')
@@ -432,9 +433,9 @@ def print_stats(egeszseg, energia, lebukas, penz):
     print('-----------------------')
 
 
-def vodor(egeszseg, energia, lebukas, penz):
+def vodor():
     energia -= 2
-    print_stats(egeszseg, energia, lebukas, penz)
+    print_stats()
     print('Már csak egy vödröt és szögeket kell szereznek, de honnan is kéne szerezni olyat?')
     print('\t Átkutatod, mi van körülötted')
     print('\t Elkéred egy társadtól, mert vannak az ágya alatt ilyenek(for some reason)')
