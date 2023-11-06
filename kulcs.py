@@ -7,15 +7,18 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
     print('')
     print(f'A raboknak minden nap 16:00-18:00-ig kell dolgozniuk a műhelyben, ilyenkor {nev}-nek lehetősége lehet arra, hogy bejusson a kovácsműhelybe, de vigyázz nehogy észre vegyék!')
     print('1 óra múlva...')
+    print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
     print('A rabok elindulnak dolgozni')
     valaszelso = beker(f'Szeretne {nev} elszökni a többiek közűl, és elmenni a kovácsműhelybe?, ha igen (1), ha nem (2): ')
     if valaszelso == 1:
         print(f'{nev} észrevétlenül kilép a tömegből, és elindul a műhely felé. A következő fél órát azzal tölti, hogy információkat szerezzen a műhelyről, de vigyáznod kell, nehogy feltűnjön valakinek, hogy nem vagy ott.')
+        print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
         valaszketto = beker(f'{nev} szeretne visszaindúlni?, ha igen (1), ha nem (2): ')
         if valaszketto == 1:
             print(f'Jól döntöttél, {nev} elindul vissza és sikeresen beleolvad a tömegbe')
         elif valaszketto == 2:
             print(f'Rosszúl döntöttél, valakinek feltűnik, hogy {nev} nincs ott')
+            print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
             print('Megkérdezik tőled, hogy hol voltál, mit válaszolsz?')
             print('\t 1 - Eltévedett és nem talált vissza')
             print('\t 2 - El kellett mennie WC-re')
@@ -28,16 +31,19 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
             elif valaszharom == 3:
                 print('Rossz válasz')
                 print('VÉGE!')
+                print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                 lebukas += 100
                 exit()
             
     if valaszelso == 2 or valaszketto == 1 or valaszketto ==2:
         print('Keményen végig dolgoztad a napot.')
         print('Másnap...')
+        print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
         valasznegy = beker(f'Szeretne {nev} észrevétlenül anyagokat gyűjteni, vagy még jobban körűlnézni?, ha anyagokat akar gyűjteni(1), körűlnézni(2), maradni és dolgozni(3): ', 3)
         if valasznegy == 1:
             print(f'A mai nap során {nev} anyagokat próbál gyűjteni')
             print('A cellatársánál van egy bökő, ami alkalmas lehet ahhoz, hogy kulcsot készítsen belőle, de kell egy fair trade ehhez. ')
+            print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
             print('Mit ajánlasz neki érte?')
             print('\t 1 - A mai és a holnapi ebédet')
             print('\t 2 - Aludhat az ágyadon egy hétig')
@@ -46,6 +52,7 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
             if valaszot == 1:
                 print('Egy jó ajánlat volt')
                 print('Megszerezted a bökőt')
+                print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                 valasznyolc= beker('Szeretnél másnap elindúlni kulcsot készíteni?, ha igen(1), ha nem(2)')
                 if valasznyolc == 1:
                     print('Másnap...')
@@ -56,6 +63,7 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                     eselyharom = randint(e,f)
                     if eselyharom == e:
                         print('Sikerül elkészítenie a kulcsot')
+                        print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                         valasztiz = beker('Szeretne még ma elindulni és kiszabadúlni a börtönből?, ha igen(1), ha nem(2): ')
                         if valasztiz == 1:
                             i = 1
@@ -64,6 +72,7 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                             if eselyot == i:
                                 print('Túl mohó volt, elkapták')
                                 print('VÉGE!')
+                                print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                                 lebukas += 100
                                 exit()
                             elif eselyot == j:
@@ -78,6 +87,7 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                             if eselyot == k:
                                 print('Észreveszik és elkapták')
                                 print('VÉGE!')
+                                print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                                 lebukas += 100
                                 exit()
                             elif eselyot == l:
@@ -88,6 +98,7 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                     elif eselyharom == f:
                         print('Eltörte a kulcsot, ráadásúl élszre is veszik')
                         print('VÉGE!')
+                        print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                         lebukas += 100
                         exit()
                 elif valasznyolc == 2:
@@ -101,6 +112,7 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                     eselynegy = randint(g,h)
                     if eselynegy == g:
                         print('Sikerül elkészítenie a kulcsot')
+                        print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                         valaszkilenc = beker('Szeretne még ma elindulni és kiszabadúlni a börtönből?, ha igen(1), ha nem(2): ')
                         if valaszkilenc == 1:
                             i = 1
@@ -109,6 +121,7 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                             if eselyot == i:
                                 print('Túl mohó volt, elkapták')
                                 print('VÉGE!')
+                                print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                                 lebukas += 100
                                 exit()
                             elif eselyot == j:
@@ -123,6 +136,7 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                             if eselyot == k:
                                 print('Észreveszik és elkapták')
                                 print('VÉGE!')
+                                print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                                 lebukas += 100
                                 exit()
                             elif eselyot == l:
@@ -133,17 +147,20 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                     elif eselynegy == h:
                         print('Eltörte a kulcsot, ráadásúl élszre is veszik')
                         print('VÉGE!')
+                        print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                         lebukas += 100
                         exit()
             elif valaszot == 2:
                 print('Neki is van ágya, miért kéne neki?')
                 print('Nem szerezte meg')
                 print('Másnap...')
+                print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                 print(f'Egy ismeretlen ember meglátogatja {nev}-t és üzletet kínál')
                 print('\t 1 - Elkezd üzletelni')
                 print('\t 2 - Nem kezd el üzletelni')
                 valasztizenegy = beker('Válasz: ')
                 if valasztizenegy == 1:
+                    print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                     print('Három ajánlatot kínál fel: ')
                     print(f'\t 1 - Segít {nev}-nek kiszabadulni, és ha sikerül, akkor fizetnie kell neki 1000 Eurót.')
                     print('\t 2 - Segít kiszökni, de utána le kell dolgoznia 100 órát az éttermében')
@@ -165,11 +182,13 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                             elif penz < 1000:
                                 print('Nincs elég pénze, megverik')
                                 print('VÉGE!')
+                                print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                                 lebukas += 100
                                 exit()
                         elif eselyhat == ac:
                             print('Nem jut el a kapuig, elkapják')
                             print('VÉGE!')
+                            print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                             lebukas += 100
                             exit()
                     elif valasztizenketto == 2:
@@ -187,6 +206,7 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                         elif eselyhat == ac:
                             print('Nem jut el a kapuig, elkapják')
                             print('VÉGE!')
+                            print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                             lebukas += 100
                             exit()
                     elif valasztizenketto == 3:
@@ -198,6 +218,7 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                         if eselyot == m:
                             print('Észreveszik és elkapták')
                             print('VÉGE!')
+                            print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                             lebukas += 100
                             exit()
                         elif eselyot == n:
@@ -209,8 +230,10 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                     print(f'{nev} nem kezd bele az üzletelésbe')
                     print('Nincs több lehetősége a kulcs szerzésre')
                     print('VÉGE!')
+                    print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                     exit()
             elif valaszot == 3:
+                print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                 print('1 - Harc')
                 print('2 - Nincs harc')
                 valaszhat = beker('Válasz: ')
@@ -221,6 +244,7 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                     esely = randint(a, b)
                     if esely == a:
                         print('Nyert')
+                        print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                         valasznyolc= beker('Szeretnél másnap elindúlni kulcsot készíteni?, ha igen(1), ha nem(2)')
                         if valasznyolc == 1:
                             print('Másnap...')
@@ -239,6 +263,7 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                                     if eselyot == i:
                                         print('Túl mohó volt, elkapták')
                                         print('VÉGE!')
+                                        print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                                         lebukas += 100
                                         exit()
                                     elif eselyot == j:
@@ -253,6 +278,7 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                                     if eselyot == k:
                                         print('Észreveszik és elkapták')
                                         print('VÉGE!')
+                                        print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                                         lebukas += 100
                                         exit()
                                     elif eselyot == l:
@@ -263,6 +289,7 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                             elif eselyharom == f:
                                 print('Eltörte a kulcsot, ráadásúl élszre is veszik')
                                 print('VÉGE!')
+                                print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                                 lebukas += 100
                                 exit()
                         elif valasznyolc == 2:
@@ -284,6 +311,7 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                                     if eselyot == i:
                                         print('Túl mohó volt, elkapták')
                                         print('VÉGE!')
+                                        print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                                         lebukas += 100
                                         exit()
                                     elif eselyot == j:
@@ -298,6 +326,7 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                                     if eselyot == k:
                                         print('Észreveszik és elkapták')
                                         print('VÉGE!')
+                                        print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                                         lebukas += 100
                                         exit()
                                     elif eselyot == l:
@@ -308,6 +337,7 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                             elif eselynegy == h:
                                 print('Eltörte a kulcsot, ráadásúl élszre is veszik')
                                 print('VÉGE!')
+                                print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                                 exit()
                             elif esely == b:
                                 print('Éppen el tud futni, de szét verték a búráját')
@@ -317,16 +347,19 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
         elif valasznegy == 2:
             print(f'{nev} alaposabban körbe akar nézni ma.')
             print('Négy óra múlva...')
+            print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
             print(f'A rabok elindulnak dolgozni és {nev} elhatározza, hogy megszökik a tömegből')
             valaszhet = beker('De még meggondolhatja magát, ha igen(1), ha nem(2): ')
             if valaszhet == 1:
                 print('Kemény munkával telt a nap, de nem haladt a munkával')
                 print('Másnap...')
+                print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                 print(f'Egy ismeretlen ember meglátogatja {nev}-t és üzletet kínál')
                 print('\t 1 - Elkezd üzletelni')
                 print('\t 2 - Nem kezd el üzletelni')
                 valasztizenegy = beker('Válasz: ')
                 if valasztizenegy == 1:
+                    print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                     print('Három ajánlatot kínál fel: ')
                     print(f'\t 1 - Segít {nev}-nek kiszabadulni, és ha sikerül, akkor fizetnie kell neki 1000 Eurót.')
                     print('\t 2 - Segít kiszökni, de utána le kell dolgoznia 100 órát az éttermében')
@@ -348,11 +381,13 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                             elif penz < 1000:
                                 print('Nincs elég pénze, megverik')
                                 print('VÉGE!')
+                                print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                                 lebukas += 100
                                 exit()
                         elif eselyhat == ac:
                             print('Nem jut el a kapuig, elkapják')
                             print('VÉGE!')
+                            print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                             lebukas += 100
                             exit()
                     elif valasztizenketto == 2:
@@ -370,6 +405,7 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                         elif eselyhat == ac:
                             print('Nem jut el a kapuig, elkapják')
                             print('VÉGE!')
+                            print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                             lebukas += 100
                             exit()
                     elif valasztizenketto == 3:
@@ -381,6 +417,7 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                         if eselyot == m:
                             print('Észreveszik és elkapták')
                             print('VÉGE!')
+                            print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                             lebukas += 100
                             exit()
                         elif eselyot == n:
@@ -388,18 +425,21 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                             print('NYERT!')
                             exit()
                 elif valasztizenegy == 2:
+                    print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                     print('Találkozik a cellatársával és üzletet akar kötni')
                     print('Mit ajánlasz neki érte?')
-                print('\t 1 - A mai és a holnapi ebédet')
-                print('\t 2 - Aludhat az ágyadon egy hétig')
-                print('\t 3 - Nem ad neki semmit')
-                valaszot = beker('A választás: ',3)
+                    print('\t 1 - A mai és a holnapi ebédet')
+                    print('\t 2 - Aludhat az ágyadon egy hétig')
+                    print('\t 3 - Nem ad neki semmit')
+                    valaszot = beker('A választás: ',3)
                 if valaszot == 1:
                     print('Egy jó ajánlat volt')
                     print('Megszerezted a bökőt')
+                    print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                     valasznyolc= beker('Szeretnél másnap elindúlni kulcsot készíteni?, ha igen(1), ha nem(2)')
                     if valasznyolc == 1:
                         print('Másnap...')
+                        print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                         print('Észrevétlenül elszökik')
                         print(f'A műhelyben {nev} a gép elött áll és készíti a kulcsot, de vigyáznia kell, nehogy eltörjön, vagy elrontsa a kulcsot')
                         e = 5
@@ -415,6 +455,7 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                                 if eselyot == i:
                                     print('Túl mohó volt, elkapták')
                                     print('VÉGE!')
+                                    print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                                     lebukas += 100
                                     exit()
                                 elif eselyot == j:
@@ -429,6 +470,7 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                                 if eselyot == k:
                                     print('Észreveszik és elkapták')
                                     print('VÉGE!')
+                                    print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                                     lebukas += 100
                                     exit()
                                 elif eselyot == l:
@@ -439,6 +481,7 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                         elif eselyharom == f:
                             print('Eltörte a kulcsot, ráadásúl élszre is veszik')
                             print('VÉGE!')
+                            print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                             lebukas += 100
                             exit()
                     elif valasznyolc == 2:
@@ -452,6 +495,7 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                         eselynegy = randint(g,h)
                         if eselynegy == g:
                             print('Sikerül elkészítenie a kulcsot')
+                            print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                             valaszkilenc = beker('Szeretne még ma elindulni és kiszabadúlni a börtönből?, ha igen(1), ha nem(2): ')
                             if valaszkilenc == 1:
                                 i = 1
@@ -460,6 +504,7 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                                 if eselyot == i:
                                     print('Túl mohó volt, elkapták')
                                     print('VÉGE!')
+                                    print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                                     lebukas += 100
                                     exit()
                                 elif eselyot == j:
@@ -474,6 +519,7 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                                 if eselyot == k:
                                     print('Észreveszik és elkapták')
                                     print('VÉGE!')
+                                    print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                                     lebukas += 100
                                     exit()
                                 elif eselyot == l:
@@ -484,6 +530,7 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                         elif eselynegy == h:
                             print('Eltörte a kulcsot, ráadásúl élszre is veszik')
                             print('VÉGE!')
+                            print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                             lebukas += 100
                             exit()
                 elif valaszot == 2:
@@ -497,6 +544,7 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                     esely = randint(a,b)
                     if esely == a:
                         print('Nyert')
+                        print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                         valasznyolc= beker('Szeretnél másnap elindúlni kulcsot készíteni?, ha igen(1), ha nem(2)')
                         if valasznyolc == 1:
                             print('Másnap...')
@@ -507,6 +555,7 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                             eselyharom = randint(e,f)
                             if eselyharom == e:
                                 print('Sikerül elkészítenie a kulcsot')
+                                print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                                 valasztiz = beker('Szeretne még ma elindulni és kiszabadúlni a börtönből?, ha igen(1), ha nem(2): ')
                                 if valasztiz == 1:
                                     i = 1
@@ -515,6 +564,7 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                                     if eselyot == i:
                                         print('Túl mohó volt, elkapták')
                                         print('VÉGE!')
+                                        print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                                         lebukas += 100
                                         exit()
                                     elif eselyot == j:
@@ -529,6 +579,7 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                                     if eselyot == k:
                                         print('Észreveszik és elkapták')
                                         print('VÉGE!')
+                                        print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                                         lebukas += 100
                                         exit()
                                     elif eselyot == l:
@@ -539,6 +590,7 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                             elif eselyharom == f:
                                 print('Eltörte a kulcsot, ráadásúl élszre is veszik')
                                 print('VÉGE!')
+                                print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                                 lebukas += 100
                                 exit()
                         elif valasznyolc == 2:
@@ -552,6 +604,7 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                             eselynegy = randint(g,h)
                             if eselynegy == g:
                                 print('Sikerül elkészítenie a kulcsot')
+                                print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                                 valaszkilenc = beker('Szeretne még ma elindulni és kiszabadúlni a börtönből?, ha igen(1), ha nem(2): ')
                                 if valaszkilenc == 1:
                                     i = 1
@@ -560,6 +613,7 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                                     if eselyot == i:
                                         print('Túl mohó volt, elkapták')
                                         print('VÉGE!')
+                                        print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                                         lebukas += 100
                                         exit()
                                     elif eselyot == j:
@@ -574,6 +628,7 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                                     if eselyot == k:
                                         print('Észreveszik és elkapták')
                                         print('VÉGE!')
+                                        print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                                         lebukas += 100
                                         exit()
                                     elif eselyot == l:
@@ -584,11 +639,13 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                             elif eselynegy == h:
                                 print('Eltörte a kulcsot, ráadásúl élszre is veszik')
                                 print('VÉGE!')
+                                print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                                 exit()
                             elif esely == b:
                                 print('Éppen el tud futni, de szét verték a búráját')
                                 print('Nincs bökő')
                                 print('VÉGE!')
+                                print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                                 exit()
             elif valaszhet == 2:
                 c = 2
@@ -598,11 +655,13 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                     print('Észrevétlenül el tud szökni a tömegből')
                     print('Azzal tölti a maradék időt, hogy alaposabban körűlnézzen')
                     print('Másnap...')
+                    print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                     print(f'Egy ismeretlen ember meglátogatja {nev}-t és üzletet kínál')
                     print('\t 1 - Elkezd üzletelni')
                     print('\t 2 - Nem kezd el üzletelni')
                     valasztizenegy = beker('Válasz: ')
                     if valasztizenegy == 1:
+                        print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                         print('Három ajánlatot kínál fel: ')
                         print(f'\t 1 - Segít {nev}-nek kiszabadulni, és ha sikerül, akkor fizetnie kell neki 1000 Eurót.')
                         print('\t 2 - Segít kiszökni, de utána le kell dolgoznia 100 órát az éttermében')
@@ -624,11 +683,13 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                                 elif penz < 1000:
                                     print('Nincs elég pénze, megverik')
                                     print('VÉGE!')
+                                    print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                                     lebukas += 100
                                     exit()
                             elif eselyhat == ac:
                                 print('Nem jut el a kapuig, elkapják')
                                 print('VÉGE!')
+                                print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                                 lebukas += 100
                                 exit()
                         elif valasztizenketto == 2:
@@ -646,6 +707,7 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                             elif eselyhat == ac:
                                 print('Nem jut el a kapuig, elkapják')
                                 print('VÉGE!')
+                                print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                                 lebukas += 100
                                 exit()
                         elif valasztizenketto == 3:
@@ -657,6 +719,7 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                             if eselyot == m:
                                 print('Észreveszik és elkapták')
                                 print('VÉGE!')
+                                print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                                 lebukas += 100
                                 exit()
                             elif eselyot == n:
@@ -669,16 +732,19 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                 elif eselyketto == d:
                     print('Elkapják, mostmár tényleg nem tudja kimagyarázni')
                     print('VÉGE!')
+                    print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                     lebukas += 100
                     exit()
         elif valasznegy == 3:
             print('Kemény munkával telt a mai nap')
             print('Másnap...')
+            print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
             print(f'Egy ismeretlen ember meglátogatja {nev}-t és üzletet kínál')
             print('\t 1 - Elkezd üzletelni')
             print('\t 2 - Nem kezd el üzletelni')
             valasztizenegy = beker('Válasz: ')
             if valasztizenegy == 1:
+                print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                 print('Három ajánlatot kínál fel: ')
                 print(f'\t 1 - Segít {nev}-nek kiszabadulni, és ha sikerül, akkor fizetnie kell neki 1000 Eurót.')
                 print('\t 2 - Segít kiszökni, de utána le kell dolgoznia 100 órát az éttermében')
@@ -700,11 +766,13 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                         elif penz < 1000:
                             print('Nincs elég pénze, megverik')
                             print('VÉGE!')
+                            print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                             lebukas += 100
                             exit()
                     elif eselyhat == ac:
                         print('Nem jut el a kapuig, elkapják')
                         print('VÉGE!')
+                        print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                         lebukas += 100
                         exit()
                 elif valasztizenketto == 2:
@@ -722,6 +790,7 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                     elif eselyhat == ac:
                         print('Nem jut el a kapuig, elkapják')
                         print('VÉGE!')
+                        print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                         lebukas += 100
                         exit()
                 elif valasztizenketto == 3:
@@ -733,6 +802,7 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                     if eselyot == m:
                         print('Észreveszik és elkapták')
                         print('VÉGE!')
+                        print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                         lebukas += 100
                         exit()
                     elif eselyot == n:
@@ -743,5 +813,6 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
             elif valasztizenegy == 2:
                 print('Nem találta meg a módját a szökésre, ezért a játéknak')
                 print('VÉGE!')
+                print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                 lebukas += 100
                 exit()
