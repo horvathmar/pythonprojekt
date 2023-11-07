@@ -1,14 +1,19 @@
+from stats import egeszseg, energia, lebukas, penz, nev
 from random import randint
 from safe_input import beker
-from stats import *
+
 
 nyel = 0
-
 nyel2 = 0
 vodszog = 0
+energia = 10
+lebukas = 0
+egeszseg = 10
+penz = 100
 
 
 def aso():
+    global egeszseg, energia, lebukas, penz, nev
     global vodszog
     global nyel2
     print('\n')

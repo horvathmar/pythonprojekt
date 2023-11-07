@@ -1,6 +1,7 @@
 from vagas import vago
 from kulcs import kulcsketto
 from asas import aso
+from stats import egeszseg, energia, lebukas, penz, nev
 from menu import fomenu
 
 def main() -> str:
