@@ -1,11 +1,10 @@
-from vagas import vago
-from kulcs import kulcsketto
 from asas import aso
-from stats import egeszseg, energia, lebukas, penz, nev
-from menu import fomenu
+from kulcs import kulcsketto
+from stats import egeszseg, energia, lebukas, penz
+from vagas import vago
 
-def main() -> str:
-    
+
+def main():
     # fomenu(egeszseg, nev, energia, lebukas, penz)
     print('\n')
     print('Üdvözöllek a játékban! Folyamatos választási lehetőségek, és adott esetben kihívások is lesznek a játék során. A játékban láthatjuk a szökevényünk egészségi szintjét, a pénzt, kivégzésig fennmaradó időt, lebukási esélyt százalékban és az Energia szintünket is láthatjuk. Sok esetben a játékosnak kell megadnia a kért információkat.')
@@ -23,5 +22,7 @@ def main() -> str:
     elif valasz == 2:
         vago(nev, egeszseg, energia, lebukas, penz)
     elif valasz == 3:
-        aso()
+        aso(nev)
+
+
 main()
