@@ -170,9 +170,9 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                         print('Szeretné eladni a nem használt ruháit?')
                         print('\t 1 - igen')
                         print('\t 2 - nem')
-                        valasztizenharom = input('A válasz: ')
+                        valasztizenharom = int(input('A válasz: '))
                         if valasztizenharom == 1:
-                            print('+ 100 Euró')
+                            penz += 100
                             print('A következő egy hétben minden nap a szökés tervén dolgoznak...')
                             print('Elkészült a terv')
                             ab = 1
@@ -381,9 +381,9 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                         print('Szeretné eladni a nem használt ruháit?')
                         print('\t 1 - igen')
                         print('\t 2 - nem')
-                        valasztizenharom = input('A válasz: ')
+                        valasztizenharom = int(input('A válasz: '))
                         if valasztizenharom == 1:
-                            print('+ 100 Euró')
+                            penz += 100
                             print('A következő egy hétben minden nap a szökés tervén dolgoznak...')
                             print('Elkészült a terv')
                             ab = 1
@@ -695,9 +695,9 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                             print('Szeretné eladni a nem használt ruháit?')
                             print('\t 1 - igen')
                             print('\t 2 - nem')
-                            valasztizenharom = input('A válasz: ')
+                            valasztizenharom = int(input('A válasz: '))
                             if valasztizenharom == 1:
-                                print('+ 100 Euró')
+                                penz += 100
                                 print('A következő egy hétben minden nap a szökés tervén dolgoznak...')
                                 print('Elkészült a terv')
                                 ab = 1
@@ -791,9 +791,9 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                     print('Szeretné eladni a nem használt ruháit?')
                     print('\t 1 - igen')
                     print('\t 2 - nem')
-                    valasztizenharom = input('A válasz: ')
+                    valasztizenharom = int(input('A válasz: '))
                     if valasztizenharom == 1:
-                        print('+ 100 Euró')
+                        penz += 100
                         print('A következő egy hétben minden nap a szökés tervén dolgoznak...')
                         print('Elkészült a terv')
                         ab = 1
