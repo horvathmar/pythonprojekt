@@ -162,31 +162,43 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                 if valasztizenegy == 1:
                     print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                     print('Három ajánlatot kínál fel: ')
-                    print(f'\t 1 - Segít {nev}-nek kiszabadulni, és ha sikerül, akkor fizetnie kell neki 1000 Eurót.')
+                    print(f'\t 1 - Segít {nev}-nek kiszabadulni, és ha sikerül, akkor fizetnie kell neki 100 Eurót.')
                     print('\t 2 - Segít kiszökni, de utána le kell dolgoznia 100 órát az éttermében')
                     print('\t 3 - Ad neki egy eszközt, de nem segít a szökésben')
                     valasztizenketto = beker('Választás: ', 3) 
                     if valasztizenketto == 1:
-                        print('A következő egy hétben minden nap a szökés tervén dolgoznak...')
-                        print('Elkészült a terv')
-                        ab = 1
-                        ac = 2
-                        eselyhat = randint(ab, ac)
-                        if eselyhat == ab:
-                            print('Sikerül eljutnia a kapuig')
-                            print('A kapunál az üzlettársa várja egy kocsival, sikerül megszöknie')
-                            if penz >= 1000:
-                                print('NYERT!')
-                                print(f'A győztes játékos: {nev}')
-                                exit()
-                            elif penz < 1000:
-                                print('Nincs elég pénze, megverik')
+                        print('Szeretné eladni a nem használt ruháit?')
+                        print('\t 1 - igen')
+                        print('\t 2 - nem')
+                        valasztizenharom = input('A válasz: ')
+                        if valasztizenharom == 1:
+                            print('+ 100 Euró')
+                            print('A következő egy hétben minden nap a szökés tervén dolgoznak...')
+                            print('Elkészült a terv')
+                            ab = 1
+                            ac = 2
+                            eselyhat = randint(ab, ac)
+                            if eselyhat == ab:
+                                print('Sikerül eljutnia a kapuig')
+                                print('A kapunál az üzlettársa várja egy kocsival, sikerül megszöknie')
+                                if penz >= 100:
+                                    print('NYERT!')
+                                    print(f'A győztes játékos: {nev}')
+                                    exit()
+                                elif penz < 100:
+                                    print('Nincs elég pénze, megverik')
+                                    print('VÉGE!')
+                                    print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
+                                    lebukas += 100
+                                    exit()
+                            elif eselyhat == ac:
+                                print('Nem jut el a kapuig, elkapják')
                                 print('VÉGE!')
                                 print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                                 lebukas += 100
                                 exit()
-                        elif eselyhat == ac:
-                            print('Nem jut el a kapuig, elkapják')
+                        elif valasztizenharom == 2:
+                            print('Nincs elég pénze, megverik')
                             print('VÉGE!')
                             print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                             lebukas += 100
@@ -361,31 +373,43 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                 if valasztizenegy == 1:
                     print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                     print('Három ajánlatot kínál fel: ')
-                    print(f'\t 1 - Segít {nev}-nek kiszabadulni, és ha sikerül, akkor fizetnie kell neki 1000 Eurót.')
+                    print(f'\t 1 - Segít {nev}-nek kiszabadulni, és ha sikerül, akkor fizetnie kell neki 100 Eurót.')
                     print('\t 2 - Segít kiszökni, de utána le kell dolgoznia 100 órát az éttermében')
                     print('\t 3 - Ad neki egy eszközt, de nem segít a szökésben')
                     valasztizenketto = beker('Választás: ', 3)
                     if valasztizenketto == 1:
-                        print('A következő egy hétben minden nap a szökés tervén dolgoznak...')
-                        print('Elkészült a terv')
-                        ab = 1
-                        ac = 2
-                        eselyhat = randint(ab, ac)
-                        if eselyhat == ab:
-                            print('Sikerül eljutnia a kapuig')
-                            print('A kapunál az üzlettársa várja egy kocsival, sikerül megszöknie')
-                            if penz >= 1000:
-                                print('NYERT!')
-                                print(f'A győztes játékos: {nev}')
-                                exit()
-                            elif penz < 1000:
-                                print('Nincs elég pénze, megverik')
+                        print('Szeretné eladni a nem használt ruháit?')
+                        print('\t 1 - igen')
+                        print('\t 2 - nem')
+                        valasztizenharom = input('A válasz: ')
+                        if valasztizenharom == 1:
+                            print('+ 100 Euró')
+                            print('A következő egy hétben minden nap a szökés tervén dolgoznak...')
+                            print('Elkészült a terv')
+                            ab = 1
+                            ac = 2
+                            eselyhat = randint(ab, ac)
+                            if eselyhat == ab:
+                                print('Sikerül eljutnia a kapuig')
+                                print('A kapunál az üzlettársa várja egy kocsival, sikerül megszöknie')
+                                if penz >= 100:
+                                    print('NYERT!')
+                                    print(f'A győztes játékos: {nev}')
+                                    exit()
+                                elif penz < 100:
+                                    print('Nincs elég pénze, megverik')
+                                    print('VÉGE!')
+                                    print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
+                                    lebukas += 100
+                                    exit()
+                            elif eselyhat == ac:
+                                print('Nem jut el a kapuig, elkapják')
                                 print('VÉGE!')
                                 print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                                 lebukas += 100
                                 exit()
-                        elif eselyhat == ac:
-                            print('Nem jut el a kapuig, elkapják')
+                        elif valasztizenharom == 2:
+                            print('Nincs elég pénze, megverik')
                             print('VÉGE!')
                             print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                             lebukas += 100
@@ -663,35 +687,48 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
                     if valasztizenegy == 1:
                         print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                         print('Három ajánlatot kínál fel: ')
-                        print(f'\t 1 - Segít {nev}-nek kiszabadulni, és ha sikerül, akkor fizetnie kell neki 1000 Eurót.')
+                        print(f'\t 1 - Segít {nev}-nek kiszabadulni, és ha sikerül, akkor fizetnie kell neki 100 Eurót.')
                         print('\t 2 - Segít kiszökni, de utána le kell dolgoznia 100 órát az éttermében')
                         print('\t 3 - Ad neki egy eszközt, de nem segít a szökésben')
                         valasztizenketto = beker('Választás: ', 3)
                         if valasztizenketto == 1:
-                            print('A következő egy hétben minden nap a szökés tervén dolgoznak...')
-                            print('Elkészült a terv')
-                            ab = 1
-                            ac = 2
-                            eselyhat = randint(ab, ac)
-                            if eselyhat == ab:
-                                print('Sikerül eljutnia a kapuig')
-                                print('A kapunál az üzlettársa várja egy kocsival, sikerül megszöknie')
-                                if penz >= 1000:
-                                    print('NYERT!')
-                                    print(f'A győztes játékos: {nev}')
-                                    exit()
-                                elif penz < 1000:
-                                    print('Nincs elég pénze, megverik')
+                            print('Szeretné eladni a nem használt ruháit?')
+                            print('\t 1 - igen')
+                            print('\t 2 - nem')
+                            valasztizenharom = input('A válasz: ')
+                            if valasztizenharom == 1:
+                                print('+ 100 Euró')
+                                print('A következő egy hétben minden nap a szökés tervén dolgoznak...')
+                                print('Elkészült a terv')
+                                ab = 1
+                                ac = 2
+                                eselyhat = randint(ab, ac)
+                                if eselyhat == ab:
+                                    print('Sikerül eljutnia a kapuig')
+                                    print('A kapunál az üzlettársa várja egy kocsival, sikerül megszöknie')
+                                    if penz >= 100:
+                                        print('NYERT!')
+                                        print(f'A győztes játékos: {nev}')
+                                        exit()
+                                    elif penz < 100:
+                                        print('Nincs elég pénze, megverik')
+                                        print('VÉGE!')
+                                        print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
+                                        lebukas += 100
+                                        exit()
+                                elif eselyhat == ac:
+                                    print('Nem jut el a kapuig, elkapják')
                                     print('VÉGE!')
                                     print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                                     lebukas += 100
                                     exit()
-                            elif eselyhat == ac:
-                                print('Nem jut el a kapuig, elkapják')
+                            elif valasztizenharom == 2:
+                                print('Nincs elég pénze, megverik')
                                 print('VÉGE!')
                                 print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                                 lebukas += 100
                                 exit()
+                            
                         elif valasztizenketto == 2:
                             print('A következő egy hétben minden nap a szökés tervén dolgoznak...')
                             print('Elkészült a terv')
@@ -746,31 +783,43 @@ def kulcsketto(nev, egeszseg, energia, lebukas, penz):
             if valasztizenegy == 1:
                 print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                 print('Három ajánlatot kínál fel: ')
-                print(f'\t 1 - Segít {nev}-nek kiszabadulni, és ha sikerül, akkor fizetnie kell neki 1000 Eurót.')
+                print(f'\t 1 - Segít {nev}-nek kiszabadulni, és ha sikerül, akkor fizetnie kell neki 100 Eurót.')
                 print('\t 2 - Segít kiszökni, de utána le kell dolgoznia 100 órát az éttermében')
                 print('\t 3 - Ad neki egy eszközt, de nem segít a szökésben')
                 valasztizenketto = beker('Választás: ')
                 if valasztizenketto == 1:
-                    print('A következő egy hétben minden nap a szökés tervén dolgoznak...')
-                    print('Elkészült a terv')
-                    ab = 1
-                    ac = 2
-                    eselyhat = randint(ab, ac)
-                    if eselyhat == ab:
-                        print('Sikerül eljutnia a kapuig')
-                        print('A kapunál az üzlettársa várja egy kocsival, sikerül megszöknie')
-                        if penz >= 1000:
-                            print('NYERT!')
-                            print(f'A győztes játékos: {nev}')
-                            exit()
-                        elif penz < 1000:
-                            print('Nincs elég pénze, megverik')
+                    print('Szeretné eladni a nem használt ruháit?')
+                    print('\t 1 - igen')
+                    print('\t 2 - nem')
+                    valasztizenharom = input('A válasz: ')
+                    if valasztizenharom == 1:
+                        print('+ 100 Euró')
+                        print('A következő egy hétben minden nap a szökés tervén dolgoznak...')
+                        print('Elkészült a terv')
+                        ab = 1
+                        ac = 2
+                        eselyhat = randint(ab, ac)
+                        if eselyhat == ab:
+                            print('Sikerül eljutnia a kapuig')
+                            print('A kapunál az üzlettársa várja egy kocsival, sikerül megszöknie')
+                            if penz >= 100:
+                                print('NYERT!')
+                                print(f'A győztes játékos: {nev}')
+                                exit()
+                            elif penz < 100:
+                                print('Nincs elég pénze, megverik')
+                                print('VÉGE!')
+                                print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
+                                lebukas += 100
+                                exit()
+                        elif eselyhat == ac:
+                            print('Nem jut el a kapuig, elkapják')
                             print('VÉGE!')
                             print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                             lebukas += 100
                             exit()
-                    elif eselyhat == ac:
-                        print('Nem jut el a kapuig, elkapják')
+                    elif valasztizenharom == 2:
+                        print('Nincs elég pénze, megverik')
                         print('VÉGE!')
                         print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
                         lebukas += 100
