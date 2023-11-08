@@ -1,4 +1,6 @@
+import stats
 from safe_input import beker
+
 
 def telefon_vagy_level(nev):
     print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
@@ -6,13 +8,11 @@ def telefon_vagy_level(nev):
     if valasztott_ember == 1:
         print(f'A tesvérében bízik {nev}, ezért jól választottál!')
         print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
-        megbeszeles = beker('Válaszd ki, hogy hol kérje meg a tesvérét, 1-est ha telefonon és 2-est, ha levélben.')
-    elif valasztott_ember == 2:
-        print(f'{nev}-nek reménykednie kell, hogy a barátja, akiben ő bízik nem adja fel a rendőröknek.')
-        print(f'Szerencséje van, mivel a barátja nem adja fel, és benne van hogy segít {nev}-nek.')
-        print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
-        megbeszeles = beker('Válaszd ki, hogy hol kérje meg a barátját, 1-est ha telefonon és 2-est, ha levélben.')
-    return megbeszeles
+        return beker('Válaszd ki, hogy hol kérje meg a tesvérét, 1-est ha telefonon és 2-est, ha levélben.')
+    print(f'{nev}-nek reménykednie kell, hogy a barátja, akiben ő bízik nem adja fel a rendőröknek.')
+    print(f'Szerencséje van, mivel a barátja nem adja fel, és benne van hogy segít {nev}-nek.')
+    print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
+    return beker('Válaszd ki, hogy hol kérje meg a barátját, 1-est ha telefonon és 2-est, ha levélben.')
 
 
 def baratno(nev):
@@ -52,13 +52,13 @@ def kapu(nev):
         exit()
 
 
-def vago(nev, egeszseg, energia, lebukas, penz):
+def vago(nev):
     print(f'A vágásos szökésimódot választottad {nev}-nek')
     print(f'Az első lépés a szökés irányában, hogy hogyan szerezze meg {nev} a vágóeszközt, amivel majd átvágja magát')
     print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
     elso = beker('Válassz helyette! Írj be 1-est, ha be szeretné, hogy valaki csempéssze be neki, de ha lebukik vége és 2-est ha saját maga vegyen a börtönben, de ahhoz pénz kell! ')
     if elso == 1:
-        lebukas = csempesz(lebukas, nev)
+        csempesz(nev)
 
     elif elso == 2:
         print('Így sokkal kisebb a lebukási esély, de pénzt kell szereznie az elitéltnek!')
@@ -69,12 +69,13 @@ def vago(nev, egeszseg, energia, lebukas, penz):
             print(f'{nev} összegyűjtötte a szügséges pénzmennyiséget')
         elif penzkeresetimod == 2:
             print(f'{nev} hamar eladja nem használt dolgait, így meg tudja venni a vágóeszközt')
-        penz += 25
+        stats.penz += 25
         print(f'Most meg kell vennie {nev}-nek a csípőfogót, ami 175 euro.')
 
-    szokes(nev, penz, lebukas)
+    szokes(nev)
 
-def szokes(nev, penz, lebukas):
+
+def szokes(nev):
     print('Miután megvette a csípőfogót még aznap este megpróbál megszökni.')
     print(f'Sikeresen kilopózott az udvarra, de most el kell jutni a kerítésig,  úgy, hogy az őr nem veszi észre.')
     print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
@@ -87,9 +88,10 @@ def szokes(nev, penz, lebukas):
         exit()
     elif fut_vagy_kuszas == 2:
         print('Jól döntöttél, mivel eljutott a kapuig, és így más csak el kell vágni a kerítést.')
-    kapu_atvagasa(nev, penz, lebukas)
+    kapu_atvagasa(nev)
 
-def kapu_atvagasa(nev, penz, lebukas):
+
+def kapu_atvagasa(nev):
     print('ELkezdte vágni a kerítést és hamar vágott magának egy lyukat, amin már átfér.')
     print('Azonban a két kerítés között szögesdrót van.')
     print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
@@ -108,17 +110,14 @@ def kapu_atvagasa(nev, penz, lebukas):
         exit()
 
 
-
-
-def csempesz(lebukas, nev):
+def csempesz(nev):
     print(f'{nev}-nek ügyenie kell az őrökre, mivel, ha észreveszik, vagy megtalálják nála vége a játéknak!')
     megbeszeles = telefon_vagy_level(nev)
     if megbeszeles == 1:
-        lebukas = telefon(lebukas, megbeszeles, nev)
-    return lebukas
+        telefon(megbeszeles, nev)
 
 
-def telefon(lebukas, megbeszeles, nev):
+def telefon(megbeszeles, nev):
     print('Reménykedniük kell, hogy ne hallgassák le a telefont.')
     print(f'A megpróbálja becsempészni {nev}-nek a csípőfogót.')
     print(f'Sikeresen becsempészte a börtön területére a csípőfogót, és most átadta {nev}-nek.')
@@ -132,18 +131,17 @@ def telefon(lebukas, megbeszeles, nev):
         print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
         exit()
     elif dobas_vagy_maradas == 2:
-        lebukas = marad(lebukas, nev)
+        marad(nev)
 
     elif megbeszeles == 2:
         print('Ez egy biztonságosabb mód, de lassabban ér oda az üzenet.')
         print(f'A valasztott személy megpróbálja becsempészni {nev}-nek a csípőfogót.')
-    return lebukas
 
 
-def marad(lebukas, nev):
+def marad(nev):
     print('Odaért a motozáshoz, és az őr gyanut fogott a viselkedéséből és...')
     print(f'{nev}-nek szerencséje volt mivel nem találták meg nála a csípőfogt a motozás során. Bevitte a cellájába, és ott elrejtette.')
-    lebukas += 10
+    stats.lebukas += 10
     print(f'Most ki kellene választania {nev}-nek, hogy mikor szeretne kiszabadulni')
     print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
     idopont = beker('Írjon be 1-est ha, akkor amikor éppen nézik a rabok a TV-t és hangoskodnak, így senki sem fog rá figyelni és 2-est, ha egy este amikor már mindenki alszik. ')
@@ -151,7 +149,6 @@ def marad(lebukas, nev):
         tv(nev)
     elif idopont == 2:
         este(nev)
-    return lebukas
 
 
 def este(nev):

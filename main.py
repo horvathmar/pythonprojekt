@@ -20,7 +20,7 @@ def main():
     if valasz == 1:
         kulcsketto(nev, egeszseg, energia, lebukas, penz)
     elif valasz == 2:
-        vago(nev, egeszseg, energia, lebukas, penz)
+        vago(nev)
     elif valasz == 3:
         aso(nev)
 
