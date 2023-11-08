@@ -30,6 +30,8 @@ body{
     width: 200px;
     margin-right: 100px;
     float: right;
+    margin-left: 100px;
+    margin-bottom: 100px;
 }
 .gomb:hover{
     background-color: rgb(10, 9, 9);
@@ -39,4 +41,10 @@ body{
 }
 .navbar-toggler-icon{
     filter: invert(1);
+}
+.kepek{
+    width: 75%;
+    margin-top: 100px;
+    margin-left: 20px;
+    margin-bottom: 100px;
 }
