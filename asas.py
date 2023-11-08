@@ -160,7 +160,7 @@ def aso(nev):
                         stats.line()
                         stats.print_stats()
                         stats.energia -= 2
-                        print('Gondolkodsz azon, hogyha csak egy picivel is óvtosabb lettél volna, el tudtad volna csempészni mellette')
+                        print('Gondolkodsz azon, hogyha csak egy picivel is óvatosabb lettél volna, el tudtad volna csempészni mellette')
                         print('\t 1 - Áhh, majd máskor visszatérek erre')
                         print('\t 2 - Hajrá, megbízok az ösztöneimben, menni fog ez mint az 1x1')
                         ujra = beker('Mi a következő lépésed az alábbiak közül')
@@ -455,8 +455,8 @@ def vodor():
     print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
     stats.print_stats()
     print('Már csak egy vödröt és szögeket kell szereznek, de honnan is kéne szerezni olyat?')
-    print('\t Átkutatod, mi van körülötted')
-    print('\t Elkéred egy társadtól, mert vannak az ágya alatt ilyenek(for some reason)')
+    print('\t 1 - Átkutatod, mi van körülötted')
+    print('\t 2 - Elkéred egy társadtól, mert vannak az ágya alatt ilyenek(for some reason)')
     kellkeves = beker('Mi lenne a TE választásod')
     if kellkeves == 1:
         print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
