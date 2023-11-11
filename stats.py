@@ -2,6 +2,9 @@ egeszseg = 10
 energia = 10
 lebukas = 0
 penz = 100
+ruha = 0
+fegyver = 0
+
 
 
 def print_stats():

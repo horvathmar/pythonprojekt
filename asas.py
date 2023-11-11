@@ -5,6 +5,8 @@ from safe_input import beker
 nyel = 0
 nyel2 = 0
 vodszog = 0
+vodor = 0
+szogek = 0
 
 
 def aso(nev):
@@ -93,55 +95,6 @@ def aso(nev):
                                 print('Inkább visszafordulsz, még átgondolod ezt')
                                 stats.energia -= 2
                                 return ide
-                            # stats.line()
-                            # stats.print_stats()
-                            # print('Másnap ismét meglátod a rácsok közt bevilágító napfényt, és kikelsz az ágyból')
-                            # print('\t 1 - Elmész a nyél után keresni')
-                            # print('\t 2 - Rákérdezel a cellatársadra, hátha tud valami módot')
-                            # tarsas1 = beker('Hogyan cselekszel: ')
-                            # stats.energia += 2
-                            # if tarsas1 == 1:
-                            #     stats.line()
-                            #     stats.print_stats()
-                            #     stats.energia -= 2
-                            #     print('Bizonytalanul továbbmész, de meglátsz egy őrt, és megtorpansz')
-                            #     print('\t 1 - Tovább menni, el az őr mellett úgy kinézve mintha tudnád merre mész')
-                            #     print('\t 2 - Visszafordulni, és inkább a cellatársadnál rákérdezni, majd követni utasításait')
-                            #     visszafele = beker('Válassz: ')
-                            #     if visszafele == 1:
-                            #         random3 = randint(1, 2)
-                            #         if random3 == 1:
-                            #             stats.line()
-                            #             stats.print_stats()
-                            #             stats.energia -= 2
-                            #             ajtok = ajtok_beker(False)
-                            #             ajtok_kezel(ajtok, )
-                            #         if random3 == 2:
-                            #             print('Az úr megállított téged, és visszaküldött a cellába')
-                            #             stats.energia -= 2
-                            #     if visszafele == 2:
-                            #         print('Visszatérsz a társadhoz, hogy meglásd, ő mit mondd')
-                            #         stats.line()
-                            #         stats.print_stats()
-                            #         stats.energia -= 2
-                            #         ajtok = ajtok_beker()
-                            #         ajtok_kezel(ajtok, )
-                            # else:
-                            #     stats.line()
-                            #     stats.print_stats()
-                            #     stats.energia -= 2
-                            #     ajtok = ajtok_beker()
-                            #     ajtok_kezel(ajtok, )
-                        # if random3 == 2:
-                        #     stats.line()
-                        #     print('Az úr megállított téged, és visszaküldött a cellába')
-                        #     stats.energia -= 2
-                        # else:
-                        #     print('Azt mondja, hogy van a folyosó végén 3 ajtó, és semmilyen körülmények között ne menj be a másodikba')
-                        #     stats.energia -= 2
-                        #     return ajtok == 1
-                        # if nyel2 == 1:
-                        #     vodor()
                 else:
                     stats.lebukas += 4
                     stats.energia -= 2
@@ -470,3 +423,39 @@ def vodor():
             print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
             print('Nagyon sajnálom barátom, de ezt beszoptad, a cellatársad beköpött téged, vesztettél')
     exit(0)
+
+def shop():
+    print.stats
+    print('Üdvözöllek Ezüstfogú Károly boltjában, gyorsan válassz, aztán tűnés innen')
+    print('1 - Egy nagy tál leves +3 enegiát ad')
+    print('Ára : 200')
+    print('2 - Egy teljes rendőr álöltözetm, amellyel van esélyed bevegyülni')
+    print('Ára : 800 Ft')
+    print('3 - Egy vödör, az ásó egyik alkatrésze')
+    print('Ára : 300 Ft')
+    print('4 - Egy fa nyél, az ásó egyik alkatrésze')
+    print('Ára : 400 Ft')
+    print('5 - Pár darab szög, az ásó egyik alkatrésze')
+    print('Ára : 300 Ft')
+    print('6 - Egy kis pisztoly, ki tudja mire lehet még jó')
+    print('Ára : 900 Ft')
+    bolt_one = beker('Mit szeretnél vásárolni: ')
+    if bolt_one == 1:
+        print('Megvetted a levest, + 3 energia')
+        stats.energia += 1
+    elif bolt_one == 2:
+        print('Megvásároltad a ruhát')
+        print('És most tűnj innen, mielőtt mindkettőnket meglátnak')
+        stats.ruha += 1
+    elif bolt_one == 3:
+        print('Megszerezted a vödröt, ami az ásó egyik alkatrésze, ha kicsit hajlítgatod')
+        vodor += 1
+    elif bolt_one == 4:
+        print('Megvetted az ásónak a nyelét, ')
+        nyel += 1
+    elif bolt_one == 5:
+        print('Megvetted az összeszereléshez szükséges egy felszerelést, amivel rögzíthetsz alkatrészeket egymáshoz')
+        szogek += 1
+    elif bolt_one == 6:
+        print('Megvetted a pisztolyt, csak okosan vele, ki tudja mire tudod majd használni')
+        fegyver += 1
