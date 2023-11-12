@@ -8,11 +8,12 @@ fegyver = 0
 
 
 def print_stats():
-    print(f'HP: {egeszseg}/10')
-    print(f'Energia: {energia}/10')
-    print(f'Lebukás esélye: {lebukas}/10')
-    print(f'Pénzed: {penz} Ft')
-
+    print('-------------------------------')
+    print(f'HP: \t\t\t{egeszseg}/10')
+    print(f'Energia: \t\t{energia}/10')
+    print(f'Lebukás esélye: \t{lebukas}/10')
+    print(f'Pénzed: \t\t{penz}Ft')
+    print('-------------------------------')
 
 def line():
     print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
