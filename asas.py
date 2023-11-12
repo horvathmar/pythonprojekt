@@ -54,7 +54,7 @@ def masnap(tarsas1, visszafele, ajtok):
             stats.energia -= 2
             ajtok_beker()
 
-def kerdojel():
+def kerdojel(tarsas1, visszafele, ajtok):
     os.system('cls')
     stats.lebukas += 4
     stats.energia -= 2
@@ -83,7 +83,7 @@ def kerdojel():
             os.system('cls')
             print('Visszakullogsz szemlesújtva a celládba')
             stats.energia -= 2
-            masnap()
+            masnap(tarsas1, visszafele, ajtok)
         else:
             hiszipiszi = randint(1, 2)
             if hiszipiszi == 1:
@@ -238,7 +238,33 @@ def ajtok_beker(told=True):
     ajtok = beker('Melyik ajtót választod: ')
     return ajtok
 
-def sarok(energia, stats, egeszseg):
+def vodor(vodor):
+    stats.energia -= 2
+    os.system('cls')
+    print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
+    stats.print_stats()
+    print('Már csak egy vödröt és szögeket kell szereznek, de honnan is kéne szerezni olyat?')
+    print('\t 1 - Átkutatod, mi van körülötted')
+    print('\t 2 - Elkéred egy társadtól, mert vannak az ágya alatt ilyenek(for some reason)')
+    kellkeves = beker('Mi lenne a TE választásod: ')
+    if kellkeves == 1:
+        os.system('cls')
+        print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
+        print('Találtál amit kell, gratulálok, összeraktad és kijutottál')
+    else:
+        os.system('cls')
+        picirandom = randint(1, 2)
+        if picirandom == 1:
+            os.system('cls')
+            print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
+            print('Látta egyik társad hogy miben settenkedsz, de együttérzett veled és nem árult be, NYERTÉL')
+        else:
+            os.system('cls')
+            print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
+            print('Nagyon sajnálom barátom, de ezt beszoptad, a cellatársad beköpött téged, vesztettél')
+    exit(0)
+
+def sarok(energia, stats, egeszseg, vodor):
     os.system('cls')
     stats.lebukas += 4
     stats.energia -= 2
@@ -344,32 +370,6 @@ def sarok(energia, stats, egeszseg):
                     print('Inkább visszafordulsz, még átgondolod ezt')
                     stats.energia -= 2                    
 
-def vodor():
-    stats.energia -= 2
-    os.system('cls')
-    print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
-    stats.print_stats()
-    print('Már csak egy vödröt és szögeket kell szereznek, de honnan is kéne szerezni olyat?')
-    print('\t 1 - Átkutatod, mi van körülötted')
-    print('\t 2 - Elkéred egy társadtól, mert vannak az ágya alatt ilyenek(for some reason)')
-    kellkeves = beker('Mi lenne a TE választásod: ')
-    if kellkeves == 1:
-        os.system('cls')
-        print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
-        print('Találtál amit kell, gratulálok, összeraktad és kijutottál')
-    else:
-        os.system('cls')
-        picirandom = randint(1, 2)
-        if picirandom == 1:
-            os.system('cls')
-            print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
-            print('Látta egyik társad hogy miben settenkedsz, de együttérzett veled és nem árult be, NYERTÉL')
-        else:
-            os.system('cls')
-            print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
-            print('Nagyon sajnálom barátom, de ezt beszoptad, a cellatársad beköpött téged, vesztettél')
-    exit(0)
-
 def introduction(nev, egeszseg, valasztott1):
     print(f'"{nev}" elhatározta, hogy ki fog ásni a börtönből, aminek végrehajtásához egy ásót kell megszereznie.')
     print('A játék során te fogod irányítani minden választását, sok sikert!')
@@ -420,7 +420,7 @@ def valasztott_2(nev, valasztott1, sarok, egeszseg):
             print('\t 2 - Kilépés')
             terv2 = beker('Válassz, mit tegyen: ')
             if terv2 == 1:
-                sarok(energia, stats, egeszseg)
+                sarok(energia, stats, egeszseg, vodor)
             else:
                 os.system('cls')
                 print('Köszönjük, hogy kipróbáltad')
