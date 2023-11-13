@@ -4,7 +4,8 @@ from random import randint
 from safe_input import beker
 import os
 
-
+ruha = 0
+fegyver = 0
 nyel = 0
 vodor = 0
 szogek = 0
@@ -278,153 +279,87 @@ def vodro():
             print('Nagyon sajnálom barátom, de ezt beszoptad, a cellatársad beköpött téged, vesztettél')
     exit(0)
 
-def sarok(energia, stats, egeszseg, vodor, fegyver):
-    stats.lebukas += 4
-    stats.energia -= 2
+def folyoso_vodor(stats, energia, egeszseg, vodor, fegyver, nev):
+    os.system('cls')
     stats.line()
     stats.print_stats()
-    folyoso = randint(1,2)
-    if folyoso == 1:
-        energia -= 2
-        print('Az egyik sarokban találsz egy nyelet,gyorsan felkapod, és elindulsz visszafelé, amilyen halkan csak tudsz')
-        print('Egy őr észrevesz, és megkérdőjelezi, hogy mit csinálsz itt, egy random fa nyéllel a kezedben')
-        print('\t 1 - Letagadod(egy cellatársnak viszed, eltört a felmosó nyele)')
-        print('\t 2 - Elnézést kérsz mielőtt agyonverne, és szépen visszahelyezed ahonnan hoztad')
-        orocske = beker('Mit szeretnél tenni')
-        if orocske == 1:
+    stats.energia -= 2
+    print('Miközben a folyosókon kúszol, szembetalálkozol egy felmosóvödröt, a kezedbe veszed')
+    print('\n')
+    print('Gratulálok, megszerezted a vödröt')
+    vodor += 1
+    print('\n')
+    print('Több lehetőséged is van a továbbhaladásra')
+    print('\t 1 - Folytatom')
+    print('\t 2 - Visszatérek a cellába')
+    print('\t 3 - A helyi feketén működő bolt meglátogatása')
+    print('\t 4 - úgy döntesz, öngyilkos leszel')
+    nyel = beker('Mit választasz következő lépésnek: ')
+    if nyel == 3:
+            shop()
+    elif nyel == 4:
+            print('Egy pisztolyra van szükség arra, hogy ezt megtedd')
+            if fegyver == 1:
+                print(f'{nev}-Viszlát világ, kiáltja {nev}, majd meghúzza a ravaszt')  
+            else: 
+                print('Szeretnél most ellátogatni a boltba, fegyvert venni')
+    elif nyel == 1:
+        os.system('cls')
+        stats.line()
+        print('A kezedben lévő vödör többször is megzörrent, meghallottak, és elkaptak, VESZTETTÉL')
+        exit(0)
+    else:
+        os.system('cls')
+        stats.line()
+        stats.print_stats()
+        print('Másnap reggel csodás napra ébredsz, és azt véled feldefedezni hogy a cellatársad éppen a padlót mossa fel')
+        print('Eszedbe jut a gondolat, miszerint ha letöröd a végét a felmósonak, lesz egy nyeled')
+        print('\t 1 - Letöröd')
+        print('\t 2 - Inkább békén hagyod')
+        tores = beker('Hogyan cselekszel társadat látván: ')
+        if tores == 1:
+            os.system('cls')
             stats.line()
-            print('Ez bevállt, elhitte neked, megszerezted a nyelet')
-            vodro()
+            print('Sajnos amikor ezt cselekedted, észreveszed, hogy a hozzátok közeli őr közeledik a cellátok felé')
+            print('\t 1 - felveszed az ál rendőrruhádat, amivel van esélyed eltusolni az ügyet, ha kilépsz benne a folyosóra, és csak normálisan viselkedsz')
+            print('\t 2 - Előveszed a fegyvered   ')
+            
         else:
             os.system('cls')
             stats.line()
             stats.print_stats()
             stats.energia -= 2
-            print('Gondolkodsz azon, hogyha csak egy picivel is óvatosabb lettél volna, el tudtad volna csempészni mellette')
-            print('\t 1 - Áhh, majd máskor visszatérek erre')
-            print('\t 2 - Hajrá, megbízok az ösztöneimben, menni fog ez mint az 1x1')
-            ujra = beker('Mi a következő lépésed az alábbiak közül')
-            if ujra == 1:
-                os.system('cls')
-                print('Visszakullogsz szemlesújtva a celládba')
-                masnap()
-           
-            elif ujra == 2:
-                hiszipiszi = randint(1, 2)
-                if hiszipiszi == 1:
+            print('Mostanára legalábbis békénhagytad, de beugrott, hogy mintha a raktárban tartanának néhány pót rudat, azt fel tudnád használni nyélként')
+            print('\t 1 - Még átgondolni')
+            print('\t 2 - Irány, azt hiszem jó a memóriám')
+            memoria = beker('Miként választasz:')
+            if memoria == 2:
+                memorandom = randint(1,3)
+                if memorandom == 1:
                     os.system('cls')
                     stats.line()
-                    print('Második próbálkozásodkor is rajtakapott, de ezúttal nem volt olyan elnéző')
-                    print('Rendesen elvert téged egy gumibottal, majd visszaküldött a celládba')
-                    egeszseg -= 5
-                    masnap()
-            elif ujra == 3:
-                shop()
-            elif ujra == 4:
-                print('Egy pisztolyra van szükség arra, hogy ezt megtedd')
-                if fegyver == 1:
-                    print(f'-Viszlát világ, kiáltja {nev}, majd meghúzza a ravaszt')
-            else:
-                os.system('cls')
-                stats.line()
-                print('Gratulálok, megszerezted a nyelet')
-                nyel2 += 1
-                stats.energia -= 2
-                vodro()
-                if nyel == 1 and vodor == 1 and szogek == 1:
-                    os.system('cls')
-                    print('Ezt a kettőt összeeszkabáltad, gratulálok, NYERTÉL')
+                    print('ÉS tényleg jól emlékeztél, megszerezted, összeszerelted és kijutottál, NYERTÉL')
                     exit(0)
-            else:
-            hiszipiszi = randint(1, 2)
-            if hiszipiszi == 1:
-                os.system('cls')
-                stats.line()
-                print('Második próbálkozásodkor is rajtakapott, de ezúttal nem volt olyan elnéző')
-                print('Rendesen elvert téged egy gumibottal, majd visszaküldött a celládba')
-                egeszseg -= 5
-                masnap()
-                else:
+                elif memorandom == 2:
                     os.system('cls')
                     stats.line()
-                    print('Gratulálok, megszerezted a nyelet')
-                    nyel2 += 1
-                    stats.energia -= 2
-                    vodro()
-                    if nyel == 1 and vodor == 1 and szogek == 1:
-                        os.system('cls')
-                        print('Ezt a kettőt összeeszkabáltad, gratulálok, NYERTÉL')
-                        exit(0)
-    else:
-        os.system('cls')
-        stats.line()
-        stats.print_stats()
-        stats.energia -= 2
-        print('Miközben a folyosókon kúszol, szembetalálkozol egy felmosóvödröt, a kezedbe veszed')
-        print('\n')
-        print('Gratulálok, megszerezted a vödröt')
-        vodor += 1
-        print('\n')
-        print('Elmész a nyél, és szögek után is kutatni, vagy inkább mára abbahagyod a császkálást?')
-        print('\t 1 - Folytatom')
-        print('\t 2 - Visszatérek a cellába')
-        nyel = beker('Mit választasz következő lépésnek: ')
-        if nyel == 1:
-            os.system('cls')
-            stats.line()
-            print('A kezedben lévő vödör többször is megzörrent, meghallottak, és elkaptak, VESZTETTÉL')
-            exit(0)
-        else:
-            os.system('cls')
-            stats.line()
-            stats.print_stats()
-            print('Másnap reggel csodás napra ébredsz, és azt véled feldefedezni hogy a cellatársad éppen a padlót mossa fel')
-            print('Eszedbe jut a gondolat, miszerint ha letöröd a végét a felmósonak, lesz egy nyeled')
-            print('\t 1 - Letöröd')
-            print('\t 2 - Inkább békén hagyod')
-            tores = beker('Hogyan cselekszel társadat látván: ')
-            if tores == 1:
-                os.system('cls')
-                stats.line()
-                print('Sajnos amikor ezt cselekedted, észreveszed, hogy a hozzátok közeli őr közeledik a cellátok felé')
-                print('\t 1 - felveszed az ál rendőrruhádat, amivel van esélyed eltusolni az ügyet, ha kilépsz benne a folyosóra, és csak normálisan viselkedsz')
-                print('\t 2 - Előveszed a fegyvered   ')
-                
+                    print('ÉS tényleg jól emlékeztél, megszerezted, összeszerelted és kijutottál, NYERTÉL')
+                    exit(0)
+                elif memorandom == 3:
+                    os.system('cls')
+                    stats.line()
+                    print('Az odavezető úton őrőket vélsz felfedezni')
+                    terv2_kezel(nev)
             else:
                 os.system('cls')
                 stats.line()
-                stats.print_stats()
+                stats.print.stats()
+                print('Inkább visszafordulsz, még átgondolod ezt')
                 stats.energia -= 2
-                print('Mostanára legalábbis békénhagytad, de beugrott, hogy mintha a raktárban tartanának néhány pót rudat, azt fel tudnád használni nyélként')
-                print('\t 1 - Még átgondolni')
-                print('\t 2 - Irány, azt hiszem jó a memóriám')
-                memoria = beker('Miként választasz:')
-                if memoria == 2:
-                    memorandom = randint(1,3)
-                    if memorandom == 1:
-                        os.system('cls')
-                        stats.line()
-                        print('ÉS tényleg jól emlékeztél, megszerezted, összeszerelted és kijutottál, NYERTÉL')
-                        exit(0)
-                    elif memorandom == 2:
-                        os.system('cls')
-                        stats.line()
-                        print('ÉS tényleg jól emlékeztél, megszerezted, összeszerelted és kijutottál, NYERTÉL')
-                        exit(0)
-                    elif memorandom == 3:
-                        os.system('cls')
-                        stats.line()
-                        print('Az odavezető úton őrőket vélsz felfedezni')
-                        terv2_kezel(nev)
-                else:
-                    os.system('cls')
-                    stats.line()
-                    stats.print.stats()
-                    print('Inkább visszafordulsz, még átgondolod ezt')
-                    stats.energia -= 2
-                    masnap()    
+                masnap()  
+ 
 
-def introduction(nev, egeszseg, valasztott1):
+def introduction(nev, egeszseg, valasztott1, folyoso_nyel, folyoso_vodor):
     os.system('cls')
     print(f'"{nev}" elhatározta, hogy ki fog ásni a börtönből, aminek végrehajtásához egy ásót kell megszereznie, vagy összeraknia')
     print('A játék során te fogod irányítani minden választását, sok sikert!')
@@ -436,7 +371,7 @@ def introduction(nev, egeszseg, valasztott1):
     if valasztott1 == 1:
         valasztott_1(nev, valasztott1, terv1_kezel, terv2_kezel)
     else:
-        valasztott_2(nev, valasztott1, sarok, egeszseg)
+        valasztott_2(nev, valasztott1, folyoso_nyel, folyoso_vodor, egeszseg, fegyver)
 
 def introduction_2():
     print('Másnap reggel felkelsz, és bevilágítanak a napnak sugarai a cella rácsain keresztül')
@@ -464,14 +399,18 @@ def valasztott_1(nev, valasztott1, terv1_kezel, terv2_kezel):
         if terv == 2:
             terv2_kezel(nev)       
 
-def valasztott_2(nev, valasztott1, sarok, egeszseg):
+def valasztott_2(nev, valasztott1, folyoso_nyel, folyoso_vodor, egeszseg, fegyver):
         if valasztott1 == 2:
             os.system('cls')
             stats.line()
             print(f'"{nev}" úgy döntött, hogy maga fog el készíteni egy ásót, amivel majd utána kiáshatja magát')
             print('Ehhez három dologra van szüksége: vödör, szögek, nyél')
             print('Sok sikert a játékhoz!')
-            sarok(energia, stats, egeszseg, vodor)
+            v_or_ny = randint(1,2)
+            if v_or_ny == 1:
+                folyoso_nyel(energia, stats, egeszseg, vodor, nev, fegyver)
+            else:
+                folyoso_vodor(energia, stats, egeszseg, vodor, fegyver, nev)
 
 def shop():
     os.system('cls')
@@ -509,3 +448,60 @@ def shop():
     elif bolt_one == 6:
         print('Megvetted a pisztolyt, csak okosan vele, ki tudja mire tudod majd használni')
         fegyver += 1
+
+def folyoso_nyel(energia, stats, egeszseg, vodor, fegyver, nev, tarsas1, visszafele, ajtok):
+    stats.lebukas += 4
+    stats.energia -= 2
+    stats.line()
+    stats.print_stats()
+    folyoso = randint(1,2)
+    if folyoso == 1:
+        energia -= 2
+        print('Az egyik sarokban találsz egy nyelet,gyorsan felkapod, és elindulsz visszafelé, amilyen halkan csak tudsz')
+        print('Egy őr észrevesz, és megkérdőjelezi, hogy mit csinálsz itt, egy random fa nyéllel a kezedben')
+        print('\t 1 - Letagadod(egy cellatársnak viszed, eltört a felmosó nyele)')
+        print('\t 2 - Elnézést kérsz mielőtt agyonverne, és szépen visszahelyezed ahonnan hoztad')
+        orocske = beker('Mit szeretnél tenni')
+        if orocske == 1:
+            stats.line()
+            print('Ez bevállt, elhitte neked, megszerezted a nyelet')
+            vodro()
+        else:
+            os.system('cls')
+            stats.line()
+            stats.print_stats()
+            stats.energia -= 2
+            print('Gondolkodsz azon, hogyha csak egy picivel is óvatosabb lettél volna, el tudtad volna csempészni mellette')
+            print('\t 1 - Áhh, majd máskor visszatérek erre')
+            print('\t 2 - Hajrá, megbízok az ösztöneimben, menni fog ez mint az 1x1')
+            ujra = beker('Mi a következő lépésed az alábbiak közül')
+            if ujra == 1:
+                os.system('cls')
+                print('Visszakullogsz szemlesújtva a celládba')
+                masnap(tarsas1, visszafele, ajtok)
+            elif ujra == 2:
+                hiszipiszi = randint(1, 2)
+                if hiszipiszi == 1:
+                    os.system('cls')
+                    stats.line()
+                    print('Második próbálkozásodkor is rajtakapott, de ezúttal nem volt olyan elnéző')
+                    print('Rendesen elvert téged egy gumibottal, majd visszaküldött a celládba')
+                    egeszseg -= 5
+                    masnap()
+                else: 
+                    os.system('cls')
+                    stats.line()
+                    print('Gratulálok, megszerezted a nyelet')
+                    nyel2 += 1
+                    stats.energia -= 2
+                    vodro()
+                    if nyel == 1 and vodor == 1 and szogek == 1:
+                        os.system('cls')
+                        print('Ezt a kettőt összeeszkabáltad, gratulálok, NYERTÉL')
+                        exit(0)
+            elif ujra == 3:
+                shop()
+            elif ujra == 4:
+                print('Egy pisztolyra van szükség arra, hogy ezt megtedd')
+                if fegyver == 1:
+                    print(f'{nev}-Viszlát világ, kiáltja {nev}, majd meghúzza a ravaszt')
