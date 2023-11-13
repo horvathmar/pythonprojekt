@@ -18,6 +18,7 @@ def telefon_vagy_level(nev):
 def baratno(nev):
     print('Vigyázz! Ne bízz teljesen a barátnődben, nehogy eláruljon.')
     stats.line()
+    print('Miután kiért az udvarra, hogyan jusson el a kerítésig?')
     opcio = beker('1 - kúszva menjek el a keríésig, és 2 - futva, mert úgy gyorsabb. ')
     if opcio == 1:
         kapu(nev)
@@ -31,7 +32,7 @@ def baratno(nev):
 
 def kapu(nev):
     print(f'Jól döntöttél, sikeresen eljutott {nev} a kapuig.')
-    print('Nyugodtan vághatja a kaput, mivel nem hallják a többi rab miatt.')
+    print('Nyugodtan vághatja a kaput, mivel nem hallják az őrök.')
     print(f'Két kerítés van, közöttük a földön szögesdrót. Mit tegyen {nev}?')
     stats.line()
     dontes = beker('1-est ha vágja el, 2-est ha menjen át rajta. ')
@@ -120,10 +121,11 @@ def csempesz(nev):
 def telefon(megbeszeles, nev):
     print('Reménykedniük kell, hogy ne hallgassák le a telefont.')
     print(f'A megpróbálja becsempészni {nev}-nek a csípőfogót.')
+    print('......')
     print(f'Sikeresen becsempészte a börtön területére a csípőfogót, és most átadta {nev}-nek.')
     print(f'AMikor azonban {nev} megpróbálja bevinni a cellájába egy motozáshoz ér.')
     stats.line()
-    dobas_vagy_maradas = beker('Ugyan elrejtette a gatájában, de ha megtatálja a fegyőr azonnal vége a tervének! Mit tegyen? Írjon be 1-est ha menjen vissza, és dobja el, és 2-est ha higgadttan reménykedik, hogy nem találjál meg. ')
+    dobas_vagy_maradas = beker('Ugyan elrejtette a nadrágjában, de ha megtatálja a fegyőr azonnal vége a tervének! Mit tegyen? Írjon be 1-est ha menjen vissza, és dobja el, és 2-est ha higgadttan reménykedik, hogy nem találjál meg. ')
     if dobas_vagy_maradas == 1:
         print('Ez egy rossz döntés volt! Elveszítette a legfontosabb kellékét a szökéshez, így végetért számodra a játék!')
         print('VÉGE!')
@@ -142,7 +144,7 @@ def marad(nev):
     print('Odaért a motozáshoz, és az őr gyanut fogott a viselkedéséből és...')
     print(f'{nev}-nek szerencséje volt mivel nem találták meg nála a csípőfogt a motozás során. Bevitte a cellájába, és ott elrejtette.')
     stats.lebukas += 10
-    print(f'Most ki kellene választania {nev}-nek, hogy mikor szeretne kiszabadulni')
+    print(f'Most ki kellene választania {nev}-nek, hogy mikor szeretné megkíséreli a szökést')
     stats.line()
     idopont = beker('Írjon be 1-est ha, akkor amikor éppen nézik a rabok a TV-t és hangoskodnak, így senki sem fog rá figyelni és 2-est, ha egy este amikor már mindenki alszik. ')
     if idopont == 1:
