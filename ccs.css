@@ -129,15 +129,17 @@ body{
     border: 0;
     color: #c7d5e0;
   }
-  .ertek {
-    color: #90979d;
+  .sorok {
+    color: #556772;
     font-size: 0.9rem;
   }
-  .ertek a {
+  .sorok a {
     text-decoration: none;
-    color: #66c0f4;
+    color: #67c1f5;
   }
   .card-body {
     padding-bottom: 0!important ;
   }
-  
+  .kártya{
+    background: none;
+  }
