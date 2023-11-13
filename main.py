@@ -1,4 +1,4 @@
-from asas import introduction, valasztott_1, folyoso_vodor, folyoso_nyel
+from asas import introduction, valasztott_1, folyoso_vodor, folyoso_nyel, ajtok_kezel,ajtok_beker, tarsas1
 from stats import egeszseg, energia, lebukas, penz
 from vagas import vago
 from kulcs import kulcsketto
@@ -20,6 +20,6 @@ def main():
     elif valasz == 2:
         vago(nev)
     elif valasz == 3:
-        introduction(nev, egeszseg, valasztott_1, folyoso_vodor, folyoso_nyel)
+        introduction(nev, egeszseg, valasztott_1, folyoso_vodor, folyoso_nyel, ajtok_beker,ajtok_kezel, tarsas1)
 
 main()
