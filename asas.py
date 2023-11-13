@@ -384,7 +384,7 @@ def folyoso_vodor(stats, energia, egeszseg, vodor, fegyver, nev):
                 stats.energia -= 2
                 masnap()  
 
-def introduction(nev, egeszseg, valasztott1, folyoso_nyel, folyoso_vodor, tarsas1, ajtok):
+def introduction(nev, egeszseg, valasztott1, folyoso_nyel, folyoso_vodor, tarsas1, ajtok_beker, ajtok_kezel):
     os.system('cls')
     print(f'"{nev}" elhatározta, hogy ki fog ásni a börtönből, aminek végrehajtásához egy ásót kell megszereznie, vagy összeraknia')
     print('A játék során te fogod irányítani minden választását, sok sikert!')
@@ -396,7 +396,7 @@ def introduction(nev, egeszseg, valasztott1, folyoso_nyel, folyoso_vodor, tarsas
     if valasztott1 == 1:
         valasztott_1(nev, valasztott1, terv1_kezel, terv2_kezel)
     else:
-        valasztott_2(nev, valasztott1, folyoso_nyel, folyoso_vodor, egeszseg, fegyver, tarsas1,  ajtok)
+        valasztott_2(nev, valasztott1, folyoso_nyel, folyoso_vodor, egeszseg, fegyver, tarsas1, ajtok_beker, ajtok_kezel)
 
 def introduction_2():
     print('Másnap reggel felkelsz, és bevilágítanak a napnak sugarai a cella rácsain keresztül')
@@ -530,3 +530,15 @@ def folyoso_nyel(energia, stats, egeszseg, vodor, fegyver, nev, tarsas1, visszaf
                 print('Egy pisztolyra van szükség arra, hogy ezt megtedd')
                 if fegyver == 1:
                     print(f'{nev}-Viszlát világ, kiáltja {nev}, majd meghúzza a ravaszt')
+
+def munka():
+    print('Ezen a helyeken más raboknak hajthatsz végre különböző küldetéseket.')
+    print('Mindegyik küldetés egy vele járó kockázattal, illetve fizettséggel jár')
+    print('Figyelj oda, mindegyik küldetés valamennyi energiát, és harcok esetén életerőt is vonhat le')
+    print('Sok sikert a pénszerzéshez')
+    print('\t')
+    print('\t')
+    print('\t')
+    print('\t')
+    print('\t')
+
