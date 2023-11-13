@@ -123,3 +123,21 @@ body{
 .kep1{
     margin: 25px;
 }
+
+  .bg-card {
+    background-color: #171a28;
+    border: 0;
+    color: #c7d5e0;
+  }
+  .ertek {
+    color: #90979d;
+    font-size: 0.9rem;
+  }
+  .ertek a {
+    text-decoration: none;
+    color: #66c0f4;
+  }
+  .card-body {
+    padding-bottom: 0!important ;
+  }
+  
