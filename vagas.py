@@ -17,6 +17,7 @@ def telefon_vagy_level(nev):
 
 def baratno(nev):
     print('Vigyázz! Ne bízz teljesen a barátnődben, nehogy eláruljon.')
+    stats.lebukas += 20
     stats.line()
     print('Miután kiért az udvarra, hogyan jusson el a kerítésig?')
     opcio = beker('1 - kúszva menjek el a keríésig, és 2 - futva, mert úgy gyorsabb. ')
@@ -122,6 +123,7 @@ def telefon(megbeszeles, nev):
     print('Reménykedniük kell, hogy ne hallgassák le a telefont.')
     print(f'A megpróbálja becsempészni {nev}-nek a csípőfogót.')
     print('......')
+    stats.lebukas += 20
     print(f'Sikeresen becsempészte a börtön területére a csípőfogót, és most átadta {nev}-nek.')
     print(f'AMikor azonban {nev} megpróbálja bevinni a cellájába egy motozáshoz ér.')
     stats.line()
@@ -143,7 +145,7 @@ def telefon(megbeszeles, nev):
 def marad(nev):
     print('Odaért a motozáshoz, és az őr gyanut fogott a viselkedéséből és...')
     print(f'{nev}-nek szerencséje volt mivel nem találták meg nála a csípőfogt a motozás során. Bevitte a cellájába, és ott elrejtette.')
-    stats.lebukas += 10
+    stats.lebukas += 45
     print(f'Most ki kellene választania {nev}-nek, hogy mikor szeretné megkíséreli a szökést')
     stats.line()
     idopont = beker('Írjon be 1-est ha, akkor amikor éppen nézik a rabok a TV-t és hangoskodnak, így senki sem fog rá figyelni és 2-est, ha egy este amikor már mindenki alszik. ')
