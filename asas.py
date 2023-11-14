@@ -305,7 +305,7 @@ def vodro(nev):
             print('Nagyon sajnálom barátom, de ezt beszoptad, a cellatársad beköpött téged, vesztettél')
     exit(0)
 
-def folyoso_vodor(stats, energia, egeszseg, vodor, fegyver, nev):
+def folyoso_vodor(vodor, fegyver, nev):
     os.system('cls')
     stats.line()
     stats.print_stats()
@@ -384,7 +384,7 @@ def folyoso_vodor(stats, energia, egeszseg, vodor, fegyver, nev):
                 stats.energia -= 2
                 masnap()  
 
-def introduction(nev, egeszseg, valasztott1, folyoso_nyel, folyoso_vodor, tarsas1, ajtok_beker, ajtok_kezel):
+def introduction(nev):
     os.system('cls')
     print(f'"{nev}" elhatározta, hogy ki fog ásni a börtönből, aminek végrehajtásához egy ásót kell megszereznie, vagy összeraknia')
     print('A játék során te fogod irányítani minden választását, sok sikert!')
@@ -394,9 +394,9 @@ def introduction(nev, egeszseg, valasztott1, folyoso_nyel, folyoso_vodor, tarsas
     print('\t 2 - Kézi ásó készítése')
     valasztott1 = int(input('Válaszd ki az egyik lehetőséget: '))
     if valasztott1 == 1:
-        valasztott_1(nev, valasztott1, terv1_kezel, terv2_kezel)
+        valasztott_1(nev, valasztott1)
     else:
-        valasztott_2(nev, valasztott1, folyoso_nyel, folyoso_vodor, egeszseg, fegyver, tarsas1, ajtok_beker, ajtok_kezel)
+        valasztott_2(nev, valasztott1)
 
 def introduction_2():
     print('Másnap reggel felkelsz, és bevilágítanak a napnak sugarai a cella rácsain keresztül')
@@ -424,7 +424,7 @@ def valasztott_1(nev, valasztott1, terv1_kezel, terv2_kezel):
         if terv == 2:
             terv2_kezel(nev)       
 
-def valasztott_2(nev, valasztott1, folyoso_nyel, folyoso_vodor, egeszseg, fegyver, tarsas1, visszafele, ajtok):
+def valasztott_2(nev, valasztott1):
         if valasztott1 == 2:
             os.system('cls')
             stats.line()
@@ -433,9 +433,9 @@ def valasztott_2(nev, valasztott1, folyoso_nyel, folyoso_vodor, egeszseg, fegyve
             print('Sok sikert a játékhoz!')
             v_or_ny = randint(1,2)
             if v_or_ny == 1:
-                folyoso_nyel(energia, stats, egeszseg, vodor, nev, fegyver)
+                folyoso_nyel(nev)
             else:
-                folyoso_vodor(energia, stats, egeszseg, vodor, fegyver, nev, tarsas1, visszafele, ajtok)
+                folyoso_vodor(nev)
 
 def shop():
     os.system('cls')

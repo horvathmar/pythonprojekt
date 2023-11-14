@@ -11,7 +11,7 @@ def main():
     print('\n')
     print(f'Jelenleg "{nev}" egy börtöncellában fekszik az ágyán és azon gondolkozik, hogy hogyan tudna kiszabadulni a börtönből')
     print('Három ötlete van: ')
-    print('\t 1 - Csinálni álkulcsot és kinyitni az ajtókat')
+    print('\t 1 - Csinálni álkulcsot és kinyitni az ajtókat')                                                                                 
     print('\t 2 - Szerezni egy vágóeszközt és kivágni a kerítést')
     print('\t 3 - Szerezni egy ásót és kiásni magát')
     valasz = int(input('Melyik szökési módot választod: '))
@@ -20,6 +20,6 @@ def main():
     elif valasz == 2:
         vago(nev)
     elif valasz == 3:
-        introduction(nev, egeszseg, valasztott_1, folyoso_vodor, folyoso_nyel, ajtok_beker,ajtok_kezel)
+        introduction(nev)
 
 main()
