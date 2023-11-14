@@ -126,12 +126,6 @@ body{
 .kep1{
     margin: 25px;
 }
-
-  .bg-card {
-    background-color: #171a28;
-    border: 0;
-    color: #c7d5e0;
-  }
   .sorok {
     color: #556772;
     font-size: 0.9rem;
@@ -145,4 +139,9 @@ body{
   }
   .kártya{
     background: none;
+    border: 0;
+    color: #c7d5e0;
+  }
+  .kisszoveg{
+    color: #c7d5e0;
   }
