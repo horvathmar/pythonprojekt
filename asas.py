@@ -57,11 +57,11 @@ def masnap(nev, told=True):
             print('Visszatérsz a társadhoz, hogy meglásd, ő mit mondd')
             stats.energia -= 2
             ajtok_beker()
-    if tarsas1 == 2:
+    elif tarsas1 == 2:
         ajtok_beker(nev, told=True )
-    if tarsas1 == 3:
-        shop()
-    if tarsas1 == 4:
+    elif tarsas1 == 3:
+        shop(vodor, nyel, szogek, ruha)
+    elif tarsas1 == 4:
         os.system('cls')
         print('Levetetted magad az épület tetejéről')
         print('Vesztettél')
@@ -81,7 +81,6 @@ def kerdojel(nev):
     stats.lebukas += 4
     orocske = beker('Mit szeretnél tenni:')
     if orocske == 1:
-        os.system('cls')
         stats.line()
         print('Ez bevállt, elhitte neked, megszerezted a nyelet')
         vodro(nev)
@@ -230,7 +229,7 @@ def ajtok_beker(nev, told=True):
     ajtok = beker('Melyik ajtót választod: ')
     ajtok_kezel(ajtok, nev)
 
-def ajtok_kezel(ajtok, nev):
+def ajtok_kezel(ajtok, nev, nyel):
     if ajtok == 1:
         os.system('cls')
         print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
@@ -241,14 +240,11 @@ def ajtok_kezel(ajtok, nev):
         print('\t 2 - Leütöd vele, és menekülsz')
         orok1es2 = beker('Mit teszel: ')
         if orok1es2 == 1:
-            os.system('cls')
             print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
             print('Megszerezted a nyelet is')
             nyel += 1
             stats.energia -= 2
-            if nyel == 1:
-                os.system('cls')
-            vodro(nev)
+            vodro
         else:
             os.system('cls')
             utes = randint(1, 2)
@@ -263,7 +259,7 @@ def ajtok_kezel(ajtok, nev):
                 print('Megszerezted a nyelet is')
                 nyel2 += 1
                 stats.energia -= 2
-    if ajtok == 2:
+    elif ajtok == 2:
         os.system('cls')
         stats.print_stats()
         stats.lebukas += 8
@@ -296,8 +292,7 @@ def ajtok_kezel(ajtok, nev):
                     vodro()
                 elif hova == 3:
                     folyoso_nyel()
-
-    if ajtok == 3:
+    elif ajtok == 3:
         os.system('cls')
         print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
         print('Most tényleg, mit vártál')
@@ -475,8 +470,8 @@ def valasztott_2(nev):
         folyoso_vodor(nev)
 
 
-def shop():
-    global vodor, nyel, szogek, ruha
+def shop(vodor, nyel, szogek, ruha):
+    # global vodor, nyel, szogek, ruha
     os.system('cls')
     stats.print_stats()
     print('Üdvözöllek Ezüstfogú Károly boltjában, gyorsan válassz, aztán tűnés innen')
