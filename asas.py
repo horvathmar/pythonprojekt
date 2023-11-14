@@ -60,7 +60,7 @@ def masnap(nev, told=True):
     if tarsas1 == 2:
         ajtok_beker(nev, told=True )
     if tarsas1 == 3:
-        shop(nev)
+        shop()
     if tarsas1 == 4:
         os.system('cls')
         print('Levetetted magad az épület tetejéről')
@@ -569,13 +569,7 @@ def folyoso_nyel(nev, nyel):
                 exit()
 
 
-def munka():
-    print('Ezen a helyeken más raboknak hajthatsz végre különböző küldetéseket.')
-    print('Mindegyik küldetés egy vele járó kockázattal, illetve fizettséggel jár')
-    print('Figyelj oda, mindegyik küldetés valamennyi energiát, és harcok esetén életerőt is vonhat le')
-    print('Sok sikert a pénszerzéshez')
-    print('\t')
-    print('\t')
-    print('\t')
-    print('\t')
-    print('\t')
+def halal():
+    global energia
+    if energia > 2:
+        print('Teljesen kifogytál energiából, vesztettél')
