@@ -1,7 +1,6 @@
-from asas import introduction, valasztott_1, folyoso_vodor, folyoso_nyel, ajtok_kezel,ajtok_beker
-from stats import egeszseg, energia, lebukas, penz
-from vagas import vago
+from asas import introduction
 from kulcs import kulcsketto
+from vagas import vago
 
 
 def main():
