@@ -377,10 +377,8 @@ def folyoso_vodor(nev):
         if tores == 1:
             os.system('cls')
             stats.line()
-            print('Sajnos amikor ezt cselekedted, észreveszed, hogy a hozzátok közeli őr közeledik a cellátok felé')
-            print('\t 1 - felveszed az ál rendőrruhádat, amivel van esélyed eltusolni az ügyet, ha kilépsz benne a folyosóra, és csak normálisan viselkedsz')
-            print('\t 2 - Előveszed a fegyvered   ')
-
+            print('Sajnos amikor ezt cselekedted, a közelben minden őr meghallota ezt, elkaptak, VESZTETTÉL')
+            exit()
         else:
             os.system('cls')
             stats.line()
