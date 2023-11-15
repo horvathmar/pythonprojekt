@@ -540,3 +540,4 @@ def halal():
     global energia
     if energia > 2:
         print('Teljesen kifogytál energiából, vesztettél')
+        exit()
