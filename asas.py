@@ -39,6 +39,7 @@ def masnap(nev, told=True):
                 stats.line()
                 stats.print_stats()
                 stats.energia -= 2
+                stats.lebukas += 3
                 print('Egy 3 ajtós épületrészlegnél találod magadat, viszont melyik lehet a raktár ajtaja')
                 print('\t1 - Első ajtó, kint egy kalapács logója látható az ajtón')
                 print('\t2 - Második ajtó, rajta egy fegyver jel áll')
@@ -56,6 +57,7 @@ def masnap(nev, told=True):
             stats.line()
             print('Visszatérsz a társadhoz, hogy meglásd, ő mit mondd')
             stats.energia -= 2
+            stats.lebukas -= 2
             ajtok_beker()
     elif tarsas1 == 2:
         ajtok_beker(nev, told=True )
@@ -99,6 +101,7 @@ def kerdojel(nev):
             os.system('cls')
             print('Visszakullogsz szemlesújtva a celládba')
             stats.energia -= 2
+            stats.lebukas += 2
             masnap(nev)
         elif ujra == 2:
             hiszipiszi = randint(1, 2)
@@ -195,6 +198,7 @@ def terv2_kezel(nev):
     print('\t 3 - A helyi feketén működő bolt meglátogatása')
     print('\t 4 - úgy döntesz, öngyilkos leszel')
     orok = beker('Az ő helyében te hogy cselekednél?')
+    stats.lebukas += 2
     if orok == 3:
         shop()
     elif orok == 4:
@@ -219,6 +223,7 @@ def terv2_kezel(nev):
 def ajtok_beker(nev, told=True):
     if told:
         os.system('cls')
+        stats.lebukas += 5
         stats.print_stats()
         stats.energia -= 2
         print('Azt mondja, hogy van a folyosó végén 3 ajtó, és semmilyen körülmények között ne menj be a másodikba')
@@ -234,8 +239,9 @@ def ajtok_kezel(ajtok, nev, nyel):
     if ajtok == 1:
         os.system('cls')
         print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
-        stats.print_stats()
         stats.energia -= 2
+        stats.lebukas += 3
+        stats.print_stats()
         print('Ez itt a raktár része, itt ráleltél a nyélre, ámde visszafele egy őr megkérdezi hová tartasz vele')
         print('\t 1 - Egy társamnak viszem, eltört a felmosó nyele')
         print('\t 2 - Leütöd vele, és menekülsz')
@@ -278,6 +284,8 @@ def vodro(nev):
     stats.energia -= 2
     os.system('cls')
     print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
+    stats.energia -= 1
+    stats.lebukas += 4
     stats.print_stats()
     print('Már csak egy vödröt és szögeket kell szereznek, de honnan is kéne szerezni olyat?')
     print('\t 1 - Átkutatod, mi van körülötted')
@@ -342,6 +350,7 @@ def folyoso_vodor(nev):
     elif nyel == 2:
         os.system('cls')
         stats.line()
+        stats.lebukas -= 3
         stats.print_stats()
         print('Másnap reggel csodás napra ébredsz, és azt véled feldefedezni hogy a cellatársad éppen a padlót mossa fel')
         print('Eszedbe jut a gondolat, miszerint ha letöröd a végét a felmósonak, lesz egy nyeled')
@@ -538,6 +547,6 @@ def folyoso_nyel(nev, nyel):
 
 def halal():
     global energia
-    if energia > 2:
+    if energia < 2:
         print('Teljesen kifogytál energiából, vesztettél')
         exit()
