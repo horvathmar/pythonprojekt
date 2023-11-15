@@ -153,6 +153,7 @@ def terv1_kezel(nev):
         print('A személy csúnyán beköpöte, VESZTETTÉL')
         exit(0)
 
+    
     print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
     stats.print_stats()
     print('Felajánlotta segítségét, így gyorsabban tud majd végezni, hogy válaszol')
@@ -227,7 +228,7 @@ def ajtok_beker(nev, told=True):
     print('\t2 - Második ajtó, rajta egy fegyver jel áll')
     print('\t3 - Harmadik ajtó, külsején egy rendőr jelzéssel')
     ajtok = beker('Melyik ajtót választod: ')
-    ajtok_kezel(ajtok, nev)
+    ajtok_kezel(ajtok, nev, nyel)
 
 def ajtok_kezel(ajtok, nev, nyel):
     if ajtok == 1:
@@ -262,36 +263,9 @@ def ajtok_kezel(ajtok, nev, nyel):
     elif ajtok == 2:
         os.system('cls')
         stats.print_stats()
-        stats.lebukas += 8
-        print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
-        print('Egy kis záras babrálás után beléptél, és mindenféle fegyverrel találtad magad szembe')
-        print('Mélyen elgondolkozol, hogy vajon mit kéne tenned')
-        print('\t 1 - Felkapni egy fegyvert, majd elfutni vele, amilyen gyorsan tudsz')
-        print('\t 2 - A zsaruk már jönnek érted, inkább megadod magad')
-        stats.energia -= 2
-        zsaruk = beker('Miként döntesz: ')
-        if zsaruk == 1:
-            kapas = randint(1,2)
-            if kapas == 1:
-                os.system('cls')
-                stats.line()
-                print('Bármennyire is igyekeztél, el láblövés után te sem tudtál messzire futni')
-                print('Elkaptak, majd megműtenek, és mész vissza a celládba, plusz 2 év letöltendővel')
-                print('Vesztettél')
-                exit()
-            else:
-                print('Egy nagy futás és sokáig tartó bújás után előjöhetsz')
-                print('Megszerezted a pisztolyt')
-                fegyver += 1
-                energia -= 2
-                lebukas += 3  
-                hova = randint(1,4)
-                if hova == 1: 
-                    masnap()
-                elif hova == 2:
-                    vodro()
-                elif hova == 3:
-                    folyoso_nyel()
+        print('Mielőtt kimehettél volna az ajtón, szembeállt veled egy őr, és elkapott')
+        print('Vesztettél')
+        exit()
     elif ajtok == 3:
         os.system('cls')
         print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
